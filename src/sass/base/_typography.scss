@@ -1,0 +1,120 @@
+// body{
+//   font-size: $font-size-base;
+//   line-height: $line-height-base;
+//   font-family: $font-family-base;
+//   font-weight: $font-weight-normal;
+//   text-rendering: optimizeLegibility;
+//   text-rendering: geometricPrecision;
+// }
+
+h1, h2, h3, h4, h5, h6 {
+  @include mb(2);
+}
+
+h1{
+  @include ms-respond(font-size, 6);
+  font-weight: $font-weight-normal;
+  line-height: $line-height-h2;
+  &+h6{
+    @include mq($from: md){
+      margin-top: -2rem;
+    }
+    @include mq($until: md){
+      margin-top: -1rem;
+    }
+    @include mb(6);
+  }
+}
+
+h2{
+//     @include ms-respond(font-size, 6);
+//     font-weight: $font-weight-normal;
+  line-height: $line-height-h2;
+  &+h6{
+    margin-top: -2rem;
+    @include mb(6);
+  }
+}
+
+h3{
+//     @include ms-respond(font-size, 4);
+//     font-weight: $font-weight-normal;
+  line-height: $line-height-h3;
+}
+
+h4{
+//     @include ms-respond(font-size, 2);
+//     font-weight: $font-weight-normal;
+  line-height: $line-height-h4;
+}
+
+h5{
+  text-transform: uppercase;
+//     @include ms-respond(font-size, 1);
+//     font-weight: $font-weight-normal;
+  line-height: $line-height-h5;
+}
+
+h6{
+  color: $gray-light;
+//     @include ms-respond(font-size, 0);
+//     font-weight: $font-weight-normal;
+  line-height: $line-height-h6;
+
+  &.main{
+    color: blue;
+  }
+  &.spaced{
+    @include mt(8);
+  }
+}
+
+p{
+    @include ms-respond(font-size, 0);
+    line-height: $line-height-base;
+    letter-spacing: .0125em;
+    &.big{
+      @include ms-respond(font-size, 3);
+    }
+    a{
+      &.highlight{
+        transition: all .2s ease-out;
+        text-decoration: none;
+        padding: 0 .5rem;
+        background: rgba(0,255,10,.2);
+        display: inline-block;
+
+        &:hover{
+          background: rgba(0,255,10,.5);
+        }
+        &--reskewed{
+          transform: skew(4deg);
+          span{
+            display: inline-block;
+            transform: skew(-4deg);
+          }
+        }
+        &--skewed{
+          transform: skew(-7deg);
+          span{
+            display: inline-block;
+            transform: skew(7deg);
+          }
+        }
+      }
+    }
+}
+
+a{
+  sup{
+    font-size: .4em;
+    text-decoration: none;
+  }
+}
+// pre{
+//   @include m(0);
+//   @include mt(1);
+//   @include mb(1);
+//   @include p(2);
+//   background-color: $gray-lightest;
+// }

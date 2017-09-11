@@ -1,0 +1,26 @@
+@import "./main-no-prints";
+// SASS framework
+@import "~styles/main";
+@import "./base/typography";
+
+
+
+// Set your grid dimensions here
+@mixin baseline-grid {
+	background-image: linear-gradient(rgba(50, 50, 200, 0.1) 1px, transparent 1px);//, linear-gradient(rgba(50, 50, 200, 0.15) 1px, transparent 1px);
+  background-size: 1px 8px;//, 1px .5rem;
+  background-position: 0 .1rem;
+}
+
+// Example call
+body {
+	// @include baseline-grid;
+}
+
+.footer-main{
+  // border-top: 1px solid $black;
+  @include mt(4);
+  @include pt(2);
+  @include pb(4);
+  text-align: right;
+}

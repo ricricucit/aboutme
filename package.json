@@ -1,0 +1,59 @@
+{
+  "name": "aboutme",
+  "version": "1.0.0",
+  "description": "Enrico Icardi - Personal homepage/portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV='dev' env UV_THREADPOOL_SIZE=100 webpack-dev-server --host 0.0.0.0 --open",
+    "prod": "NODE_ENV='prod' env UV_THREADPOOL_SIZE=100  webpack -p --optimize-minimize",
+    "deploy": "gh-pages -d dist",
+    "ghpages": "NODE_ENV='gh-pages' env UV_THREADPOOL_SIZE=100 webpack -p --optimize-minimize && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricricucit/aboutme.git"
+  },
+  "keywords": [
+    "about",
+    "enrico",
+    "icardi"
+  ],
+  "author": "Enrico Icardi <enrico.icardi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricricucit/aboutme/issues"
+  },
+  "homepage": "https://github.com/ricricucit/aboutme#readme",
+  "devDependencies": {
+    "@welance/welance-bs": "^0.7.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "favicons-webpack-plugin": "0.0.7",
+    "gh-pages": "^1.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "imagemin-webpack-plugin": "^1.5.2",
+    "modularscale-sass": "^3.0.3",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "prerender-spa-plugin": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "sass-mq": "^3.3.2",
+    "script-ext-html-webpack-plugin": "^1.8.5",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "vue": "^2.4.2",
+    "vue-loader": "^13.0.4",
+    "vue-router": "^2.7.0",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.6",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-sources": "^1.0.1"
+  }
+}
