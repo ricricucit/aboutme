@@ -21,8 +21,8 @@ let API_URL   = 'http://localhost:8000/';     //API endpoints base
 
 switch(process.env.NODE_ENV){
   case 'gh-pages':
-    BASE_URL = '/aboutme/';
-    API_URL = 'https://ricricucit.github.io/aboutme/'
+    BASE_URL = '/';
+    API_URL = 'http://aboutme.it/'
     break;
   case 'dev':
     BASE_URL = '/';
@@ -60,9 +60,9 @@ module.exports.PROD_PLUGINS = [
     "API_URL": JSON.stringify(API_URL)
   }),
   //adds async tag to script to load JS asynchronously
-  /*new ScriptExtHtmlWebpackPlugin({
-    defaultAttribute: 'async'
-  }),*/
+  new ScriptExtHtmlWebpackPlugin({
+    defaultAttribute: 'defer'
+  }),
   //about SASS compilation
   new ExtractTextPlugin({
     filename: "assets/bundle.css"
@@ -73,7 +73,8 @@ module.exports.PROD_PLUGINS = [
   }),*/
   // Copy the images folder and optimize all the images
   new CopyWebpackPlugin([
-    { from: 'src/assets/images/', to: 'assets/images/' }
+    { from: 'src/assets/images/', to: 'assets/images/' },
+    { from: 'src/assets/ghpages/CNAME', to: 'CNAME', toType: 'file' }
   ]),
   new ImageminWebpackPlugin({
     test: /\.(jpe?g|png|gif|svg)$/i,
