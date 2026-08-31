@@ -1,0 +1,292 @@
+{
+  "lang": "en",
+  "native": "English",
+  "meta": {
+    "siteName": "Enrico Icardi",
+    "title": "Enrico Icardi — Engineering and Product + AI Sitter @welance",
+    "description": "Enrico Icardi, Berlin ⇄ Alta Langa. Engineering and Product + AI Sitter @welance. Co-founder of ShareDesk/Optix, Stood, Doi Fagnán and Rural Pop-Up. Building digital products and the teams that ship them since 2006.",
+    "aboutTitle": "Career — Enrico Icardi",
+    "aboutDescription": "How Enrico Icardi got from web development in Torino (2006) to CTO / Principal Engineer at welance: ShareDesk/Optix, stood.it, æternity, agencies and startups.",
+    "cvTitle": "Detailed career — Enrico Icardi",
+    "cvDescription": "Full CV of Enrico Icardi: welance, Rural Pop-Up, Doi Fagnán, Stood, æternity SDK, ShareDesk/Optix, education, languages and interests.",
+    "onedayTitle": "One Day — Enrico Icardi",
+    "onedayDescription": "One Day, Enrico Icardi's blog: compressed stories of days that turned out worth telling. Italian-first, translated."
+  },
+  "nav": {
+    "home": "Enrico Icardi",
+    "about": "Career",
+    "cv": "CV",
+    "book": "Book a 30min call",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "language": "Language",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "E-mail",
+    "oneday": "One Day"
+  },
+  "home": {
+    "hi": "Hi! I'm Enrico.",
+    "intro": [
+      "I'm in IT since 2006 and my role (at <a href=\"https://welance.com\"><strong>welance</strong></a>) mostly involves deciding how to build a <strong>digital product</strong>, as well as form or join a <strong>team</strong> to collectively plan and create it — lately with AI agents doing a good share of the typing, and me sitting them. I also help the org take data-driven decisions.",
+      "Along the way I co-founded a few companies, some digital, one made of wood, and I still enjoy helping early-stage founders get unstuck and getting to know smart people and ideas.",
+      "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
+    ],
+    "alsoTitle": "Also",
+    "also": [
+      "Co-founded <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> in 2009 — the “Airbnb for flexible workplaces”, seed-funded by Tim Draper's DFJ.",
+      "Helped build <a href=\"https://github.com/aeternity/aepp-sdk-js\">æternity's open-source JavaScript SDK</a> and developer tools (2018–19).",
+      "Product-manage welance's internal agency ERP + developer platform, born after 250+ clients.",
+      "Co-founded <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a> and <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a> in Alta Langa, and helped start <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, a volunteer association protecting the woods of the Langhe.",
+      "Co-founded <a href=\"https://stood.it\">stood.it</a> in 2014, a design monobrand of wooden office objects, now mainly run by a friend and my partner Giorgia."
+    ],
+    "moreAbout": "More in my <a href=\"{about}\">career story</a> or the <a href=\"{cv}\">detailed CV</a>."
+  },
+  "about": {
+    "title": "Career",
+    "html": [
+      "I've started with Web Development in 2006 in Torino, Italy.",
+      "Since then I've been working (mostly as a consultant) with perfectionist –Type B– designers, complicated –Type A– developers, and spent a countless hours writing e-mails and attending meetings about planning, estimating, discussing, fixing, pivoting, refactoring, supervise tech products and digital teams.",
+      "I enjoy teamwork, i am capable avoid or handle <em>stressful assignments</em> and i'm usually very intrigued by any new venture that i get to know or work at. I also occasionally give advices to early stage startups struggling to bootstrap.",
+      "<hr>",
+      "<a href=\"https://www.optixapp.com/\">⭐ <strong>ShareDesk (now Optix)</strong>, my first venture</a> was co-founded in 2009 with a team of friends, started to be <a href=\"https://www.forbes.com/sites/ericaswallow/2012/10/17/sharedesk-coworking/\">recognized</a> in 2012 as the <em>Airbnb for flexible Workplaces</em>, and has been <a href=\"https://brainstation.io/magazine/sharedesk-raises-11-million-seed-round\">successfully funded</a>. Its seed round ($1.1M) was led by Tim Draper's DFJ and today it's still one of the main players in the Coworking Management SAAS.",
+      "My second venture is called <a href=\"http://stood.it\">⭐ <strong>stood.it</strong></a> and started in early 2015. It's a wooden product (B2C+B2B) and early B2B customers include many Tech Companies and Events (<a href=\"https://google.com\"><em>Google</em></a>, <a href=\"https://exoclick.com\"><em>exoclick</em></a>, <a href=\"https://breather.com\"><em>Breather</em></a> and more).",
+      "In 2017 I've mentored an <a href=\"https://busrapido.com/\">Italian Bus Startup</a> (acquired by BusForFun), in February 2018, I've helped <a href=\"https://aeternity.com/\">æternity</a> building its <a href=\"https://github.com/aeternity/aepp-sdk-js\">Blockchain SDK</a> and Developer Tools.",
+      "⭐ Over the years I've had the pleasure to consult and work with many European Agencies and all kinds of agile startups, brands and organisations. These include <a href=\"https://www.getunik.com/en/\">GetUnik</a> (Red Cross, Amnesty International, Salvation Army, Caritas, Save The Children, ...), <a href=\"https://vyking.io/\">Vyking</a> (Infrastructure, RBAC B2B \"Dashboard\"), <a href=\"https://acker.co\">Acker</a> (Data Platform for School Teaching Tools, Learning Platform, Multi Website) and more.",
+      "From 2019 I work as <strong>CTO / Principal Engineer</strong> <a href=\"https://welance.com\">⭐<strong>welance</strong></a>, a multidisciplinary network of independent professionals, acting as a full-service Digital Agency.",
+      "<hr>",
+      "<a href=\"https://www.linkedin.com/in/enricoicardi/\">linkedin</a> · <a href=\"{cv}\">detailed Career</a>"
+    ]
+  },
+  "cv": {
+    "title": "Detailed career",
+    "lead": "Engineering and Product + AI Sitter @welance. Based in Berlin, Germany and Alta Langa, Italy. Italian. Working with teams across the EU and the world since 2006, mostly as a consultant, often as a co-founder.",
+    "labels": {
+      "now": "Now",
+      "earlier": "Earlier",
+      "advising": "Mentoring & advising",
+      "openSource": "Open source",
+      "stack": "Stack",
+      "education": "Education",
+      "languages": "Languages",
+      "interests": "Interests",
+      "present": "present",
+      "contact": "Get in touch"
+    },
+    "now": [
+      {
+        "org": "welance",
+        "url": "https://welance.com",
+        "role": "Co-founder · CTO / Principal Engineer · Engineering and Product + AI Sitter",
+        "period": "2012 – present",
+        "where": "Berlin, Germany · Lequio Berria, Italy · remote",
+        "text": [
+          "A collective of hand-picked independent professionals acting as a full-service digital agency: consulting, technology, UI/UX, marketing, DevOps, CMS. I restructure and maintain the collective's own engineering and strategy, and the digital products derived from it, for the collective and for its clients.",
+          "Started in 2017 with a design system and development guidelines so the community could streamline (and automate) repeating work; enlarged the tech offer and stack in 2021; today that structure lets any welance member develop the company's framework further.",
+          "Day to day: budget and resource allocation for 40+ people, shared processes and guidelines, client acquisition and relationships, cashflow, several projects and teams in parallel, and, lately, supervising AI agents that do a good share of the typing. Since 2022 <strong>Welance Ventures Italia</strong> also works with rural municipalities on digital solutions that improve rural life, as one of the first rural digital hubs."
+        ]
+      },
+      {
+        "org": "welance · Agency ERP + Developer Platform",
+        "url": "https://welance.com",
+        "role": "Product Manager",
+        "period": "2022 – present",
+        "where": "remote",
+        "text": [
+          "After 250+ clients, managing an agency had become chaos. Fixing that chaos produced an internal, Directus-based tool (think Vercel + Linear + ERP) that we're now happy to show and share with digital agencies like ours."
+        ]
+      },
+      {
+        "org": "Rural Pop-Up",
+        "url": "https://rural-pop-up.com/",
+        "role": "Founder, rural development",
+        "period": "2023 – present",
+        "where": "Alta Langa, Piedmont, Italy",
+        "text": [
+          "Rural development starts from infrastructure. We collected rural public places that never existed on Google Maps and made them accessible to the general public (a PNRR project). I'm also an early co-founder and, these days, a quiet supporting member of <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, a volunteer association that protects the woods, meadows and springs of the Langhe."
+        ]
+      },
+      {
+        "org": "Doi Fagnán · Residenza di Campagna",
+        "url": "https://www.doi-fagnan.it/",
+        "role": "Co-founder",
+        "period": "2019 – present",
+        "where": "Lequio Berria, Piedmont, Italy",
+        "text": [
+          "Living isolated is great; exchanging experience with people from all over the world is also great. So we renovated a stone house from 1790 in 40 hectares of woodland and opened it to guests, fast Wi-Fi included. Come meet me."
+        ]
+      },
+      {
+        "org": "Stood.it",
+        "url": "https://stood.it",
+        "role": "Co-founder",
+        "period": "2014 – present",
+        "where": "Berlin, Germany · Torino, Italy",
+        "text": [
+          "A design monobrand of wooden office objects, B2C and B2B. A test project that “just worked” and became a small business; I set up branding, e-commerce, customer acquisition, materials, CNC and logistics, and today it's mainly run by a friend and my partner Giorgia, with the objects still made in Torino with the help of a luthier friend. Early B2B customers include Google, exoclick and Breather."
+        ]
+      },
+      {
+        "org": "Independent",
+        "url": "",
+        "role": "Software development · Fractional CTO",
+        "period": "2006 – present",
+        "where": "EU / world",
+        "text": [
+          "As part of a solid network of consultants I've been on small-to-huge internet projects since 2006, mainly in Italy, Germany and Switzerland.",
+          "Agencies and organisations include <a href=\"https://www.getunik.com/en/\">GetUnik</a> (Red Cross, Amnesty International, Salvation Army, Caritas, Save the Children…), <a href=\"https://vyking.io/\">Vyking</a> (infrastructure, RBAC B2B dashboard), <a href=\"https://acker.co\">Acker</a> (data platform for teaching tools, learning platform, multi-site), <a href=\"https://gppi.net\">GPPi</a>, <a href=\"https://www.highsnobiety.com/\">Highsnobiety</a> and more."
+        ]
+      }
+    ],
+    "earlier": [
+      {
+        "org": "æternity (with Ape Unit)",
+        "url": "https://github.com/aeternity/aepp-sdk-js",
+        "role": "Senior JavaScript developer, SDK, developer tools, documentation",
+        "period": "Apr 2018 – Dec 2019",
+        "where": "Berlin, Germany",
+        "text": [
+          "Open-source JavaScript SDK and developer toolkits to ease the use of æternity's blockchain and the apps built on it; onboarding of new developers through tooling and technical documentation. Functional programming, Docker, Kubernetes, CI/CD with Jenkins, AWS."
+        ]
+      },
+      {
+        "org": "ShareDesk → Optix (AppQii Technology Inc.)",
+        "url": "https://www.optixapp.com/",
+        "role": "Co-founder & CPO, shareholder since 2016",
+        "period": "2009 – 2016",
+        "where": "Vancouver, Canada · San Francisco, USA · Berlin",
+        "text": [
+          "My first venture, described by Forbes in 2012 as the “Airbnb for flexible workplaces”; $1.1M seed round led by Tim Draper's DFJ; after almost eight years of teamwork, a leading position in its industry.",
+          "I followed the full lifecycle of both products: ShareDesk, the marketplace for shared workspaces, and Optix, the web/iOS/Android platform for managing office space, communication and utilisation. Team creation and lead, budget, UX and design, strategy, product timeline, investor expectations."
+        ]
+      },
+      {
+        "org": "BusRapido",
+        "url": "https://busrapido.com/",
+        "role": "Mentor",
+        "period": "2017",
+        "where": "Italy",
+        "text": [
+          "Mentored an Italian bus-travel startup, later acquired by BusForFun."
+        ]
+      },
+      {
+        "org": "Digital Nomad Survey",
+        "url": "",
+        "role": "Founder",
+        "period": "2015",
+        "where": "Berlin, Germany · worldwide",
+        "text": [
+          "An open-data experiment on a trending topic: 40 questions, 700+ responses, ~1,400 unique visitors (a 50% conversion rate) and 95% of participants leaving their e-mail. Idea, sponsorship, promotion and coordination until completion; a second edition followed with a partner."
+        ]
+      },
+      {
+        "org": "Brand-Catcher · Maxema",
+        "url": "",
+        "role": "Full-stack developer, analyst and advisor",
+        "period": "2009 – 2012",
+        "where": "Berlin, Germany (remote) · Torino, Italy",
+        "text": [
+          "In a team put together by a renowned design studio, I built the online presence of two brands from scratch, two custom platforms, no CMS or framework: a retail startup's e-commerce and a traditional B2B reseller app. Working next to complex UI/UX tied to a branding strategy is where my focus shifted towards the front-end and design in software."
+        ]
+      },
+      {
+        "org": "Bakeca.it · Easybit",
+        "url": "https://www.bakeca.it/",
+        "role": "Developer",
+        "period": "2009 – 2010",
+        "where": "Torino, Italy",
+        "text": [
+          "Easybit is the web agency behind Bakeca, which quickly became Italy's leading classifieds site. Back-end for Bakeca, optimising complex queries and extending the core of a large OOP PHP application under high traffic and constantly growing databases (Apache Solr), and full-stack for Easybit, building sites for small-to-large enterprises with an XML-based Java generator."
+        ]
+      },
+      {
+        "org": "Independent",
+        "url": "",
+        "role": "Full-stack web and software developer",
+        "period": "2006 – 2009",
+        "where": "Torino, Italy",
+        "text": [
+          "Right after school: web development (ASP, HTML, JS) and software (Visual Basic) for small companies and associations, plus print design and corporate identities. Learning to find clients, work with external agencies and run a self-employed business."
+        ]
+      },
+      {
+        "org": "Unieuro IT department · GameStop",
+        "url": "",
+        "role": "Systems and network maintenance · Store manager",
+        "period": "2004 – 2005",
+        "where": "Alba, Italy",
+        "text": [
+          "Servers, computers and network for Unieuro's ~500-person headquarters. The IT team was essential to physical store set-ups and openings: sys-administering the central servers right next to the server room, preparing hundreds of computers to ship for a new store opening, fixing the network and finding solutions for the offices' everyday IT and software issues.",
+          "Then, at GameStop, a team of five and the daily business of a videogame store."
+        ]
+      }
+    ],
+    "advising": "Startup advisor and shareholder (AppQii, Tillairplant); occasional advice to early-stage startups struggling to bootstrap.",
+    "openSource": [
+      {
+        "name": "aeternity/aepp-sdk-js",
+        "url": "https://github.com/aeternity/aepp-sdk-js",
+        "text": "JavaScript SDK for the æternity blockchain"
+      },
+      {
+        "name": "html5admin",
+        "url": "https://github.com/ricricucit/html5admin",
+        "text": "HTML5 admin template"
+      },
+      {
+        "name": "welance-bs",
+        "url": "https://github.com/welance-archive/welance-bs",
+        "text": "welance's SASS + Vue design-system starter"
+      },
+      {
+        "name": "welance-craft-starter",
+        "url": "https://github.com/welance-archive/welance-craft-starter",
+        "text": "Craft CMS starter kit"
+      }
+    ],
+    "stack": "JavaScript / TypeScript, Node.js, Vue / Nuxt, PHP, MySQL, REST APIs, Directus and other headless CMS, Craft and WordPress, Docker, Kubernetes / Rancher, AWS, Cloudflare, CI/CD, and, since 2023, AI agents, MCP servers and AI-assisted delivery.",
+    "education": [
+      "Istituto Tecnico Industriale Statale G. Vallauri, Fossano, technical programming (1997–2003)",
+      "Cisco Systems Level 1: system administration and architecture design (2004–2005, Fossano)",
+      "Print, web and multimedia internships at “Il Tipografo” and “L'artigiana” (2005, Alba)",
+      "Self-taught, continuously: product design, development and promotion for the physical and the digital world (since 2002); team management, budgeting and business modelling (since 2010); events on management, strategy and technology"
+    ],
+    "languages": [
+      {
+        "name": "Italian",
+        "level": "native"
+      },
+      {
+        "name": "English",
+        "level": "professional"
+      },
+      {
+        "name": "Spanish",
+        "level": "good understanding, basic spoken"
+      },
+      {
+        "name": "German",
+        "level": "elementary"
+      },
+      {
+        "name": "French",
+        "level": "elementary"
+      }
+    ],
+    "interests": "Among literally everything in this life, if I really need to pick interests for my personal page I'd pick: Organisational Processes, AI-Assisted Engineering, Rural Development, Regenerative Agriculture, Woodland Conservation, Food, Wine, Cats and ChillMaxxxing.",
+    "contact": "E-mail <a href=\"mailto:enrico@welance.com\">enrico@welance.com</a>, <a href=\"{book}\">book a 30-minute call</a>, or find me on <a href=\"https://www.linkedin.com/in/enricoicardi/\">LinkedIn</a> and <a href=\"https://github.com/ricricucit\">GitHub</a>."
+  },
+  "footer": {
+    "updated": "last update",
+    "colophon": "Static HTML, no framework, no cookies."
+  },
+  "oneday": {
+    "title": "One Day",
+    "tagline": "Compressed stories of days that turned out worth telling.",
+    "empty": "One Day starts on August 31st, 2026. Today I can't think of a day worth telling, so it starts with zero posts.",
+    "langNote": "Posts are written in Italian first; translations follow."
+  }
+}
