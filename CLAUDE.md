@@ -11,7 +11,7 @@ aboutme.it — Enrico Icardi's personal site. Static HTML, **no framework, no ru
 - `npm run dev` — builds to `dist/` and serves it at http://localhost:5173 (`PORT=…` to change). Every page request rebuilds, so editing `content/*.json`, `src/style.css` or `build.mjs` shows on reload. No watcher, no install needed.
 - `npm run build` — one-off build to `dist/`.
 - `npm test` — the e2e gate: builds, serves on :5199, runs Lighthouse 12 (mobile + desktop) on `/`, `/about/`, `/cv/`, `/it/`, `/de/cv/` and fails unless every category is 100. Reports land in `.lighthouse/` (gitignored). Override the page list with `LH_PAGES=/,/fr/cv/ npm test`. Needs Chrome installed; `npx` fetches Lighthouse, so the repo itself has zero dependencies — there is no `npm install`.
-- **Deploy = push to `master`.** `.github/workflows/deploy.yml` runs the build + `npm test`, uploads the Lighthouse reports as a workflow artifact, and publishes `dist/` with `actions/deploy-pages` (repo Settings → Pages → Source must be "GitHub Actions"; the custom domain is set there too, `static/CNAME` is kept for safety). Pull requests run the test job only.
+- **Deploy = push to `main`.** `.github/workflows/deploy.yml` runs the build + `npm test`, uploads the Lighthouse reports as a workflow artifact, and publishes `dist/` with `actions/deploy-pages` (repo Settings → Pages → Source must be "GitHub Actions"; the custom domain is set there too, `static/CNAME` is kept for safety). Pull requests run the test job only.
 
 No linter.
 

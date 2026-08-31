@@ -56,18 +56,25 @@ const ICON = {
 };
 const FAVICON = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0a0a0a"/><circle cx="32" cy="32" r="14" fill="#eecc5d"/></svg>');
 
-function jsonld(c) {
-  return JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'Person', '@id': BASE + '/#person',
-    name: 'Enrico Icardi', url: BASE + '/', image: BASE + '/img/og.jpg', email: 'mailto:' + EMAIL,
-    jobTitle: 'Engineering and Product + AI Sitter', description: c.meta.description,
+function jsonld(c, page) {
+  const person = {
+    '@type': 'Person', '@id': BASE + '/#person',
+    name: 'Enrico Icardi', alternateName: 'ricricucit', url: BASE + '/', image: BASE + '/img/og.jpg', email: 'mailto:' + EMAIL,
+    jobTitle: 'CTO / Principal Engineer · Engineering and Product + AI Sitter',
+    description: c.meta.description,
     worksFor: { '@type': 'Organization', name: 'welance', url: 'https://welance.com' },
-    address: [{ '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' }, { '@type': 'PostalAddress', addressLocality: 'Lequio Berria', addressRegion: 'Piedmont', addressCountry: 'IT' }],
+    homeLocation: [{ '@type': 'Place', name: 'Berlin, Germany' }, { '@type': 'Place', name: 'Alta Langa, Piedmont, Italy' }],
     nationality: { '@type': 'Country', name: 'Italy' },
     knowsLanguage: ['it', 'en', 'es', 'de', 'fr'],
+    knowsAbout: ['Product management', 'Software engineering', 'Engineering management', 'AI-assisted engineering', 'AI agents', 'Design systems', 'Developer platforms', 'Digital agencies', 'Startups', 'Rural development', 'Regenerative agriculture', 'Woodland conservation'],
+    hasOccupation: { '@type': 'Occupation', name: 'CTO / Principal Engineer', occupationLocation: { '@type': 'AdministrativeArea', name: 'EU / remote' }, skills: 'JavaScript, TypeScript, Node.js, Vue, Nuxt, PHP, MySQL, REST APIs, Directus, Docker, Kubernetes, AWS, CI/CD, AI agents, MCP' },
     alumniOf: { '@type': 'EducationalOrganization', name: 'ITIS G. Vallauri, Fossano' },
     sameAs: [LINKEDIN, GITHUB, 'https://x.com/ricricucit']
-  });
+  };
+  const root = page === 'home'
+    ? { '@context': 'https://schema.org', '@type': 'ProfilePage', dateModified: now.toISOString().slice(0, 10), mainEntity: person }
+    : { '@context': 'https://schema.org', ...person };
+  return JSON.stringify(root);
 }
 
 function head(c, page, title, desc, o = {}) {
@@ -76,7 +83,7 @@ function head(c, page, title, desc, o = {}) {
   const L = o.langs ? langs.filter(x => o.langs.includes(x.lang)) : langs;
   const abs = lg => BASE + route(lg);
   const alts = L.map(x => `<link rel="alternate" hreflang="${x.lang}" href="${abs(x.lang)}">`).join('') + (L.some(x => x.lang === 'en') ? `<link rel="alternate" hreflang="x-default" href="${abs('en')}">` : '');
-  return `<!doctype html><html lang="${l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${abs(l)}">${alts}<meta property="og:type" content="profile"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${abs(l)}"><meta property="og:image" content="${BASE}/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="${l}"><meta property="og:site_name" content="${esc(c.meta.siteName)}"><meta name="twitter:card" content="summary_large_image"><meta name="author" content="Enrico Icardi"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"><link rel="icon" href="${FAVICON}"><script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script><link rel="preload" href="/fonts/MaisonNeue-Book.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/MaisonNeue-Medium.woff2" as="font" type="font/woff2" crossorigin><style>${css}</style><script type="application/ld+json">${jsonld(c)}</script></head><body>`;
+  return `<!doctype html><html lang="${l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${abs(l)}">${alts}<meta property="og:type" content="profile"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${abs(l)}"><meta property="og:image" content="${BASE}/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="${l}"><meta property="og:site_name" content="${esc(c.meta.siteName)}"><meta name="twitter:card" content="summary_large_image"><meta name="author" content="Enrico Icardi"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"><link rel="icon" href="${FAVICON}"><script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script><link rel="preload" href="/fonts/MaisonNeue-Book.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/MaisonNeue-Medium.woff2" as="font" type="font/woff2" crossorigin><style>${css}</style><script type="application/ld+json">${jsonld(c, page)}</script></head><body>`;
 }
 
 function header(c, page) {
@@ -179,8 +186,16 @@ function build() {
       ? Object.keys(u.post.tr).map(lg => `<xhtml:link rel="alternate" hreflang="${lg}" href="${BASE + postPath(lg, u.post.slug)}"/>`).join('')
       : langs.map(o => `<xhtml:link rel="alternate" hreflang="${o.lang}" href="${url(o.lang, u.page)}"/>`).join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${url('en', u.page)}"/>`) + `</url>`).join('') + `</urlset>`;
   writeFileSync(join(OUT, 'sitemap.xml'), sm);
-  writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${BASE}/sitemap.xml\n`);
-  writeFileSync(join(OUT, 'llms.txt'), `# Enrico Icardi\n\n> ${en.meta.description}\n\nPersonal site of Enrico Icardi, available in ${langs.map(o => o.native).join(', ')}. English is the canonical version.\n\n## Pages\n\n- [Home](${BASE}/): who I am and what I do now\n- [Career](${BASE}/about/): the story in my own words\n- [Detailed CV](${BASE}/cv/): full career, education, languages\n- [CV as Markdown](${BASE}/cv.md): plain-text version of the CV\n- [One Day](${BASE}/one-day/): blog, compressed stories of days worth telling (Italian-first)\n\n## Contact\n\n- E-mail: ${EMAIL}\n- Book a 30-minute call: ${BOOK}\n- LinkedIn: ${LINKEDIN}\n- GitHub: ${GITHUB}\n`);
+  writeFileSync(join(OUT, 'robots.txt'), `# All crawlers welcome, AI crawlers included (see /llms.txt and /llms-full.txt).\nUser-agent: *\nAllow: /\n\nSitemap: ${BASE}/sitemap.xml\n`);
+  writeFileSync(join(OUT, 'llms.txt'), `# Enrico Icardi\n\n> ${en.meta.description}\n\nPersonal site of Enrico Icardi, available in ${langs.map(o => o.native).join(', ')}. English is the canonical version.\n\n## Pages\n\n- [Home](${BASE}/): who I am and what I do now\n- [Career](${BASE}/about/): the story in my own words\n- [Detailed CV](${BASE}/cv/): full career, education, languages\n- [CV as Markdown](${BASE}/cv.md): plain-text version of the CV\n- [Full site as plain text](${BASE}/llms-full.txt): everything on one page, for LLM ingestion\n- [One Day](${BASE}/one-day/): blog, compressed stories of days worth telling (Italian-first)\n\n## Contact\n\n- E-mail: ${EMAIL}\n- Book a 30-minute call: ${BOOK}\n- LinkedIn: ${LINKEDIN}\n- GitHub: ${GITHUB}\n`);
+  const full = [`# Enrico Icardi — full site content (English)\n`,
+    `> ${en.meta.description}\n`,
+    `## Home\n`, ...en.home.intro.map(strip), en.home.alsoTitle + ':', ...en.home.also.map(x => '- ' + strip(x)),
+    `\n## Career (in my own words)\n`, ...en.about.html.filter(x => x !== '<hr>').map(strip),
+    `\n${cvMarkdown(en).replace(/^# .*\n/, '## Detailed CV\n')}`,
+    `\n## One Day (blog)\n`, strip(en.oneday.tagline), posts.length ? posts.map(p => `- ${p.tr[postFor(p, 'en')].title} (${p.date}): ${BASE + postPath(postFor(p, 'en'), p.slug)}`).join('\n') : strip(en.oneday.empty),
+    `\n## Contact\n`, `E-mail: ${EMAIL}`, `Book a 30-minute call: ${BOOK}`, `LinkedIn: ${LINKEDIN}`, `GitHub: ${GITHUB}`].join('\n');
+  writeFileSync(join(OUT, 'llms-full.txt'), full + '\n');
   writeFileSync(join(OUT, '404.html'), head(en, 'home', 'Not found — Enrico Icardi', 'Page not found').replace(/<link rel="canonical"[^>]+>/, '').replace(/<link rel="alternate"[^>]+>/g, '') + header(en, '') + `<main class="wrap"><h1>404</h1><p class="lead">Nothing here. <a href="/">Home</a>.</p></main>` + footer(en));
   return urls.length;
 }

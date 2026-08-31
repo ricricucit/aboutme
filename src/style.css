@@ -38,7 +38,7 @@ h1+h2,.hero+h2,.btn+h2{margin-top:var(--r4)}
 h3{font-size:var(--fs-b);line-height:var(--lh);font-weight:500;margin:0}
 .lead{font-size:var(--fs-l);line-height:1.45;letter-spacing:-.008em;margin-bottom:var(--r2)}
 .tldr{margin-top:calc(-1*var(--r1))}
-.small,.meta{font-size:var(--fs-s);line-height:var(--lh);color:var(--muted)}
+.meta{font-size:var(--fs-s);line-height:var(--lh);color:var(--muted)}
 .muted{color:var(--muted)}
 /* drop cap on page openers */
 .opener::first-letter{float:left;font-family:var(--ff-serif);font-size:3.1em;line-height:.76;padding:.06em .12em 0 0;font-weight:400}

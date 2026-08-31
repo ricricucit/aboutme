@@ -2,7 +2,7 @@ name: Build, test, deploy
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -33,13 +33,14 @@ jobs:
         with:
           name: lighthouse-reports
           path: .lighthouse
+          include-hidden-files: true
           retention-days: 14
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: test
     runs-on: ubuntu-latest
     environment:
