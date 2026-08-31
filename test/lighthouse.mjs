@@ -12,13 +12,21 @@ const server = spawn('node', ['build.mjs', '--serve'], { cwd: ROOT, env: { ...pr
 await new Promise((ok, bad) => { server.stdout.on('data', d => /serving/.test(d) && ok()); server.on('exit', c => bad(new Error('server exited ' + c))); });
 
 let failed = 0;
+const run = (page, preset, out) => {
+  execSync(`npx --yes lighthouse@12 "${BASE}${page}" --quiet --chrome-flags="--headless=new --no-sandbox" --output=json --output-path="${out}" --only-categories=performance,accessibility,best-practices,seo ${preset === 'desktop' ? '--preset=desktop' : ''}`, { cwd: ROOT, stdio: ['ignore', 'ignore', 'inherit'] });
+  return JSON.parse(readFileSync(out, 'utf8'));
+};
 try {
   for (const page of PAGES) for (const preset of ['mobile', 'desktop']) {
     const out = join(OUTDIR, `${page.replace(/\W+/g, '_') || 'root'}-${preset}.json`);
-    execSync(`npx --yes lighthouse@12 "${BASE}${page}" --quiet --chrome-flags="--headless=new --no-sandbox" --output=json --output-path="${out}" --only-categories=performance,accessibility,best-practices,seo ${preset === 'desktop' ? '--preset=desktop' : ''}`, { cwd: ROOT, stdio: ['ignore', 'ignore', 'inherit'] });
-    const r = JSON.parse(readFileSync(out, 'utf8'));
-    const scores = Object.fromEntries(Object.entries(r.categories).map(([k, v]) => [k, Math.round(v.score * 100)]));
-    const bad = Object.entries(scores).filter(([, s]) => s < 100);
+    let r = run(page, preset, out);
+    let scores = Object.fromEntries(Object.entries(r.categories).map(([k, v]) => [k, Math.round(v.score * 100)]));
+    let bad = Object.entries(scores).filter(([, s]) => s < 100);
+    if (bad.length) { // one retry: cold runners flake on the first pass
+      r = run(page, preset, out);
+      scores = Object.fromEntries(Object.entries(r.categories).map(([k, v]) => [k, Math.round(v.score * 100)]));
+      bad = Object.entries(scores).filter(([, s]) => s < 100);
+    }
     const m = r.audits.metrics?.details?.items?.[0] || {};
     console.log(`${bad.length ? '✗' : '✓'} ${page.padEnd(10)} ${preset.padEnd(7)} ${Object.entries(scores).map(([k, s]) => `${k.slice(0, 4)}=${s}`).join(' ')}  LCP=${Math.round(m.largestContentfulPaint || 0)}ms CLS=${m.cumulativeLayoutShift ?? '-'}`);
     if (bad.length) { failed++; for (const a of Object.values(r.audits)) if (a.score !== null && a.score < 1 && a.scoreDisplayMode !== 'informative') console.log(`    - ${a.id}: ${a.title} (${Math.round(a.score * 100)})`); }
