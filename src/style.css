@@ -41,7 +41,7 @@ h3{font-size:var(--fs-b);line-height:var(--lh);font-weight:500;margin:0}
 .meta{font-size:var(--fs-s);line-height:var(--lh);color:var(--muted)}
 .muted{color:var(--muted)}
 /* drop cap on page openers */
-.opener::first-letter{float:left;font-family:var(--ff-serif);font-size:2.6em;line-height:.8;padding:.04em .12em 0 0;font-weight:400}
+.opener::first-letter{float:left;font-family:var(--ff-serif);font-size:3.05em;line-height:.76;padding:.125em .12em 0 0;font-weight:400}
 .masthead{font-family:var(--ff-serif);font-style:italic;font-weight:400;letter-spacing:0}
 /* 3. components ---------------------------------------------------------- */
 /* header */
