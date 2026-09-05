@@ -35,6 +35,7 @@
    "En bref : <strong>Engineering and Product + AI Sitter</strong>."
   ],
   "alsoTitle": "Et aussi",
+  "alsoCountries": [["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
   "also": [
    "J'ai cofondé <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> en 2009 — l'« Airbnb des espaces de travail flexibles », financé en amorçage par DFJ de Tim Draper.",
    "J'ai contribué à <a href=\"https://github.com/aeternity/aepp-sdk-js\">le SDK JavaScript open source d'æternity</a> et à ses outils pour développeurs (2018–19).",
@@ -84,6 +85,7 @@
     "where": "Berlin, Allemagne · Lequio Berria, Italie · à distance",
     "text": [
      "Un collectif de professionnels indépendants triés sur le volet qui opère comme une agence numérique full-service : conseil, technologie, UI/UX, marketing, DevOps, CMS. Je restructure et maintiens l'ingénierie et la stratégie propres au collectif, ainsi que les produits numériques qui en découlent, pour le collectif et pour ses clients.",
+     "Parmi les clients et organisations avec lesquels j'ai eu le plaisir de travailler par l'intermédiaire de welance — notamment sur des projets avec son partenaire de longue date <a href=\"https://www.getunik.com/en/\">GetUnik</a>, principalement dans l'UE — figurent Sony, la Croix-Rouge, Amnesty International, Save the Children, Caritas, GIZ, le Brandebourg, Highsnobiety, allsafe, acker.co et OptixApp. J'ai également accompagné de nombreuses autres ONG de la région DACH et internationales, principalement en les aidant à gérer les aspects techniques de leurs campagnes.",
      "Tout a commencé en 2017 avec un design system et des lignes directrices de développement pour que la communauté puisse simplifier (et automatiser) le travail répétitif ; en 2021, j'ai élargi l'offre tech et le stack ; aujourd'hui, cette structure permet à n'importe quel membre de welance de faire évoluer le framework de l'entreprise.",
      "Au quotidien : budget et allocation des ressources pour plus de 40 personnes, processus et lignes directrices partagés, acquisition et relation clients, trésorerie, plusieurs projets et équipes en parallèle, et, dernièrement, la supervision d'agents IA qui font une bonne partie de la frappe. Depuis 2022, <strong>Welance Ventures Italia</strong> travaille aussi avec des communes rurales sur des solutions numériques qui améliorent la vie à la campagne, en tant que l'un des premiers hubs numériques ruraux."
     ]

@@ -67,6 +67,9 @@ main{padding-block:var(--r4) var(--r5)}
 .hero figure{float:right;width:7rem;margin:var(--r0) 0 var(--r1) var(--r2)}
 .hero figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0;border-radius:4px}
 @media (min-width:48rem){.hero figure{width:13rem;margin-left:var(--r3)}}
+.country-flags{display:inline-flex;align-items:center;gap:calc(var(--r0)/3);margin-inline-end:var(--r0);vertical-align:.05em;white-space:nowrap}
+.country-flags img{width:auto;height:.66em;border-radius:2px;box-shadow:0 0 0 1px light-dark(rgb(10 10 10/.14),rgb(255 255 255/.2))}
+.location-map{display:inline-block;width:.78em;height:.78em;background:var(--muted);-webkit-mask:url(/img/map-europe.svg) center/contain no-repeat;mask:url(/img/map-europe.svg) center/contain no-repeat}
 /* button */
 .btn{display:inline-flex;align-items:center;gap:var(--r0);min-height:var(--control);padding:0 var(--r2);border:1px solid var(--fg);border-radius:999px;background:var(--fg);color:var(--bg);text-decoration:none;font-size:var(--fs-s);font-weight:500;margin:var(--r1) 0 var(--r2)}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:#0a0a0a}

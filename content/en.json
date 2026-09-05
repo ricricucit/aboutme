@@ -35,6 +35,7 @@
    "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
   ],
   "alsoTitle": "Also",
+  "alsoCountries": [["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
   "also": [
    "Co-founded <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> in 2009 — the “Airbnb for flexible workplaces”, seed-funded by Tim Draper's DFJ.",
    "Helped build <a href=\"https://github.com/aeternity/aepp-sdk-js\">æternity's open-source JavaScript SDK</a> and developer tools (2018–19).",
@@ -85,6 +86,7 @@
     "where": "Berlin, Germany · Lequio Berria, Italy · remote",
     "text": [
      "A collective of hand-picked independent professionals acting as a full-service digital agency: consulting, technology, UI/UX, marketing, DevOps, CMS. I restructure and maintain the collective's own engineering and strategy, and the digital products derived from it, for the collective and for its clients.",
+     "Selected clients and organisations I've had the pleasure of working with through welance — including projects with its long-term partner <a href=\"https://www.getunik.com/en/\">GetUnik</a>, mostly across the EU — include Sony, the Red Cross, Amnesty International, Save the Children, Caritas, GIZ, Brandenburg, Highsnobiety, allsafe, acker.co and OptixApp. I've also supported many other DACH-based and international NGOs, mainly helping them manage the technical parts of their campaigns.",
      "Started in 2017 with a design system and development guidelines so the community could streamline (and automate) repeating work; enlarged the tech offer and stack in 2021; today that structure lets any welance member develop the company's framework further.",
      "Day to day: budget and resource allocation for 40+ people, shared processes and guidelines, client acquisition and relationships, cashflow, several projects and teams in parallel, and, lately, supervising AI agents that do a good share of the typing. Since 2022 <strong>Welance Ventures Italia</strong> also works with rural municipalities on digital solutions that improve rural life, as one of the first rural digital hubs."
     ]
