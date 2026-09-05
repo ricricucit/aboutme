@@ -35,8 +35,9 @@
    "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
   ],
   "alsoTitle": "Poza tym",
-  "alsoCountries": [["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
+  "alsoCountries": [["it"], ["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
   "also": [
+   "Pomagałem budować i skalować back-end <a href=\"https://www.bakeca.it/\">Bakeca.it</a>, który szybko stał się wiodącym serwisem ogłoszeniowym we Włoszech, przy dużym ruchu i stale rosnących bazach danych.",
    "W 2009 roku współzałożyłem <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — „Airbnb dla elastycznych miejsc pracy”, z finansowaniem seed od DFJ Tima Drapera.",
    "Pomagałem budować <a href=\"https://github.com/aeternity/aepp-sdk-js\">open-source'owe SDK JavaScript æternity</a> i narzędzia dla deweloperów (2018–19).",
    "Zarządzam produktowo wewnętrznym ERP agencji + platformą deweloperską welance, które powstały po ponad 250 klientach.",
