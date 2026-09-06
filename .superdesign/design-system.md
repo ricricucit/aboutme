@@ -1,0 +1,3 @@
+# aboutme.it Design System
+
+An editorial, framework-free personal site. Preserve the existing black/white adaptive palette, Maison Neue body typography, Times display accents, 48rem reading measure, and 1.9rem vertical rhythm. Use only the four existing type-size tokens. Pages are quiet and typographic, with no cards, shadows, gradients, decorative UI, or additional fonts. The opener drop cap should occupy approximately two text lines, align visually with the first line's cap height, and leave a natural but compact gap before the text. Maintain responsive behavior and accessibility in light and dark modes.
