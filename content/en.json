@@ -36,7 +36,7 @@
   ],
   "earlierTitle": "Earlier",
   "earlier": [
-   "2007–09 — Helped build and scale the back end of <a href=\"https://www.bakeca.it/\">Bakeca.it</a> as it became Italy's leading classifieds site, handling high traffic and constantly growing databases.",
+   "2007–09 — Joined the team behind <a href=\"https://www.bakeca.it/\">Bakeca.it</a> early in my career. I was still learning how professional software teams worked, contributing to back-end features, queries and growing databases as the classifieds site scaled.",
    "2009–17 — Co-founded <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — the “Airbnb for flexible workplaces”, seed-funded by Tim Draper's DFJ.",
    "2018–19 — Helped build <a href=\"https://github.com/aeternity/aepp-sdk-js\">æternity's open-source JavaScript SDK</a> and developer tools."
   ],
@@ -90,7 +90,7 @@
     "org": "welance",
     "url": "https://welance.com",
     "role": "Co-founder · CTO / Principal Engineer · Engineering and Product + AI Sitter",
-    "period": "2012 – present",
+    "period": "2009 – present",
     "where": "Berlin, Germany · Lequio Berria, Italy · remote",
     "text": [
      "A collective of hand-picked independent professionals acting as a full-service digital agency: consulting, technology, UI/UX, marketing, DevOps, CMS. I restructure and maintain the collective's own engineering and strategy, and the digital products derived from it, for the collective and for its clients.",
@@ -207,10 +207,10 @@
     "org": "Bakeca.it · Easybit",
     "url": "https://www.bakeca.it/",
     "role": "Developer",
-    "period": "2009 – 2010",
+    "period": "2007 – 2009",
     "where": "Torino, Italy",
     "text": [
-     "Easybit is the web agency behind Bakeca, which quickly became Italy's leading classifieds site. Back-end for Bakeca, optimising complex queries and extending the core of a large OOP PHP application under high traffic and constantly growing databases (Apache Solr), and full-stack for Easybit, building sites for small-to-large enterprises with an XML-based Java generator."
+     "An early-career role at Easybit, the web agency behind Bakeca. I was still learning how professional software teams worked while contributing back-end features, query improvements and database work to the growing classifieds platform, plus smaller full-stack sites for Easybit clients."
     ]
    },
    {

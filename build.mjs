@@ -113,8 +113,15 @@ function homePage(c) {
 
 function aboutPage(c) {
   const l = c.lang, a = c.about;
+  const firstRule = a.html.indexOf('<hr>'), lastRule = a.html.lastIndexOf('<hr>');
+  const intro = a.html.slice(0, firstRule);
+  const outro = a.html.slice(lastRule + 1);
+  const paragraphs = items => items.map(p => `<p>${html(p, l)}</p>`).join('');
+  const clients = c.cv.now[0].text[1];
   return head(c, 'about', c.meta.aboutTitle, c.meta.aboutDescription) + header(c, 'about') +
-    `<main class="wrap"><h1 class="sr">${esc(a.title)}</h1>` + a.html.map((p, i) => (p === '<hr>' ? '<hr>' : `<p${i === 0 ? ' class="opener"' : ''}>${html(p, l)}</p>`)).join('') + bookBtn(c) + `</main>` + footer(c);
+    `<main class="wrap"><h1 class="sr">${esc(a.title)}</h1>` + intro.map((p, i) => `<p${i === 0 ? ' class="opener"' : ''}>${html(p, l)}</p>`).join('') +
+    `<hr><h2>${esc(c.home.earlierTitle)}</h2>${paragraphs(c.home.earlier)}<h2>${esc(c.home.activeTitle)}</h2>${paragraphs(c.home.active)}<p>${html(clients, l)}</p><hr>` +
+    paragraphs(outro) + bookBtn(c) + `</main>` + footer(c);
 }
 
 function entry(e, l) {
@@ -192,7 +199,7 @@ function build() {
   const full = [`# Enrico Icardi — full site content (English)\n`,
     `> ${en.meta.description}\n`,
     `## Home\n`, ...en.home.intro.map(strip), en.home.earlierTitle + ':', ...en.home.earlier.map(x => '- ' + strip(x)), en.home.activeTitle + ':', ...en.home.active.map(x => '- ' + strip(x)),
-    `\n## Career (in my own words)\n`, ...en.about.html.filter(x => x !== '<hr>').map(strip),
+    `\n## Career (in my own words)\n`, ...en.about.html.slice(0, en.about.html.indexOf('<hr>')).map(strip), en.home.earlierTitle + ':', ...en.home.earlier.map(x => '- ' + strip(x)), en.home.activeTitle + ':', ...en.home.active.map(x => '- ' + strip(x)), strip(en.cv.now[0].text[1]), ...en.about.html.slice(en.about.html.lastIndexOf('<hr>') + 1).map(strip),
     `\n${cvMarkdown(en).replace(/^# .*\n/, '## Detailed CV\n')}`,
     `\n## One Day (blog)\n`, strip(en.oneday.tagline), posts.length ? posts.map(p => `- ${p.tr[postFor(p, 'en')].title} (${p.date}): ${BASE + postPath(postFor(p, 'en'), p.slug)}`).join('\n') : strip(en.oneday.empty),
     `\n## Contact\n`, `E-mail: ${EMAIL}`, `Book a 30-minute call: ${BOOK}`, `LinkedIn: ${LINKEDIN}`, `GitHub: ${GITHUB}`].join('\n');

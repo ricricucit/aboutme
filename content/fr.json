@@ -36,7 +36,7 @@
   ],
   "earlierTitle": "Auparavant",
   "earlier": [
-   "2007–09 — J'ai contribué à construire et à faire évoluer le back-end de <a href=\"https://www.bakeca.it/\">Bakeca.it</a> alors qu'il devenait le premier site de petites annonces d'Italie, avec un trafic élevé et des bases de données en croissance constante.",
+   "2007–09 — J'ai rejoint l'équipe de <a href=\"https://www.bakeca.it/\">Bakeca.it</a> au début de ma carrière. J'apprenais encore le fonctionnement des équipes logicielles professionnelles et je contribuais aux fonctionnalités back-end, aux requêtes et aux bases de données en croissance à mesure que la plateforme de petites annonces se développait.",
    "2009–17 — J'ai cofondé <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — l'« Airbnb des espaces de travail flexibles », financé en amorçage par DFJ de Tim Draper.",
    "2018–19 — J'ai contribué au <a href=\"https://github.com/aeternity/aepp-sdk-js\">SDK JavaScript open source d'æternity</a> et à ses outils pour développeurs."
   ],
@@ -89,7 +89,7 @@
     "org": "welance",
     "url": "https://welance.com",
     "role": "Cofondateur · CTO / Principal Engineer · Engineering and Product + AI Sitter",
-    "period": "2012 – aujourd'hui",
+    "period": "2009 – aujourd'hui",
     "where": "Berlin, Allemagne · Lequio Berria, Italie · à distance",
     "text": [
      "Un collectif de professionnels indépendants triés sur le volet qui opère comme une agence numérique full-service : conseil, technologie, UI/UX, marketing, DevOps, CMS. Je restructure et maintiens l'ingénierie et la stratégie propres au collectif, ainsi que les produits numériques qui en découlent, pour le collectif et pour ses clients.",
@@ -209,11 +209,10 @@
     "org": "Bakeca.it · Easybit",
     "url": "https://www.bakeca.it/",
     "role": "Développeur",
-    "period": "2009 – 2010",
+    "period": "2007 – 2009",
     "where": "Torino, Italie",
     "text": [
-     "Easybit est l'agence web derrière Bakeca, devenu rapidement le premier site de petites annonces d'Italie.",
-     "Back-end pour Bakeca, optimisation de requêtes complexes et extension du cœur d'une grande application PHP orientée objet sous fort trafic et avec des bases de données en croissance constante (Apache Solr), et full-stack pour Easybit, en construisant des sites pour des entreprises de petite à grande taille avec un générateur Java basé sur XML."
+     "Un poste de début de carrière chez Easybit, l'agence web derrière Bakeca. J'apprenais encore le fonctionnement des équipes logicielles professionnelles tout en contribuant aux fonctionnalités back-end, à l'amélioration des requêtes et aux bases de données de la plateforme de petites annonces en croissance, ainsi qu'à de plus petits sites full-stack pour les clients d'Easybit."
     ]
    },
    {

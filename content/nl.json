@@ -36,7 +36,7 @@
   ],
   "earlierTitle": "Eerder",
   "earlier": [
-   "2007–09 — Ik hielp de back-end van <a href=\"https://www.bakeca.it/\">Bakeca.it</a> bouwen en opschalen terwijl het de grootste advertentiesite van Italië werd, onder hoog verkeer en met voortdurend groeiende databases.",
+   "2007–09 — Vroeg in mijn loopbaan sloot ik me aan bij het team achter <a href=\"https://www.bakeca.it/\">Bakeca.it</a>. Ik leerde nog hoe professionele softwareteams werkten en droeg bij aan back-endfuncties, queries en groeiende databases terwijl het advertentieplatform opschaalde.",
    "2009–17 — Medeoprichter van <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — de “Airbnb voor flexibele werkplekken”, met seedfinanciering van Tim Drapers DFJ.",
    "2018–19 — Hielp mee aan <a href=\"https://github.com/aeternity/aepp-sdk-js\">de open-source JavaScript-SDK van æternity</a> en de bijbehorende developertools."
   ],
@@ -89,7 +89,7 @@
     "org": "welance",
     "url": "https://welance.com",
     "role": "Medeoprichter · CTO / Principal Engineer · Engineering and Product + AI Sitter",
-    "period": "2012 – heden",
+    "period": "2009 – heden",
     "where": "Berlijn, Duitsland · Lequio Berria, Italië · remote",
     "text": [
      "Een collectief van zorgvuldig geselecteerde onafhankelijke professionals dat als full-service digitaal bureau opereert: consultancy, technologie, UI/UX, marketing, DevOps, CMS. Ik herstructureer en onderhoud de engineering en strategie van het collectief zelf, en de digitale producten die daaruit voortkomen, voor het collectief en voor zijn klanten.",
@@ -208,10 +208,10 @@
     "org": "Bakeca.it · Easybit",
     "url": "https://www.bakeca.it/",
     "role": "Developer",
-    "period": "2009 – 2010",
+    "period": "2007 – 2009",
     "where": "Turijn, Italië",
     "text": [
-     "Easybit is het webbureau achter Bakeca, dat al snel de grootste advertentiesite van Italië werd. Back-end voor Bakeca, het optimaliseren van complexe queries en het uitbreiden van de kern van een grote OOP PHP-applicatie onder hoog verkeer en voortdurend groeiende databases (Apache Solr), en full-stack voor Easybit, waar ik sites voor kleine tot grote ondernemingen bouwde met een op XML gebaseerde Java-generator."
+     "Een vroege rol in mijn loopbaan bij Easybit, het webbureau achter Bakeca. Ik leerde nog hoe professionele softwareteams werkten terwijl ik bijdroeg aan back-endfuncties, verbeteringen aan queries en databasewerk voor het groeiende advertentieplatform, plus kleinere full-stackwebsites voor klanten van Easybit."
     ]
    },
    {

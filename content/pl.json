@@ -36,7 +36,7 @@
   ],
   "earlierTitle": "Wcześniej",
   "earlier": [
-   "2007–09 — Pomagałem budować i skalować back-end <a href=\"https://www.bakeca.it/\">Bakeca.it</a>, gdy stawał się wiodącym serwisem ogłoszeniowym we Włoszech, przy dużym ruchu i stale rosnących bazach danych.",
+   "2007–09 — Na początku kariery dołączyłem do zespołu stojącego za <a href=\"https://www.bakeca.it/\">Bakeca.it</a>. Wciąż uczyłem się, jak pracują profesjonalne zespoły programistyczne, i współtworzyłem funkcje back-endu, zapytania oraz rozwijające się bazy danych, gdy platforma ogłoszeniowa rosła.",
    "2009–17 — Współzałożyłem <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — „Airbnb dla elastycznych miejsc pracy”, z finansowaniem seed od DFJ Tima Drapera.",
    "2018–19 — Pomagałem budować <a href=\"https://github.com/aeternity/aepp-sdk-js\">open-source'owe SDK JavaScript æternity</a> i narzędzia dla deweloperów."
   ],
@@ -89,7 +89,7 @@
     "org": "welance",
     "url": "https://welance.com",
     "role": "Współzałożyciel · CTO / Principal Engineer · Engineering and Product + AI Sitter",
-    "period": "2012 – obecnie",
+    "period": "2009 – obecnie",
     "where": "Berlin, Niemcy · Lequio Berria, Włochy · zdalnie",
     "text": [
      "Kolektyw starannie dobranych niezależnych profesjonalistów działający jako agencja cyfrowa full-service: doradztwo, technologia, UI/UX, marketing, DevOps, CMS. Restrukturyzuję i utrzymuję inżynierię oraz strategię samego kolektywu, a także wynikające z nich produkty cyfrowe, dla kolektywu i dla jego klientów.",
@@ -206,10 +206,10 @@
     "org": "Bakeca.it · Easybit",
     "url": "https://www.bakeca.it/",
     "role": "Developer",
-    "period": "2009 – 2010",
+    "period": "2007 – 2009",
     "where": "Turyn, Włochy",
     "text": [
-     "Easybit to agencja webowa stojąca za Bakeca, która szybko stała się wiodącym serwisem ogłoszeniowym we Włoszech. Back-end dla Bakeca, optymalizacja złożonych zapytań i rozbudowa rdzenia dużej obiektowej aplikacji PHP przy wysokim ruchu i stale rosnących bazach danych (Apache Solr), oraz full-stack dla Easybit: budowanie stron dla małych i dużych przedsiębiorstw za pomocą generatora Java opartego na XML."
+     "Jedna z pierwszych ról w mojej karierze, w Easybit — agencji webowej stojącej za Bakeca. Wciąż uczyłem się pracy w profesjonalnym zespole programistycznym, współtworząc funkcje back-endu, ulepszenia zapytań i bazy danych rosnącej platformy ogłoszeniowej, a także mniejsze strony full-stack dla klientów Easybit."
     ]
    },
    {
