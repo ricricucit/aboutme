@@ -34,15 +34,22 @@
    "Lungo la strada ho co-fondato qualche azienda, alcune digitali, una di legno, e mi piace ancora aiutare founder alle prime armi a sbloccarsi e conoscere persone e idee intelligenti.",
    "In breve: <strong>Engineering and Product + AI Sitter</strong>."
   ],
-  "alsoTitle": "Inoltre",
-  "alsoCountries": [["it"], ["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
-  "also": [
-   "Ho contribuito a costruire e scalare il back-end di <a href=\"https://www.bakeca.it/\">Bakeca.it</a>, diventato rapidamente il principale sito di annunci in Italia, gestendo traffico elevato e database in costante crescita.",
-   "Ho co-fondato <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> nel 2009 — l'“Airbnb degli spazi di lavoro flessibili”, con seed round guidato da DFJ di Tim Draper.",
-   "Ho contribuito a <a href=\"https://github.com/aeternity/aepp-sdk-js\">l'SDK JavaScript open source di æternity</a> e ai suoi strumenti per sviluppatori (2018–19).",
-   "Faccio product management dell'ERP interno per agenzie + developer platform di welance, nato dopo oltre 250 clienti.",
-   "Ho co-fondato <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a> e <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a> in Alta Langa e ho contribuito a far nascere <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, un'associazione di volontariato che tutela i boschi della Langa.",
-   "Ho co-fondato <a href=\"https://stood.it\">stood.it</a> nel 2014, un monomarca di design di oggetti da ufficio in legno, oggi portato avanti soprattutto da un amico e dalla mia compagna Giorgia."
+  "earlierTitle": "In precedenza",
+  "earlier": [
+   "2007–09 — Ho contribuito a costruire e scalare il back-end di <a href=\"https://www.bakeca.it/\">Bakeca.it</a> mentre diventava il principale sito di annunci in Italia, gestendo traffico elevato e database in costante crescita.",
+   "2009–17 — Ho co-fondato <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — l'“Airbnb degli spazi di lavoro flessibili”, con seed round guidato da DFJ di Tim Draper.",
+   "2018–19 — Ho contribuito all'<a href=\"https://github.com/aeternity/aepp-sdk-js\">SDK JavaScript open source di æternity</a> e ai suoi strumenti per sviluppatori."
+  ],
+  "activeTitle": "Attivi oggi",
+  "active": [
+   "2009–presente — Ho co-fondato <a href=\"https://welance.com\">welance</a> e non l'ho mai lasciata. CTO / Principal Engineer dal 2019; dal 2022 gestisco come product manager il suo ERP interno per agenzie + developer platform, nato dopo oltre 250 progetti cliente.",
+   "2014–presente — Ho co-fondato <a href=\"https://stood.it\">stood.it</a>, un monomarca di design di oggetti da ufficio in legno, oggi portato avanti soprattutto da un amico e dalla mia compagna Giorgia.",
+   "2019–presente — Ho co-fondato <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a>, una residenza di campagna in 40 ettari di bosco dell'Alta Langa.",
+   "Attualmente aiuto <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> a ristrutturare l'ingegneria del software e i suoi processi.",
+   "2023–presente — Ho co-fondato <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a>, che mappa e apre spazi pubblici rurali per eventi e attività.",
+   "Sostengo <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, un'associazione di volontariato che tutela boschi, prati e sorgenti delle Langhe.",
+   "2026–presente — Costruisco <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, che mette su una mappa le sagre e gli eventi locali d'Italia.",
+   "2026–presente — Costruisco <a href=\"https://radarpa.it/\">RadarPA</a>, che trasforma gli atti pubblici dei comuni italiani in segnali operativi sugli acquisti."
   ],
   "moreAbout": "Di più nella mia <a href=\"{about}\">storia professionale</a> o nel <a href=\"{cv}\">CV dettagliato</a>."
  },

@@ -54,17 +54,6 @@ const ICON = {
   moon: '<svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2a9 9 0 1 0 8 13 8 8 0 0 1-8-13z"/></svg>',
   auto: '<svg class="i-auto" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20V2z"/><path d="M12 2a10 10 0 0 1 0 20V2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>'
 };
-const FLAG_SIZE = { us: [38, 20], ca: [40, 20], de: [33, 20], bg: [33, 20], it: [30, 20] };
-function countryFlags(codes, l) {
-  const names = new Intl.DisplayNames([l], { type: 'region' });
-  const label = new Intl.ListFormat([l], { style: 'long', type: 'conjunction' }).format(codes.map(code => names.of(code.toUpperCase())));
-  const images = codes.map(code => {
-    if (code === 'eu') return '<span class="location-map" aria-hidden="true"></span>';
-    const [width, height] = FLAG_SIZE[code];
-    return `<img src="/img/flag-${code}.svg" alt="" width="${width}" height="${height}">`;
-  }).join('');
-  return `<span class="country-flags" role="img" aria-label="${esc(label)}" title="${esc(label)}">${images}</span>`;
-}
 const FAVICON = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0a0a0a"/><circle cx="32" cy="32" r="14" fill="#eecc5d"/></svg>');
 
 function jsonld(c, page) {
@@ -115,10 +104,11 @@ const bookBtn = c => `<a class="btn" href="${BOOK}" rel="noopener" target="_blan
 
 function homePage(c) {
   const l = c.lang, h = c.home;
+  const list = items => `<ul class="plain">${items.map(x => `<li>${html(x, l)}</li>`).join('')}</ul>`;
   return head(c, 'home', c.meta.title, c.meta.description) + header(c, 'home') +
     `<main class="wrap"><div class="hero"><figure><img src="/img/enrico-icardi.webp" srcset="/img/enrico-icardi-360.webp 360w, /img/enrico-icardi.webp 720w" sizes="(min-width: 48rem) 13rem, 7rem" width="720" height="900" alt="Enrico Icardi" fetchpriority="high"></figure><h1>${esc(h.hi)}</h1>` +
     h.intro.map((p, i) => `<p class="lead${i === h.intro.length - 1 ? ' tldr' : ''}">${html(p, l)}</p>`).join('') + bookBtn(c) + `</div>` +
-    `<h2>${esc(h.alsoTitle)}</h2><ul class="plain">${h.also.map((x, i) => `<li>${countryFlags(h.alsoCountries[i], l)}${html(x, l)}</li>`).join('')}</ul><p class="muted">${html(h.moreAbout, l)}</p></main>` + footer(c);
+    `<details class="earlier"><summary>${esc(h.earlierTitle)}</summary>${list(h.earlier)}</details><h2>${esc(h.activeTitle)}</h2>${list(h.active)}<p class="muted">${html(h.moreAbout, l)}</p></main>` + footer(c);
 }
 
 function aboutPage(c) {
@@ -201,7 +191,7 @@ function build() {
   writeFileSync(join(OUT, 'llms.txt'), `# Enrico Icardi\n\n> ${en.meta.description}\n\nPersonal site of Enrico Icardi, available in ${langs.map(o => o.native).join(', ')}. English is the canonical version.\n\n## Pages\n\n- [Home](${BASE}/): who I am and what I do now\n- [Career](${BASE}/about/): the story in my own words\n- [Detailed CV](${BASE}/cv/): full career, education, languages\n- [CV as Markdown](${BASE}/cv.md): plain-text version of the CV\n- [Full site as plain text](${BASE}/llms-full.txt): everything on one page, for LLM ingestion\n- [One Day](${BASE}/one-day/): blog, compressed stories of days worth telling (Italian-first)\n\n## Contact\n\n- E-mail: ${EMAIL}\n- Book a 30-minute call: ${BOOK}\n- LinkedIn: ${LINKEDIN}\n- GitHub: ${GITHUB}\n`);
   const full = [`# Enrico Icardi — full site content (English)\n`,
     `> ${en.meta.description}\n`,
-    `## Home\n`, ...en.home.intro.map(strip), en.home.alsoTitle + ':', ...en.home.also.map(x => '- ' + strip(x)),
+    `## Home\n`, ...en.home.intro.map(strip), en.home.earlierTitle + ':', ...en.home.earlier.map(x => '- ' + strip(x)), en.home.activeTitle + ':', ...en.home.active.map(x => '- ' + strip(x)),
     `\n## Career (in my own words)\n`, ...en.about.html.filter(x => x !== '<hr>').map(strip),
     `\n${cvMarkdown(en).replace(/^# .*\n/, '## Detailed CV\n')}`,
     `\n## One Day (blog)\n`, strip(en.oneday.tagline), posts.length ? posts.map(p => `- ${p.tr[postFor(p, 'en')].title} (${p.date}): ${BASE + postPath(postFor(p, 'en'), p.slug)}`).join('\n') : strip(en.oneday.empty),
@@ -216,7 +206,7 @@ const isMain = process.argv[1] && new URL('file://' + process.argv[1]).pathname 
 if (isMain) { const n = build(); console.log(`built ${n} pages in ${langs.length} languages → dist/`); }
 
 if (isMain && process.argv.includes('--serve')) {
-  const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.json': 'application/json' };
+  const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.json': 'application/json' };
   const port = Number(process.env.PORT) || 5173;
   createServer((req, res) => {
     let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);

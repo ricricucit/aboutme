@@ -34,15 +34,22 @@
    "Po drodze współzakładałem kilka firm, część cyfrowych, jedną z drewna, i nadal lubię pomagać założycielom na wczesnym etapie wyjść z impasu oraz poznawać mądrych ludzi i pomysły.",
    "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
   ],
-  "alsoTitle": "Poza tym",
-  "alsoCountries": [["it"], ["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
-  "also": [
-   "Pomagałem budować i skalować back-end <a href=\"https://www.bakeca.it/\">Bakeca.it</a>, który szybko stał się wiodącym serwisem ogłoszeniowym we Włoszech, przy dużym ruchu i stale rosnących bazach danych.",
-   "W 2009 roku współzałożyłem <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — „Airbnb dla elastycznych miejsc pracy”, z finansowaniem seed od DFJ Tima Drapera.",
-   "Pomagałem budować <a href=\"https://github.com/aeternity/aepp-sdk-js\">open-source'owe SDK JavaScript æternity</a> i narzędzia dla deweloperów (2018–19).",
-   "Zarządzam produktowo wewnętrznym ERP agencji + platformą deweloperską welance, które powstały po ponad 250 klientach.",
-   "Współzałożyłem <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a> i <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a> w Alta Langa oraz pomogłem uruchomić <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, wolontariackie stowarzyszenie chroniące lasy Langhe.",
-   "W 2014 współzałożyłem <a href=\"https://stood.it\">stood.it</a>, designerską monomarkę drewnianych przedmiotów biurowych, dziś prowadzoną głównie przez przyjaciela i moją partnerkę Giorgię."
+  "earlierTitle": "Wcześniej",
+  "earlier": [
+   "2007–09 — Pomagałem budować i skalować back-end <a href=\"https://www.bakeca.it/\">Bakeca.it</a>, gdy stawał się wiodącym serwisem ogłoszeniowym we Włoszech, przy dużym ruchu i stale rosnących bazach danych.",
+   "2009–17 — Współzałożyłem <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — „Airbnb dla elastycznych miejsc pracy”, z finansowaniem seed od DFJ Tima Drapera.",
+   "2018–19 — Pomagałem budować <a href=\"https://github.com/aeternity/aepp-sdk-js\">open-source'owe SDK JavaScript æternity</a> i narzędzia dla deweloperów."
+  ],
+  "activeTitle": "Aktywne teraz",
+  "active": [
+   "2009–obecnie — Współzałożyłem <a href=\"https://welance.com\">welance</a> i nigdy nie odszedłem. Od 2019 CTO / Principal Engineer; od 2022 zarządzam produktowo wewnętrznym ERP agencji + platformą deweloperską, powstałymi po ponad 250 projektach klientów.",
+   "2014–obecnie — Współzałożyłem <a href=\"https://stood.it\">stood.it</a>, designerską monomarkę drewnianych przedmiotów biurowych, dziś prowadzoną głównie przez przyjaciela i moją partnerkę Giorgię.",
+   "2019–obecnie — Współzałożyłem <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a>, wiejską rezydencję pośród 40 hektarów lasu w Alta Langa.",
+   "Obecnie pomagam <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> przebudować inżynierię oprogramowania i procesy.",
+   "2023–obecnie — Współzałożyłem <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a>, które mapuje i otwiera wiejskie przestrzenie publiczne na wydarzenia i działania.",
+   "Wspieram <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, wolontariackie stowarzyszenie chroniące lasy, łąki i źródła Langhe.",
+   "2026–obecnie — Tworzę <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, umieszczające włoskie święta wiejskie i lokalne wydarzenia na mapie.",
+   "2026–obecnie — Tworzę <a href=\"https://radarpa.it/\">RadarPA</a>, które przekształca publiczne akty włoskich gmin w użyteczne sygnały zakupowe."
   ],
   "moreAbout": "Więcej w mojej <a href=\"{about}\">historii kariery</a> lub w <a href=\"{cv}\">szczegółowym CV</a>."
  },

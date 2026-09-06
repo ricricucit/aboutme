@@ -34,15 +34,22 @@
    "Onderweg heb ik een paar bedrijven mede opgericht, sommige digitaal, één van hout, en ik help nog altijd graag beginnende founders weer op gang en leer zo slimme mensen en ideeën kennen.",
    "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
   ],
-  "alsoTitle": "Verder",
-  "alsoCountries": [["it"], ["us", "ca"], ["de", "bg"], ["eu"], ["it"], ["it", "de"]],
-  "also": [
-   "Ik hielp de back-end van <a href=\"https://www.bakeca.it/\">Bakeca.it</a> bouwen en opschalen, dat al snel de grootste advertentiesite van Italië werd, onder hoog verkeer en met voortdurend groeiende databases.",
-   "Medeoprichter van <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> in 2009 — de “Airbnb voor flexibele werkplekken”, met seedfinanciering van Tim Drapers DFJ.",
-   "Hielp mee aan <a href=\"https://github.com/aeternity/aepp-sdk-js\">de open-source JavaScript-SDK van æternity</a> en de bijbehorende developertools (2018–19).",
-   "Productmanager van het interne bureau-ERP + developerplatform van welance, ontstaan na 250+ klanten.",
-   "Medeoprichter van <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a> en <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a> in Alta Langa, en hielp <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a> van de grond te krijgen, een vrijwilligersvereniging die de bossen van de Langhe beschermt.",
-   "Medeoprichter in 2014 van <a href=\"https://stood.it\">stood.it</a>, een designmonomerk van houten kantoorobjecten, tegenwoordig vooral gerund door een vriend en mijn partner Giorgia."
+  "earlierTitle": "Eerder",
+  "earlier": [
+   "2007–09 — Ik hielp de back-end van <a href=\"https://www.bakeca.it/\">Bakeca.it</a> bouwen en opschalen terwijl het de grootste advertentiesite van Italië werd, onder hoog verkeer en met voortdurend groeiende databases.",
+   "2009–17 — Medeoprichter van <a href=\"https://www.optixapp.com/\">ShareDesk / Optix</a> — de “Airbnb voor flexibele werkplekken”, met seedfinanciering van Tim Drapers DFJ.",
+   "2018–19 — Hielp mee aan <a href=\"https://github.com/aeternity/aepp-sdk-js\">de open-source JavaScript-SDK van æternity</a> en de bijbehorende developertools."
+  ],
+  "activeTitle": "Nu actief",
+  "active": [
+   "2009–heden — Medeoprichter van <a href=\"https://welance.com\">welance</a> en nooit weggegaan. Sinds 2019 CTO / Principal Engineer; sinds 2022 productmanager van het interne bureau-ERP + developerplatform, ontstaan na meer dan 250 klantprojecten.",
+   "2014–heden — Medeoprichter van <a href=\"https://stood.it\">stood.it</a>, een designmonomerk van houten kantoorobjecten, tegenwoordig vooral gerund door een vriend en mijn partner Giorgia.",
+   "2019–heden — Medeoprichter van <a href=\"https://www.doi-fagnan.it/\">Doi Fagnán</a>, een landelijke residentie in 40 hectare bos in Alta Langa.",
+   "Momenteel help ik <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> zijn software-engineering en processen te herstructureren.",
+   "2023–heden — Medeoprichter van <a href=\"https://rural-pop-up.com/\">Rural Pop-Up</a>, dat landelijke openbare ruimtes in kaart brengt en opent voor evenementen en activiteiten.",
+   "Ik ondersteun <a href=\"https://www.langa-silvatica.org/\">Langa Silvatica</a>, een vrijwilligersvereniging die de bossen, weiden en bronnen van de Langhe beschermt.",
+   "2026–heden — Ik bouw aan <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, dat Italiaanse dorpsfeesten en lokale evenementen op de kaart zet.",
+   "2026–heden — Ik bouw aan <a href=\"https://radarpa.it/\">RadarPA</a>, dat openbare besluiten van Italiaanse gemeenten omzet in bruikbare inkoopsignalen."
   ],
   "moreAbout": "Meer in mijn <a href=\"{about}\">loopbaanverhaal</a> of het <a href=\"{cv}\">uitgebreide cv</a>."
  },
