@@ -30,9 +30,10 @@
  "home": {
   "hi": "¡Hola! Soy Enrico.",
   "intro": [
-   "Trabajo en IT desde 2006 y mi rol (en <a href=\"https://welance.com\"><strong>welance</strong></a>) consiste sobre todo en decidir cómo construir un <strong>producto digital</strong>, y en formar o unirme a un <strong>equipo</strong> para planificarlo y crearlo colectivamente — últimamente con agentes de IA que hacen buena parte del tecleo, y yo cuidándolos. También ayudo a la organización a tomar decisiones basadas en datos.",
-   "Por el camino he cofundado algunas empresas, algunas digitales, una de madera, y sigo disfrutando de ayudar a fundadores en fase inicial a desatascarse y de conocer gente e ideas brillantes.",
-   "En resumen: <strong>Engineering and Product + AI Sitter</strong>."
+   "Me guía la esperanza de aportar algo positivo a través de lo que construyo y de los proyectos en los que participo.",
+   "Desde 2006 desarrollo productos digitales y ayudo a los equipos a hacerlos realidad. En <a href=\"https://welance.com\">welance</a> me ocupo de ingeniería, producto y, cada vez más, de hacer de niñero de agentes de IA.",
+   "Mi trabajo y mis intereses abarcan la IA, el desarrollo rural y la creación de objetos físicos, con o sin electrónica. A través de welance y otras organizaciones, desarrollo y apoyo proyectos en Italia, Alemania y más allá.",
+   "Vivo en los bosques de Alta Langa, donde mi pareja y yo estamos haciendo de <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> un lugar donde personas curiosas de todo el mundo puedan conocerse, pasar tiempo juntas y vivir más cerca de la naturaleza, con un poco menos de impacto en el medioambiente."
   ],
   "earlierTitle": "Antes",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–actualidad — Construyo <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, que sitúa en un mapa las fiestas de pueblo y los eventos locales de Italia.",
    "2026–actualidad — Construyo <a href=\"https://radarpa.it/\">RadarPA</a>, que transforma los actos públicos de los municipios italianos en señales de compra procesables."
   ],
-  "moreAbout": "Más en mi <a href=\"{about}\">historia profesional</a> o en el <a href=\"{cv}\">CV detallado</a>."
+  "moreAbout": "Más en mi <a href=\"{about}\">historia profesional</a> o en el <a href=\"{cv}\">CV detallado</a>.",
+  "productsTitle": "Creados en welance",
+  "initiativesTitle": "Otras iniciativas que apoyo",
+  "journeyTitle": "Algunas etapas del camino",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "Cofundé ShareDesk, hoy <a href=\"https://optixapp.com\">Optix</a>, donde sigo siendo accionista. Ese recorrido me llevó a conocer <a href=\"https://welance.com\">welance</a>, que entonces era un espacio de coworking.",
+   "Por el camino he cofundado otras empresas — incluida <a href=\"https://stood.it\">una de madera</a> —, trabajado en Bakeca.it y contribuido al SDK JavaScript de código abierto de æternity. Sigo disfrutando de ayudar a quienes emprenden por primera vez a desbloquearse.",
+   "También ayudo a <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> a replantear su ingeniería de software y sus procesos."
+  ],
+  "notesLink": "Notas de One Day ↗",
+  "closing": "Ingeniería, producto y una vida en el bosque."
  },
  "about": {
   "title": "Trayectoria",

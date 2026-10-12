@@ -30,9 +30,10 @@
  "home": {
   "hi": "Ciao! Sono Enrico.",
   "intro": [
-   "Lavoro nell'IT dal 2006 e il mio ruolo (a <a href=\"https://welance.com\"><strong>welance</strong></a>) consiste soprattutto nel decidere come costruire un <strong>prodotto digitale</strong>, e nel formare o entrare in un <strong>team</strong> per pianificarlo e crearlo insieme — ultimamente con agenti AI che fanno buona parte del lavoro di scrittura, e io che faccio loro da babysitter. Aiuto anche l'organizzazione a prendere decisioni basate sui dati.",
-   "Lungo la strada ho co-fondato qualche azienda, alcune digitali, una di legno, e mi piace ancora aiutare founder alle prime armi a sbloccarsi e conoscere persone e idee intelligenti.",
-   "In breve: <strong>Engineering and Product + AI Sitter</strong>."
+   "Mi guida la speranza di fare la differenza in positivo attraverso ciò che costruisco e a cui contribuisco.",
+   "Dal 2006 costruisco prodotti digitali e aiuto i team a realizzarli. A <a href=\"https://welance.com\">welance</a> mi occupo di engineering, prodotto e, sempre più spesso, di fare da babysitter agli agenti AI.",
+   "Il mio lavoro e i miei interessi spaziano dall’AI allo sviluppo rurale, fino alla realizzazione di oggetti fisici, con o senza elettronica. Attraverso welance e altre organizzazioni, costruisco e sostengo progetti in Italia, Germania e oltre.",
+   "Vivo nei boschi dell’Alta Langa, dove io e la mia compagna stiamo facendo di <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> un luogo in cui persone curiose da tutto il mondo possano incontrarsi, passare tempo insieme e vivere più vicine alla natura, con un po’ meno impatto sull’ambiente."
   ],
   "earlierTitle": "In precedenza",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–presente — Costruisco <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, che mette su una mappa le sagre e gli eventi locali d'Italia.",
    "2026–presente — Costruisco <a href=\"https://radarpa.it/\">RadarPA</a>, che trasforma gli atti pubblici dei comuni italiani in segnali operativi sugli acquisti."
   ],
-  "moreAbout": "Di più nella mia <a href=\"{about}\">storia professionale</a> o nel <a href=\"{cv}\">CV dettagliato</a>."
+  "moreAbout": "Di più nella mia <a href=\"{about}\">storia professionale</a> o nel <a href=\"{cv}\">CV dettagliato</a>.",
+  "productsTitle": "Nati in welance",
+  "initiativesTitle": "Altre iniziative che sostengo",
+  "journeyTitle": "Qualche tappa lungo la strada",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "Ho co-fondato ShareDesk, oggi <a href=\"https://optixapp.com\">Optix</a>, di cui sono ancora socio. È stato quel percorso a farmi conoscere <a href=\"https://welance.com\">welance</a>, che allora era uno spazio di coworking.",
+   "Lungo la strada ho co-fondato altre imprese, tra cui <a href=\"https://stood.it\">una di legno</a>, lavorato su Bakeca.it e contribuito all’SDK JavaScript open source di æternity. Mi piace ancora aiutare founder alle prime armi a sbloccarsi.",
+   "Aiuto anche <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> a ripensare l’ingegneria del software e i suoi processi."
+  ],
+  "notesLink": "Appunti su One Day ↗",
+  "closing": "Engineering, prodotto e una vita nel bosco."
  },
  "about": {
   "title": "Percorso",

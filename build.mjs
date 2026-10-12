@@ -104,11 +104,13 @@ const bookBtn = c => `<a class="btn" href="${BOOK}" rel="noopener" target="_blan
 
 function homePage(c) {
   const l = c.lang, h = c.home;
-  const list = items => `<ul class="plain">${items.map(x => `<li>${html(x, l)}</li>`).join('')}</ul>`;
+  const links = items => `<ul class="project-links">${items.map(x => `<li>${html(`<a href="${esc(x.url)}">${esc(x.name)}</a>`, l)}</li>`).join('')}</ul>`;
   return head(c, 'home', c.meta.title, c.meta.description) + header(c, 'home') +
-    `<main class="wrap"><div class="hero"><figure><img src="/img/enrico-icardi.webp" srcset="/img/enrico-icardi-360.webp 360w, /img/enrico-icardi.webp 720w" sizes="(min-width: 48rem) 13rem, 7rem" width="720" height="900" alt="Enrico Icardi" fetchpriority="high"></figure><h1>${esc(h.hi)}</h1>` +
-    h.intro.map((p, i) => `<p class="lead${i === h.intro.length - 1 ? ' tldr' : ''}">${html(p, l)}</p>`).join('') + bookBtn(c) + `</div>` +
-    `<details class="earlier"><summary>${esc(h.earlierTitle)}</summary>${list(h.earlier)}</details><h2>${esc(h.activeTitle)}</h2>${list(h.active)}<p class="muted">${html(h.moreAbout, l)}</p></main>` + footer(c);
+    `<main class="wrap home-refresh"><div class="hero"><figure><img src="/img/enrico-icardi.webp" srcset="/img/enrico-icardi-360.webp 360w, /img/enrico-icardi.webp 720w" sizes="(min-width: 48rem) 13rem, 7rem" width="720" height="900" alt="Enrico Icardi" fetchpriority="high"></figure><h1>${esc(h.hi)}</h1>` +
+    h.intro.map((p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${html(p, l)}</p>`).join('') + `</div>` +
+    `<div class="project-groups"><section aria-labelledby="products"><h2 id="products">${esc(h.productsTitle)}</h2>${links(h.products)}</section><section aria-labelledby="initiatives"><h2 id="initiatives">${esc(h.initiativesTitle)}</h2>${links(h.initiatives)}</section></div>` +
+    `<details class="home-journey"><summary>${esc(h.journeyTitle)}</summary>${h.journey.map(p => `<p>${html(p, l)}</p>`).join('')}<p>${html(h.moreAbout, l)}</p></details>` +
+    `<div class="home-contact">${bookBtn(c)}<a href="${path(l, 'oneday')}">${esc(h.notesLink)}</a></div><p class="home-closing">${esc(h.closing)}</p></main>` + footer(c);
 }
 
 function aboutPage(c) {

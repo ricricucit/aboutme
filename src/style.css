@@ -110,3 +110,22 @@ footer .langs a:hover{color:var(--fg)}
 footer p{margin:0}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
+
+/* Compact personal homepage: prose first, project links second. */
+.home-refresh h1{font-style:italic}
+.home-refresh .lead{font-size:clamp(1.5rem,1.25rem + 1vw,1.75rem)}
+.project-groups{border-top:1px solid var(--line);padding-top:var(--r1);margin-top:var(--r2)}
+.project-groups section{display:grid;grid-template-columns:11rem 1fr;gap:var(--r1);margin-block:var(--r1)}
+.project-groups h2{margin:0;font-size:.6875rem;line-height:1.8;letter-spacing:.08em;color:var(--muted);padding-top:.15rem}
+.project-links{display:flex;flex-wrap:wrap;gap:.25rem 0;list-style:none;padding:0;margin:0;font-size:.875rem;line-height:1.8}
+.project-links li:not(:last-child)::after{content:'·';margin-inline:.55rem;color:var(--muted)}
+.project-links a{text-decoration:none}
+.project-links a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.home-journey{border-top:1px solid var(--line);margin-top:var(--r2);padding-top:var(--r1);font-size:var(--fs-s)}
+.home-journey summary{cursor:pointer;min-height:2.75rem;padding-block:.35rem}
+.home-journey[open] summary{margin-bottom:var(--r1)}
+.home-journey p{color:var(--muted)}
+.home-contact{display:flex;flex-wrap:wrap;gap:var(--r1) var(--r2);justify-content:space-between;align-items:center;margin-top:var(--r2);font-size:var(--fs-s)}
+.home-contact .btn{margin:0}
+.home-closing{font-size:.875rem;color:var(--muted);margin:var(--r2) 0 0}
+@media(max-width:40rem){.project-groups section{grid-template-columns:1fr;gap:.25rem;margin-block:var(--r1)}.project-links{line-height:2}.home-contact{align-items:flex-start}}

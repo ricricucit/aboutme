@@ -30,9 +30,10 @@
  "home": {
   "hi": "Привіт! Я Enrico.",
   "intro": [
-   "Я працюю в IT з 2006 року, і моя роль (у <a href=\"https://welance.com\"><strong>welance</strong></a>) здебільшого полягає в тому, щоб вирішувати, як будувати <strong>цифровий продукт</strong>, а також формувати <strong>команду</strong> або приєднуватися до неї, щоб разом його спланувати і створити — останнім часом чималу частину коду набирають AI-агенти, а я їх доглядаю. Також допомагаю організації ухвалювати рішення на основі даних.",
-   "Дорогою я став співзасновником кількох компаній, деякі цифрові, одна з дерева, і досі з радістю допомагаю засновникам на ранній стадії зрушити з місця та знайомлюся з розумними людьми й ідеями.",
-   "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
+   "Мене надихає надія змінити щось на краще завдяки тому, що я створюю і до чого долучаюся.",
+   "З 2006 року я створюю цифрові продукти й допомагаю командам втілювати їх у життя. У <a href=\"https://welance.com\">welance</a> я займаюся інженерією, розвитком продуктів і дедалі частіше працюю нянькою для ШІ-агентів.",
+   "Моя робота й інтереси охоплюють ШІ, розвиток сільських територій і створення фізичних речей — з електронікою чи без неї. Через welance та інші організації я створюю й підтримую проєкти в Італії, Німеччині та за їхніми межами.",
+   "Я живу в лісах Альта-Ланґи, де ми з моєю партнеркою перетворюємо <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> на місце, де допитливі люди з усього світу можуть знайомитися, проводити час разом і жити ближче до природи, з дещо меншим впливом на довкілля."
   ],
   "earlierTitle": "Раніше",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–дотепер — Розвиваю <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, що наносить на карту сільські свята й місцеві події Італії.",
    "2026–дотепер — Розвиваю <a href=\"https://radarpa.it/\">RadarPA</a>, що перетворює публічні акти італійських муніципалітетів на практичні сигнали закупівель."
   ],
-  "moreAbout": "Більше в моїй <a href=\"{about}\">історії кар'єри</a> або в <a href=\"{cv}\">детальному CV</a>."
+  "moreAbout": "Більше в моїй <a href=\"{about}\">історії кар'єри</a> або в <a href=\"{cv}\">детальному CV</a>.",
+  "productsTitle": "Створено у welance",
+  "initiativesTitle": "Інші ініціативи, які я підтримую",
+  "journeyTitle": "Кілька етапів на цьому шляху",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "Я співзаснував ShareDesk, нині <a href=\"https://optixapp.com\">Optix</a>, і залишаюся акціонером. Саме цей шлях привів мене до <a href=\"https://welance.com\">welance</a>, що тоді був коворкінгом.",
+   "Згодом я співзаснував інші компанії — зокрема <a href=\"https://stood.it\">одну дерев’яну</a> —, працював над Bakeca.it і долучався до JavaScript SDK æternity з відкритим кодом. Мені досі подобається допомагати засновникам-початківцям зрушити з місця.",
+   "Також я допомагаю <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> переосмислити розробку програмного забезпечення та робочі процеси."
+  ],
+  "notesLink": "Нотатки з One Day ↗",
+  "closing": "Інженерія, продукти й життя в лісі."
  },
  "about": {
   "title": "Кар'єра",

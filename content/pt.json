@@ -30,9 +30,10 @@
  "home": {
   "hi": "Olá! Sou o Enrico.",
   "intro": [
-   "Trabalho em TI desde 2006 e o meu papel (na <a href=\"https://welance.com\"><strong>welance</strong></a>) consiste sobretudo em decidir como construir um <strong>produto digital</strong>, e em formar ou integrar uma <strong>equipa</strong> para o planear e criar em conjunto — ultimamente com agentes de IA a fazer boa parte do trabalho de escrever código, e eu a tomar conta deles. Também ajudo a organização a tomar decisões baseadas em dados.",
-   "Pelo caminho co-fundei algumas empresas, algumas digitais, uma de madeira, e continuo a gostar de ajudar fundadores em fase inicial a desbloquear-se e de conhecer pessoas e ideias inteligentes.",
-   "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
+   "O que me move é a esperança de fazer uma diferença positiva através do que construo e dos projetos para os quais contribuo.",
+   "Desde 2006, desenvolvo produtos digitais e ajudo equipas a dar-lhes vida. Na <a href=\"https://welance.com\">welance</a>, trabalho em engenharia, produto e, cada vez mais, como babysitter de agentes de IA.",
+   "O meu trabalho e os meus interesses vão da IA ao desenvolvimento rural e à criação de objetos físicos, com ou sem eletrónica. Através da welance e de outras organizações, desenvolvo e apoio projetos em Itália, na Alemanha e noutros lugares.",
+   "Vivo nos bosques da Alta Langa, onde eu e a minha companheira estamos a fazer de <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> um lugar onde pessoas curiosas de todo o mundo possam conhecer-se, passar tempo juntas e viver mais perto da natureza, com um pouco menos de impacto no ambiente."
   ],
   "earlierTitle": "Antes",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–presente — Estou a construir a <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, que coloca num mapa as festas de aldeia e os eventos locais de Itália.",
    "2026–presente — Estou a construir a <a href=\"https://radarpa.it/\">RadarPA</a>, que transforma os atos públicos dos municípios italianos em sinais de compra acionáveis."
   ],
-  "moreAbout": "Mais na minha <a href=\"{about}\">história profissional</a> ou no <a href=\"{cv}\">CV detalhado</a>."
+  "moreAbout": "Mais na minha <a href=\"{about}\">história profissional</a> ou no <a href=\"{cv}\">CV detalhado</a>.",
+  "productsTitle": "Criados na welance",
+  "initiativesTitle": "Outras iniciativas que apoio",
+  "journeyTitle": "Algumas etapas do percurso",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "Cofundei a ShareDesk, hoje <a href=\"https://optixapp.com\">Optix</a>, da qual continuo a ser acionista. Foi esse percurso que me levou a conhecer a <a href=\"https://welance.com\">welance</a>, na altura um espaço de coworking.",
+   "Pelo caminho, cofundei outras empresas — incluindo <a href=\"https://stood.it\">uma de madeira</a> —, trabalhei na Bakeca.it e contribuí para o SDK JavaScript de código aberto da æternity. Continuo a gostar de ajudar quem está a empreender pela primeira vez a ultrapassar bloqueios.",
+   "Também ajudo a <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> a repensar a sua engenharia de software e os seus processos."
+  ],
+  "notesLink": "Notas de One Day ↗",
+  "closing": "Engenharia, produto e uma vida no bosque."
  },
  "about": {
   "title": "Percurso",

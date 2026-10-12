@@ -30,9 +30,10 @@
  "home": {
   "hi": "Hallo! Ich bin Enrico.",
   "intro": [
-   "Ich bin seit 2006 in der IT, und meine Rolle (bei <a href=\"https://welance.com\"><strong>welance</strong></a>) besteht vor allem darin, zu entscheiden, wie ein <strong>digitales Produkt</strong> gebaut wird, und ein <strong>Team</strong> zu formen oder mich einem anzuschließen, um es gemeinsam zu planen und zu bauen — neuerdings übernehmen KI-Agenten einen guten Teil des Tippens, und ich passe auf sie auf. Außerdem helfe ich der Organisation, datenbasierte Entscheidungen zu treffen.",
-   "Unterwegs habe ich ein paar Unternehmen mitgegründet, einige digital, eines aus Holz, und ich helfe immer noch gern Gründerinnen und Gründern in der Frühphase weiter und lerne dabei kluge Menschen und Ideen kennen.",
-   "Kurz gesagt: <strong>Engineering and Product + AI Sitter</strong>."
+   "Mich treibt die Hoffnung an, mit dem, was ich aufbaue und unterstütze, etwas zum Positiven zu verändern.",
+   "Seit 2006 entwickle ich digitale Produkte und helfe Teams, sie umzusetzen. Bei <a href=\"https://welance.com\">welance</a> kümmere ich mich um Engineering, Produktentwicklung und zunehmend auch ums Babysitten von KI-Agenten.",
+   "Meine Arbeit und meine Interessen reichen von KI und ländlicher Entwicklung bis zum Bau greifbarer Dinge, mit oder ohne Elektronik. Über welance und andere Organisationen entwickle und unterstütze ich Projekte in Italien, Deutschland und darüber hinaus.",
+   "Ich lebe in den Wäldern der Alta Langa. Dort machen meine Partnerin und ich <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> zu einem Ort, an dem neugierige Menschen aus aller Welt zusammenkommen, Zeit miteinander verbringen und naturnäher leben können — mit etwas weniger Belastung für die Umwelt."
   ],
   "earlierTitle": "Früher",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–heute — Ich entwickle <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, das Italiens Dorffeste und lokale Veranstaltungen auf einer Karte sammelt.",
    "2026–heute — Ich entwickle <a href=\"https://radarpa.it/\">RadarPA</a>, das öffentliche Akten italienischer Gemeinden in verwertbare Beschaffungssignale übersetzt."
   ],
-  "moreAbout": "Mehr in meiner <a href=\"{about}\">Karrieregeschichte</a> oder im <a href=\"{cv}\">ausführlichen Lebenslauf</a>."
+  "moreAbout": "Mehr in meiner <a href=\"{about}\">Karrieregeschichte</a> oder im <a href=\"{cv}\">ausführlichen Lebenslauf</a>.",
+  "productsTitle": "Bei welance entstanden",
+  "initiativesTitle": "Weitere Initiativen, die ich unterstütze",
+  "journeyTitle": "Ein paar Stationen auf dem Weg",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "Ich habe ShareDesk mitgegründet, heute <a href=\"https://optixapp.com\">Optix</a>, und bin weiterhin Gesellschafter. Auf diesem Weg lernte ich <a href=\"https://welance.com\">welance</a> kennen, damals noch ein Coworking-Space.",
+   "Unterwegs habe ich weitere Unternehmen mitgegründet — darunter <a href=\"https://stood.it\">eines aus Holz</a> —, an Bakeca.it gearbeitet und zum quelloffenen JavaScript-SDK von æternity beigetragen. Ich helfe nach wie vor gerne Menschen, die zum ersten Mal gründen, wieder voranzukommen.",
+   "Außerdem unterstütze ich <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> dabei, Softwareentwicklung und Prozesse neu zu denken."
+  ],
+  "notesLink": "Notizen aus One Day ↗",
+  "closing": "Engineering, Produkte und ein Leben im Wald."
  },
  "about": {
   "title": "Werdegang",

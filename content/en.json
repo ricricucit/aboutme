@@ -30,9 +30,10 @@
  "home": {
   "hi": "Hi! I'm Enrico.",
   "intro": [
-   "I'm in IT since 2006 and my role (at <a href=\"https://welance.com\"><strong>welance</strong></a>) mostly involves deciding how to build a <strong>digital product</strong>, as well as form or join a <strong>team</strong> to collectively plan and create it — lately with AI agents doing a good share of the typing, and me sitting them. I also help the org take data-driven decisions.",
-   "Along the way I co-founded a few companies, some digital, one made of wood, and I still enjoy helping early-stage founders get unstuck and getting to know smart people and ideas.",
-   "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
+   "What drives me is the hope of making a positive difference through what I build and contribute to.",
+   "Since 2006, I’ve been building digital products and helping teams bring them to life. At <a href=\"https://welance.com\">welance</a>, I work across engineering, product and, increasingly, babysitting AI agents.",
+   "My work and interests span AI, rural development and making physical things, with or without electronics. Through welance and other organisations, I build and support projects in Italy, Germany and beyond.",
+   "I live in the woods of Alta Langa, where my partner and I are making <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> a place for curious people from around the world to meet, spend time together and live closer to nature, with a little less impact on the environment."
   ],
   "earlierTitle": "Earlier",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–present — Building <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, putting Italy's village festivals and local events on a map.",
    "2026–present — Building <a href=\"https://radarpa.it/\">RadarPA</a>, turning Italian municipalities' public acts into actionable procurement signals."
   ],
-  "moreAbout": "More in my <a href=\"{about}\">career story</a> or the <a href=\"{cv}\">detailed CV</a>."
+  "moreAbout": "More in my <a href=\"{about}\">career story</a> or the <a href=\"{cv}\">detailed CV</a>.",
+  "productsTitle": "Built at welance",
+  "initiativesTitle": "Other initiatives I support",
+  "journeyTitle": "A few things along the way",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "I co-founded ShareDesk, now <a href=\"https://optixapp.com\">Optix</a>, where I remain a shareholder. That journey introduced me to <a href=\"https://welance.com\">welance</a>, then a coworking space.",
+   "Along the way, I’ve co-founded other businesses — including <a href=\"https://stood.it\">one wooden</a> — worked on Bakeca.it and contributed to æternity’s open-source JavaScript SDK. I still enjoy helping first-time founders get unstuck.",
+   "I’m also helping <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> rethink its software engineering and processes."
+  ],
+  "notesLink": "Notes from One Day ↗",
+  "closing": "Engineering, product & a life in the woods."
  },
  "about": {
   "title": "Career",

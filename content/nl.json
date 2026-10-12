@@ -30,9 +30,10 @@
  "home": {
   "hi": "Hoi! Ik ben Enrico.",
   "intro": [
-   "Ik werk sinds 2006 in de IT en mijn rol (bij <a href=\"https://welance.com\"><strong>welance</strong></a>) bestaat vooral uit beslissen hoe we een <strong>digitaal product</strong> bouwen, en uit het vormen van of aansluiten bij een <strong>team</strong> om het samen te plannen en te maken — de laatste tijd met AI-agents die een flink deel van het typewerk doen, en ik die op ze past. Ik help de organisatie ook om datagedreven beslissingen te nemen.",
-   "Onderweg heb ik een paar bedrijven mede opgericht, sommige digitaal, één van hout, en ik help nog altijd graag beginnende founders weer op gang en leer zo slimme mensen en ideeën kennen.",
-   "TLDR: <strong>Engineering and Product + AI Sitter</strong>."
+   "Wat mij drijft, is de hoop iets positiefs bij te dragen met wat ik bouw en de projecten waaraan ik meewerk.",
+   "Sinds 2006 bouw ik digitale producten en help ik teams ze tot leven te brengen. Bij <a href=\"https://welance.com\">welance</a> houd ik me bezig met engineering, productontwikkeling en, steeds vaker, het babysitten van AI-agenten.",
+   "Mijn werk en interesses lopen uiteen van AI en plattelandsontwikkeling tot het maken van fysieke dingen, met of zonder elektronica. Via welance en andere organisaties bouw en ondersteun ik projecten in Italië, Duitsland en daarbuiten.",
+   "Ik woon in de bossen van de Alta Langa, waar mijn partner en ik van <a href=\"https://doi-fagnan.it\">Doi Fagnán</a> een plek maken waar nieuwsgierige mensen uit de hele wereld elkaar kunnen ontmoeten, samen tijd doorbrengen en dichter bij de natuur leven, met wat minder impact op het milieu."
   ],
   "earlierTitle": "Eerder",
   "earlier": [
@@ -51,7 +52,61 @@
    "2026–heden — Ik bouw aan <a href=\"https://piazzainfesta.it/\">Piazza in Festa</a>, dat Italiaanse dorpsfeesten en lokale evenementen op de kaart zet.",
    "2026–heden — Ik bouw aan <a href=\"https://radarpa.it/\">RadarPA</a>, dat openbare besluiten van Italiaanse gemeenten omzet in bruikbare inkoopsignalen."
   ],
-  "moreAbout": "Meer in mijn <a href=\"{about}\">loopbaanverhaal</a> of het <a href=\"{cv}\">uitgebreide cv</a>."
+  "moreAbout": "Meer in mijn <a href=\"{about}\">loopbaanverhaal</a> of het <a href=\"{cv}\">uitgebreide cv</a>.",
+  "productsTitle": "Gebouwd bij welance",
+  "initiativesTitle": "Andere initiatieven die ik steun",
+  "journeyTitle": "Een paar stappen onderweg",
+  "products": [
+   {
+    "name": "welance/directory",
+    "url": "https://welance.com/directory"
+   },
+   {
+    "name": "RadarPA",
+    "url": "https://radarpa.it"
+   },
+   {
+    "name": "Piazza in Festa",
+    "url": "https://piazzainfesta.it"
+   },
+   {
+    "name": "AlboPretorio.io",
+    "url": "https://albopretorio.io"
+   },
+   {
+    "name": "Rural Pop-Up",
+    "url": "https://rural-pop-up.com"
+   }
+  ],
+  "initiatives": [
+   {
+    "name": "Zukunftsorte",
+    "url": "https://zukunftsorte.land"
+   },
+   {
+    "name": "Brandenburg Connect",
+    "url": "https://brandenburgconnect.de"
+   },
+   {
+    "name": "Rural Pop-Up Events APS",
+    "url": "https://rural-pop-up.events"
+   },
+   {
+    "name": "I Custodi",
+    "url": "https://custodi.rural-pop-up.events"
+   },
+   {
+    "name": "Langa Silvatica",
+    "url": "https://www.langa-silvatica.org/"
+   }
+  ],
+  "journey": [
+   "Ik ben medeoprichter van ShareDesk, nu <a href=\"https://optixapp.com\">Optix</a>, en ben nog steeds aandeelhouder. Langs die weg leerde ik <a href=\"https://welance.com\">welance</a> kennen, destijds een coworkingruimte.",
+   "Onderweg heb ik andere bedrijven mede opgericht — waaronder <a href=\"https://stood.it\">eentje van hout</a> —, aan Bakeca.it gewerkt en bijgedragen aan de opensource-JavaScript-SDK van æternity. Ik help beginnende ondernemers nog steeds graag om weer verder te komen.",
+   "Ook help ik <a href=\"https://www.allsafe-group.com/en/\">allsafe</a> om zijn softwareontwikkeling en processen opnieuw vorm te geven."
+  ],
+  "notesLink": "Notities uit One Day ↗",
+  "closing": "Engineering, producten en een leven in het bos."
  },
  "about": {
   "title": "Loopbaan",
