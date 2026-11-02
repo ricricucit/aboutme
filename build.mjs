@@ -153,7 +153,7 @@ const fmtDate = (l, iso) => new Intl.DateTimeFormat(l, { day: 'numeric', month: 
 function onedayPage(c) {
   const l = c.lang, b = c.oneday;
   const list = posts.length
-    ? `<ul class="plain">${posts.map(p => { const pl = postFor(p, l); return `<li><a href="${postPath(pl, p.slug)}">${esc(p.tr[pl].title)}</a>${pl === l ? '' : ` <span class="where">(${pl})</span>`} <span class="meta">· ${fmtDate(l, p.date)}</span></li>`; }).join('')}</ul>`
+    ? `<ul class="one-day-posts">${posts.map(p => { const pl = postFor(p, l); return `<li><time class="post-date" datetime="${p.date}">${fmtDate(l, p.date)}</time><a class="post-title" href="${postPath(pl, p.slug)}">${esc(p.tr[pl].title)}</a>${pl === l ? '' : ` <span class="meta post-language">(${pl})</span>`}</li>`; }).join('')}</ul>`
     : `<p>${esc(b.empty)}</p>`;
   return head(c, 'oneday', c.meta.onedayTitle, c.meta.onedayDescription) + header(c, 'oneday') +
     `<main class="wrap"><h1 class="masthead">${esc(b.title)}</h1><p class="lead">${esc(b.tagline)}</p>` + list +

@@ -129,3 +129,11 @@ footer p{margin:0}
 .home-contact .btn{margin:0}
 .home-closing{font-size:.875rem;color:var(--muted);margin:var(--r2) 0 0}
 @media(max-width:40rem){.project-groups section{grid-template-columns:1fr;gap:.25rem;margin-block:var(--r1)}.project-links{line-height:2}.home-contact{align-items:flex-start}}
+
+/* One Day: date and title have independent rows, no decorative bullets. */
+.one-day-posts{list-style:none;padding:0;margin:var(--r3) 0}
+.one-day-posts li{padding-block:var(--r2);border-top:1px solid var(--line)}
+.post-date{display:block;white-space:nowrap;font-size:var(--fs-s);line-height:var(--lh);color:var(--muted);margin-bottom:var(--r1);font-variant-numeric:tabular-nums}
+.post-title{font-family:var(--ff-serif);font-size:var(--fs-l);line-height:1.35;text-decoration:none;display:inline-block}
+.post-title:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.post-language{display:block;margin-top:var(--r0)}
