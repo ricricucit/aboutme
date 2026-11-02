@@ -152,9 +152,47 @@ th{font-weight:500}
 
 /* Editorial rhythm for this standalone post. */
 .post-head h1{margin-block:var(--r3) var(--r2)}
+.post-summary{font-size:var(--fs-s);line-height:var(--lh);margin-bottom:var(--r4);padding-bottom:var(--r3);border-bottom:1px solid var(--line)}
+article .post-summary h2{font-size:var(--fs-s);line-height:var(--lh);margin:0 0 var(--r1)}
+.post-summary ul{margin:0;padding-left:var(--r2);list-style-type:disc}
+.post-summary li:last-child{margin-bottom:0}
 article>p{max-width:100%}
 article>ul{padding-left:var(--r2);list-style-type:disc}
 article>ul li::marker{color:var(--muted)}
+
+/* A responsive, annotated specimen: live text around a native vector drawing. */
+.cms-anatomy{width:min(70rem,calc(100vw - 2*var(--gutter)));position:relative;left:50%;transform:translateX(-50%);margin:var(--r4) 0;padding-block:var(--r2);border-block:1px solid var(--fg)}
+.plate-heading{display:flex;justify-content:space-between;align-items:baseline;gap:var(--r1);font-size:var(--fs-s);line-height:1.5;margin-bottom:var(--r2)}
+.plate-heading>span{color:var(--muted);font-variant-numeric:tabular-nums}
+.plate-heading em{font-family:var(--ff-serif);font-size:var(--fs-l)}
+.plate-grid{display:grid;grid-template-columns:minmax(0,1fr) 24rem minmax(0,1fr);grid-template-rows:repeat(4,14rem);column-gap:var(--r1)}
+.cms-specimen{grid-column:2;grid-row:1/5;width:100%;height:100%;display:block;color:var(--fg);overflow:visible}
+.specimen-markers text{font-family:var(--ff-serif);font-size:var(--fs-s)}
+.anatomy-notes{display:contents;list-style:none;padding:0;margin:0}
+.anatomy-notes li{align-self:center;min-width:0;margin:0}
+.anatomy-notes li:nth-child(odd){grid-column:1}
+.anatomy-notes li:nth-child(even){grid-column:3}
+.anatomy-notes li:nth-child(-n+2){grid-row:1}
+.anatomy-notes li:nth-child(n+3):nth-child(-n+4){grid-row:2}
+.anatomy-notes li:nth-child(n+5):nth-child(-n+6){grid-row:3}
+.anatomy-notes li:nth-child(n+7){grid-row:4}
+.anatomy-notes h3{font-size:var(--fs-s);line-height:1.5;margin:0 0 var(--r0);font-weight:500}
+.anatomy-number{font-family:var(--ff-serif);font-weight:400;font-variant-numeric:tabular-nums;margin-right:var(--r0);color:var(--muted)}
+.anatomy-notes p{font-size:var(--fs-s);line-height:1.5;margin:0;color:var(--muted)}
+.cms-anatomy figcaption{font-size:var(--fs-s);line-height:1.5;max-width:var(--measure);margin:var(--r2) auto 0;color:var(--muted)}
+@media(max-width:68rem){
+ .cms-anatomy{width:100%;left:auto;transform:none}
+ .plate-grid{display:block}
+ .cms-specimen{width:min(100%,24rem);height:auto;margin:0 auto var(--r2)}
+ .anatomy-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--r2)}
+ .anatomy-notes li:nth-child(n){grid-column:auto;grid-row:auto;align-self:start}
+}
+@media(max-width:40rem){
+ .plate-heading{display:block}
+ .plate-heading>span,.plate-heading em{display:block}
+ .plate-heading em{margin-top:var(--r0)}
+ .anatomy-notes{grid-template-columns:1fr}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CMS is dead. Long live the CMS.","datePublished":"2026-11-02","inLanguage":"it","author":{"@type":"Person","name":"Enrico Icardi","url":"https://www.aboutme.it/"},"mainEntityOfPage":"https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/"}</script>
 </head><body>
@@ -167,6 +205,15 @@ article>ul li::marker{color:var(--muted)}
 <p class="lead">Vent’anni di CMS mi hanno insegnato a tenere insieme persone, dati e software che cambia. Ora che possiamo costruirlo con l’AI, quell’esperienza mi sembra più utile che mai.</p>
 <p class="meta">Enrico Icardi</p>
 </header>
+
+<aside class="post-summary" aria-labelledby="in-breve">
+<h2 id="in-breve">TL;DR</h2>
+<ul>
+<li><strong>L’esperienza resta utile anche se cambia lo strumento.</strong> L’AI può rendere conveniente sostituire un CMS; dati, permessi e recupero restano problemi da risolvere.</li>
+<li><strong>Il CMS deve meritarsi il ruolo centrale.</strong> Conviene quando riusarne modello e processi riduce il lavoro complessivo. Può anche diventare uno dei sistemi coordinati dall’agente.</li>
+<li><strong>La memoria comune può avere fonti distribuite.</strong> Collegare informazioni richiede provenienza, regole e responsabilità chiare. Accentrarle introduce anche costi e dipendenze.</li>
+</ul>
+</aside>
 
 <p class="opener">Sono un tecnico e ho fatto CMS. Ecco, l’ho detto.</p>
 <p>Ho passato buona parte degli ultimi vent’anni a lavorarci, e per un certo periodo sembrava quasi una cosa da giustificare. CMS voleva dire WordPress, WordPress voleva dire siti, e fare siti occupava un gradino piuttosto basso nella gerarchia immaginaria dell’ingegneria del software. Le applicazioni serie, evidentemente, abitavano altrove.</p>
@@ -182,22 +229,332 @@ article>ul li::marker{color:var(--muted)}
 <p>Questa grammatica ha radici anche nei database e nei gestionali. I CMS l’hanno esercitata a lungo, portandola davanti a chi doveva usarla tutti i giorni senza conoscere le chiavi esterne. Ora l’AI ci permette di generare una vista per un singolo compito, magari destinata a durare dieci minuti. Sotto, il significato dei dati e le regole per modificarli devono restare riconoscibili.</p>
 
 <h2>Anatomia di un CMS</h2>
-<p>Directus è un buon esempio perché ci lavoro e perché rende visibile questa struttura: un database relazionale, API per accedervi, un’interfaccia per gestirlo. Intorno ci sono utenti, ruoli e policy, permessi su record e campi, strumenti per trasferire lo schema tra ambienti, collegamenti a storage esterni come S3.</p>
-<p>Se domani decidessi di ricostruirlo con l’AI, partirei dalle responsabilità che si è preso:</p>
-<div class="table-wrap"><table>
-<caption>Quello che deve continuare a funzionare, anche quando il sistema cambia</caption>
-<thead><tr><th scope="col">Parte</th><th scope="col">Responsabilità</th></tr></thead>
-<tbody>
-<tr><th scope="row">Modello dati</th><td>Dare un significato a entità, relazioni e vincoli.</td></tr>
-<tr><th scope="row">Accesso</th><td>Stabilire chi può leggere o modificare quali record e campi.</td></tr>
-<tr><th scope="row">Ciclo editoriale</th><td>Gestire bozze, revisioni, approvazioni e pubblicazione.</td></tr>
-<tr><th scope="row">Asset</th><td>Mantenere coerenti file, metadati e riferimenti.</td></tr>
-<tr><th scope="row">API e integrazioni</th><td>Offrire contratti affidabili a frontend, servizi e automazioni.</td></tr>
-<tr><th scope="row">Evoluzione</th><td>Far cambiare schema, dati, configurazioni e codice senza perdere il lavoro fatto.</td></tr>
-<tr><th scope="row">Interfacce e DevEx</th><td>Rendere il sistema comprensibile e utilizzabile da interfaccia, codice, terminale e agenti.</td></tr>
-</tbody></table></div>
-<p>Un prodotto maturo contiene anni di decisioni su questi problemi. Per apprezzarne il valore bisogna entrare nei dettagli: che cosa succede a una traduzione incompleta, a un file ancora referenziato, a un campo che un utente può leggere ma non modificare. È qui che si vede quanto un software sia stato modellato sul proprio dominio.</p>
-<p>Anche le scelte di licenza riportano l’attenzione su quel valore. Directus oggi adotta una licenza <em>source-available</em>, la MSCL: il sorgente è consultabile, l’uso dipende dalle condizioni applicabili. Per chi valuta un’alternativa, il conto comprende quanto costerà mantenere nel tempo le responsabilità che decide di assumersi.</p>
+<p>Prendiamo Directus, perché ci lavoro e posso guardarlo da vicino. Dire «un database con API e un pannello» è corretto quanto descrivere un animale come qualcosa con una pelle e degli organi. Per capire che cosa stiamo comprando, riusando o pensando di ricostruire con l’AI, bisogna separarne le responsabilità.</p>
+<figure id="anatomia-directus" class="cms-anatomy" aria-labelledby="cms-plate-heading">
+<div class="plate-heading" id="cms-plate-heading"><span>Tavola 01 · Anatomia funzionale</span><em>CMS, esemplare Directus</em></div>
+<div class="plate-grid">
+<svg class="cms-specimen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" preserveAspectRatio="none" role="img" aria-labelledby="cms-specimen-title cms-specimen-desc">
+<title id="cms-specimen-title">Anatomia funzionale di Directus: un coleottero in vista esplosa</title>
+<desc id="cms-specimen-desc">Otto richiami numerati collegano le parti separate dell’animale alle spiegazioni: interfaccia, API, accesso, modello, servizi, file, storia e automazioni. La disposizione è una metafora delle responsabilità, non uno schema dei processi interni.</desc>
+<defs>
+<pattern id="cms-hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(28)"><path d="M0 0 V5" fill="none" stroke="currentColor" stroke-width=".6" opacity=".55"/></pattern>
+<pattern id="cms-crosshatch" patternUnits="userSpaceOnUse" width="5" height="5"><path d="M0 0 L5 5 M5 0 L0 5" fill="none" stroke="currentColor" stroke-width=".45" opacity=".5"/></pattern>
+</defs>
+<g class="specimen-guides" fill="none" stroke="currentColor" stroke-width=".65" stroke-dasharray="3 5" opacity=".45">
+<path d="M200 128 V165 M200 237 V275 M200 371 V410 M200 602 V641 M123 270 L174 414 M267 408 L295 349"/>
+<path d="M160 380 L145 386 M159 490 L143 492 M168 593 L149 610 M240 380 L255 316 M241 490 L257 552 M232 593 L251 610"/>
+</g>
+<g fill="var(--bg)" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round" stroke-linecap="round">
+<g transform="translate(200 0) scale(-1 1)">
+<path d="M20 126 C28 109 40 97 56 84 L76 58 L89 33 L94 35 L81 63 L61 89 C44 103 32 115 25 129 Z" fill="url(#cms-hatch)"/>
+<path d="M80.0 56.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M84.2 48.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M88.4 40.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M92.6 32.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M96.8 24.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M31 111 l-4 -5" stroke-width=".55"/>
+<path d="M36 106 l-4 -5" stroke-width=".55"/>
+<path d="M41 101 l-4 -5" stroke-width=".55"/>
+<path d="M46 96 l-4 -5" stroke-width=".55"/>
+<path d="M51 91 l-4 -5" stroke-width=".55"/>
+<path d="M56 86 l-4 -5" stroke-width=".55"/>
+<path d="M61 81 l-4 -5" stroke-width=".55"/>
+<path d="M66 76 l-4 -5" stroke-width=".55"/>
+</g>
+<g transform="translate(200 0) scale(1 1)">
+<path d="M20 126 C28 109 40 97 56 84 L76 58 L89 33 L94 35 L81 63 L61 89 C44 103 32 115 25 129 Z" fill="url(#cms-hatch)"/>
+<path d="M80.0 56.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M84.2 48.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M88.4 40.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M92.6 32.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M96.8 24.0 l9 -2 l-2 5 l-9 1 Z" fill="url(#cms-crosshatch)" stroke-width=".75"/>
+<path d="M31 111 l-4 -5" stroke-width=".55"/>
+<path d="M36 106 l-4 -5" stroke-width=".55"/>
+<path d="M41 101 l-4 -5" stroke-width=".55"/>
+<path d="M46 96 l-4 -5" stroke-width=".55"/>
+<path d="M51 91 l-4 -5" stroke-width=".55"/>
+<path d="M56 86 l-4 -5" stroke-width=".55"/>
+<path d="M61 81 l-4 -5" stroke-width=".55"/>
+<path d="M66 76 l-4 -5" stroke-width=".55"/>
+</g>
+<g transform="translate(93 75) rotate(-12)">
+<path d="M0 0 C-36 8 -46 61 -36 125 C-29 170 -12 196 8 205 C23 161 35 96 26 42 C21 16 11 2 0 0 Z" fill="url(#cms-hatch)"/>
+<path d="M-24 25 C-37 72 -31 144 8 194" fill="none" stroke-width=".75"/>
+<path d="M-18 25 C-31 72 -25 144 8 194" fill="none" stroke-width=".75"/>
+<path d="M-12 25 C-25 72 -19 144 8 194" fill="none" stroke-width=".75"/>
+<path d="M-6 25 C-19 72 -13 144 8 194" fill="none" stroke-width=".75"/>
+<path d="M0 25 C-13 72 -7 144 8 194" fill="none" stroke-width=".75"/>
+<path d="M6 25 C-7 72 -1 144 8 194" fill="none" stroke-width=".75"/>
+<path d="M12 25 C-1 72 5 144 8 194" fill="none" stroke-width=".75"/>
+<ellipse cx="-19.0" cy="38" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-8.0" cy="38" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="3.0" cy="38" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-18.35" cy="47" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-7.35" cy="47" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="3.65" cy="47" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-17.7" cy="56" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-6.7" cy="56" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="4.3" cy="56" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-17.05" cy="65" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-6.05" cy="65" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="4.95" cy="65" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-16.4" cy="74" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-5.4" cy="74" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="5.6" cy="74" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-15.75" cy="83" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-4.75" cy="83" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="6.25" cy="83" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-15.1" cy="92" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-4.1" cy="92" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="6.9" cy="92" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-14.45" cy="101" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-3.45" cy="101" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="7.55" cy="101" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-13.8" cy="110" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-2.8" cy="110" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="8.2" cy="110" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-13.149999999999999" cy="119" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-2.1499999999999995" cy="119" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="8.850000000000001" cy="119" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-12.5" cy="128" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-1.5" cy="128" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="9.5" cy="128" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-11.85" cy="137" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-0.8499999999999996" cy="137" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="10.15" cy="137" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-11.2" cy="146" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-0.1999999999999993" cy="146" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="10.8" cy="146" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-10.549999999999999" cy="155" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="0.45000000000000107" cy="155" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="11.450000000000001" cy="155" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-9.9" cy="164" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="1.0999999999999996" cy="164" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="12.1" cy="164" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<path d="M-3 6 C-34 34 -32 98 -18 152" fill="none" stroke-width="1.1"/>
+</g>
+<path d="M177 174 C183 162 215 162 223 174 L230 188 C237 206 225 230 212 233 L188 233 C175 230 163 207 170 188 Z" fill="url(#cms-hatch)"/>
+<ellipse cx="173" cy="194" rx="7" ry="14" fill="url(#cms-crosshatch)"/>
+<ellipse cx="227" cy="194" rx="7" ry="14" fill="url(#cms-crosshatch)"/>
+<path d="M182 175 C173 157 180 145 191 143 L188 154 L196 167 M218 175 C227 157 220 145 209 143 L212 154 L204 167" fill="url(#cms-crosshatch)"/>
+<path d="M184 181 Q200 174 216 181 M181 211 Q200 219 219 211 M187 227 Q200 223 213 227" fill="none" stroke-width=".8"/>
+<path d="M181 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M185 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M189 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M193 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M197 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M201 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M205 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M209 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M213 188 q-3 11 1 16" fill="none" stroke-width=".65"/>
+<path d="M165 283 Q200 268 235 283 C242 301 246 334 240 351 Q224 371 200 372 Q176 371 160 351 C154 334 158 301 165 283 Z" fill="url(#cms-hatch)"/>
+<path d="M169 289 Q200 278 231 289 M164 341 Q200 360 236 341 M169 350 Q200 366 231 350" fill="none" stroke-width=".8"/>
+<path d="M166.0 295 Q157.0 319 166.0 338" fill="none" stroke-width=".55"/>
+<path d="M171.5 295 Q162.5 319 171.5 338" fill="none" stroke-width=".55"/>
+<path d="M177.0 295 Q168.0 319 177.0 338" fill="none" stroke-width=".55"/>
+<path d="M182.5 295 Q173.5 319 182.5 338" fill="none" stroke-width=".55"/>
+<path d="M188.0 295 Q179.0 319 188.0 338" fill="none" stroke-width=".55"/>
+<path d="M193.5 295 Q184.5 319 193.5 338" fill="none" stroke-width=".55"/>
+<path d="M199.0 295 Q190.0 319 199.0 338" fill="none" stroke-width=".55"/>
+<path d="M204.5 295 Q195.5 319 204.5 338" fill="none" stroke-width=".55"/>
+<path d="M210.0 295 Q201.0 319 210.0 338" fill="none" stroke-width=".55"/>
+<path d="M215.5 295 Q206.5 319 215.5 338" fill="none" stroke-width=".55"/>
+<path d="M221.0 295 Q212.0 319 221.0 338" fill="none" stroke-width=".55"/>
+<path d="M226.5 295 Q217.5 319 226.5 338" fill="none" stroke-width=".55"/>
+<path d="M232.0 295 Q223.0 319 232.0 338" fill="none" stroke-width=".55"/>
+<ellipse cx="182" cy="316" rx="4" ry="6" fill="url(#cms-crosshatch)" stroke-width=".65"/>
+<ellipse cx="218" cy="316" rx="4" ry="6" fill="url(#cms-crosshatch)" stroke-width=".65"/>
+<g>
+<path d="M145 384 C131 377 117 369 105 354 L77 326 L57 298 L52 301 L69 334 L97 365 C111 383 127 395 140 397 Z" fill="url(#cms-hatch)"/>
+<path d="M106 367 l6 9 M102 370 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M94 356 l6 9 M90 359 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M81 342 l6 9 M77 345 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M69 328 l6 9 M65 331 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M59 313 l6 9 M55 316 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M54 299 L44 287 L38 291 M48 293 L49 283" fill="none" stroke-width="1"/>
+<path d="M143 487 C126 484 110 486 94 494 L66 516 L39 557 L44 562 L76 527 L102 510 L141 501 Z" fill="url(#cms-hatch)"/>
+<path d="M115 488 l6 9 M111 491 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M102 493 l6 9 M98 496 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M86 503 l6 9 M82 506 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M69 520 l6 9 M65 523 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M56 536 l6 9 M52 539 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M41 560 L29 575 L20 576 M34 570 L38 582" fill="none" stroke-width="1"/>
+<path d="M149 610 C130 615 116 627 106 646 L90 676 L82 721 L88 724 L101 683 L120 659 C131 646 145 638 159 635 Z" fill="url(#cms-hatch)"/>
+<path d="M137 624 l6 9 M133 627 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M124 635 l6 9 M120 638 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M112 649 l6 9 M108 652 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M99 670 l6 9 M95 673 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M91 691 l6 9 M87 694 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M84 723 L78 741 L65 749 M80 736 L86 749" fill="none" stroke-width="1"/>
+</g>
+<g transform="translate(400 0) scale(-1 1)">
+<g transform="translate(0 -70)"><path d="M145 384 C131 377 117 369 105 354 L77 326 L57 298 L52 301 L69 334 L97 365 C111 383 127 395 140 397 Z" fill="url(#cms-hatch)"/>
+<path d="M106 367 l6 9 M102 370 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M94 356 l6 9 M90 359 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M81 342 l6 9 M77 345 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M69 328 l6 9 M65 331 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M59 313 l6 9 M55 316 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M54 299 L44 287 L38 291 M48 293 L49 283" fill="none" stroke-width="1"/>
+</g><g transform="translate(0 60)"><path d="M143 487 C126 484 110 486 94 494 L66 516 L39 557 L44 562 L76 527 L102 510 L141 501 Z" fill="url(#cms-hatch)"/>
+<path d="M115 488 l6 9 M111 491 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M102 493 l6 9 M98 496 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M86 503 l6 9 M82 506 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M69 520 l6 9 M65 523 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M56 536 l6 9 M52 539 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M41 560 L29 575 L20 576 M34 570 L38 582" fill="none" stroke-width="1"/>
+</g><path d="M149 610 C130 615 116 627 106 646 L90 676 L82 721 L88 724 L101 683 L120 659 C131 646 145 638 159 635 Z" fill="url(#cms-hatch)"/>
+<path d="M137 624 l6 9 M133 627 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M124 635 l6 9 M120 638 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M112 649 l6 9 M108 652 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M99 670 l6 9 M95 673 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M91 691 l6 9 M87 694 l-5 -3" fill="none" stroke-width=".65"/>
+<path d="M84 723 L78 741 L65 749 M80 736 L86 749" fill="none" stroke-width="1"/>
+</g>
+<path d="M183 412 Q200 405 217 412 C232 431 242 468 240 502 C238 543 221 584 200 603 C179 584 162 543 160 502 C158 468 168 431 183 412 Z" fill="url(#cms-hatch)"/>
+<path d="M176 431 Q200 447 224 431" fill="none" stroke-width=".9"/>
+<path d="M169 450 Q200 466 231 450" fill="none" stroke-width=".9"/>
+<path d="M164 469 Q200 485 236 469" fill="none" stroke-width=".9"/>
+<path d="M162 488 Q200 504 238 488" fill="none" stroke-width=".9"/>
+<path d="M163 507 Q200 523 237 507" fill="none" stroke-width=".9"/>
+<path d="M168 526 Q200 542 232 526" fill="none" stroke-width=".9"/>
+<path d="M175 545 Q200 561 225 545" fill="none" stroke-width=".9"/>
+<path d="M183 564 Q200 580 217 564" fill="none" stroke-width=".9"/>
+<path d="M200 419 C191 455 191 493 200 530 C206 551 204 572 200 589" fill="none" stroke-width="2"/>
+<path d="M198 443 q-13 -8 -24 -5 M201 446 q14 -9 24 -6" fill="none" stroke-width=".75"/>
+<ellipse cx="199" cy="443" rx="2.2" ry="3.3" fill="var(--bg)" stroke-width=".8"/>
+<path d="M198 465 q-13 -8 -24 -5 M201 468 q14 -9 24 -6" fill="none" stroke-width=".75"/>
+<ellipse cx="199" cy="465" rx="2.2" ry="3.3" fill="var(--bg)" stroke-width=".8"/>
+<path d="M198 487 q-13 -8 -24 -5 M201 490 q14 -9 24 -6" fill="none" stroke-width=".75"/>
+<ellipse cx="199" cy="487" rx="2.2" ry="3.3" fill="var(--bg)" stroke-width=".8"/>
+<path d="M198 509 q-13 -8 -24 -5 M201 512 q14 -9 24 -6" fill="none" stroke-width=".75"/>
+<ellipse cx="199" cy="509" rx="2.2" ry="3.3" fill="var(--bg)" stroke-width=".8"/>
+<path d="M198 531 q-13 -8 -24 -5 M201 534 q14 -9 24 -6" fill="none" stroke-width=".75"/>
+<ellipse cx="199" cy="531" rx="2.2" ry="3.3" fill="var(--bg)" stroke-width=".8"/>
+<path d="M198 553 q-13 -8 -24 -5 M201 556 q14 -9 24 -6" fill="none" stroke-width=".75"/>
+<ellipse cx="199" cy="553" rx="2.2" ry="3.3" fill="var(--bg)" stroke-width=".8"/>
+<g transform="translate(302 347) rotate(11) scale(.85 .78)">
+<path d="M0 0 C35 8 47 59 38 123 C32 170 12 199 -8 210 C-23 165 -33 100 -27 47 C-23 18 -12 3 0 0 Z" fill="url(#cms-hatch)"/>
+<path d="M-21.0 28 C-11.0 76 -18.0 147 -8 198" fill="none" stroke-width=".7"/>
+<path d="M-14.5 28 C-4.5 76 -11.5 147 -8 198" fill="none" stroke-width=".7"/>
+<path d="M-8.0 28 C2.0 76 -5.0 147 -8 198" fill="none" stroke-width=".7"/>
+<path d="M-1.5 28 C8.5 76 1.5 147 -8 198" fill="none" stroke-width=".7"/>
+<path d="M5.0 28 C15.0 76 8.0 147 -8 198" fill="none" stroke-width=".7"/>
+<path d="M11.5 28 C21.5 76 14.5 147 -8 198" fill="none" stroke-width=".7"/>
+<path d="M18.0 28 C28.0 76 21.0 147 -8 198" fill="none" stroke-width=".7"/>
+<ellipse cx="-16.0" cy="42" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-5.0" cy="42" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="6.0" cy="42" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-16.5" cy="51" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-5.5" cy="51" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="5.5" cy="51" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-17.0" cy="60" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-6.0" cy="60" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="5.0" cy="60" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-17.5" cy="69" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-6.5" cy="69" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="4.5" cy="69" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-18.0" cy="78" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-7.0" cy="78" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="4.0" cy="78" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-18.5" cy="87" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-7.5" cy="87" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="3.5" cy="87" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-19.0" cy="96" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-8.0" cy="96" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="3.0" cy="96" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-19.5" cy="105" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-8.5" cy="105" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="2.5" cy="105" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-20.0" cy="114" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-9.0" cy="114" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="2.0" cy="114" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-20.5" cy="123" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-9.5" cy="123" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="1.5" cy="123" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-21.0" cy="132" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-10.0" cy="132" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="1.0" cy="132" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-21.5" cy="141" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-10.5" cy="141" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="0.5" cy="141" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-22.0" cy="150" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-11.0" cy="150" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="0.0" cy="150" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-22.5" cy="159" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-11.5" cy="159" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-0.5" cy="159" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-23.0" cy="168" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-12.0" cy="168" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+<ellipse cx="-1.0" cy="168" rx="0.7" ry="0.9" fill="currentColor" stroke="none"/>
+</g>
+<path d="M171 647 Q200 638 229 647 C241 679 231 728 200 756 C169 728 159 679 171 647 Z" fill="url(#cms-crosshatch)"/>
+<path d="M171 658 Q200 670 229 658" fill="none" stroke-width="1.3"/>
+<path d="M174 662 Q200 674 226 662" fill="none" stroke-width=".55"/>
+<path d="M168 673 Q200 685 232 673" fill="none" stroke-width="1.3"/>
+<path d="M171 677 Q200 689 229 677" fill="none" stroke-width=".55"/>
+<path d="M170 688 Q200 700 230 688" fill="none" stroke-width="1.3"/>
+<path d="M173 692 Q200 704 227 692" fill="none" stroke-width=".55"/>
+<path d="M174 703 Q200 715 226 703" fill="none" stroke-width="1.3"/>
+<path d="M177 707 Q200 719 223 707" fill="none" stroke-width=".55"/>
+<path d="M180 718 Q200 730 220 718" fill="none" stroke-width="1.3"/>
+<path d="M183 722 Q200 734 217 722" fill="none" stroke-width=".55"/>
+<path d="M188 733 Q200 745 212 733" fill="none" stroke-width="1.3"/>
+<path d="M191 737 Q200 749 209 737" fill="none" stroke-width=".55"/>
+<path d="M200 648 V746" fill="none" stroke-width=".6"/>
+</g>
+<g class="specimen-leaders" fill="none" stroke="currentColor" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M24 100 H52 L78 157" />
+<ellipse cx="78" cy="157" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M376 100 H329 L283 58" />
+<ellipse cx="283" cy="58" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M24 300 H110 L175 213" />
+<ellipse cx="175" cy="213" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M376 300 H287 L229 320" />
+<ellipse cx="229" cy="320" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M24 500 H116 L179 481" />
+<ellipse cx="179" cy="481" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M376 500 H345 L305 465" />
+<ellipse cx="305" cy="465" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M24 700 H129 L182 698" />
+<ellipse cx="182" cy="698" rx="2" ry="2" fill="currentColor" stroke="none"/>
+<path d="M376 700 H331 L299 681" />
+<ellipse cx="299" cy="681" rx="2" ry="2" fill="currentColor" stroke="none"/>
+</g><g class="specimen-markers" fill="var(--bg)" stroke="currentColor" stroke-width=".8">
+<ellipse cx="11" cy="100" rx="11" ry="11" />
+<text x="11" y="105" text-anchor="middle" fill="currentColor" stroke="none">1</text>
+<ellipse cx="389" cy="100" rx="11" ry="11" />
+<text x="389" y="105" text-anchor="middle" fill="currentColor" stroke="none">2</text>
+<ellipse cx="11" cy="300" rx="11" ry="11" />
+<text x="11" y="305" text-anchor="middle" fill="currentColor" stroke="none">3</text>
+<ellipse cx="389" cy="300" rx="11" ry="11" />
+<text x="389" y="305" text-anchor="middle" fill="currentColor" stroke="none">4</text>
+<ellipse cx="11" cy="500" rx="11" ry="11" />
+<text x="11" y="505" text-anchor="middle" fill="currentColor" stroke="none">5</text>
+<ellipse cx="389" cy="500" rx="11" ry="11" />
+<text x="389" y="505" text-anchor="middle" fill="currentColor" stroke="none">6</text>
+<ellipse cx="11" cy="700" rx="11" ry="11" />
+<text x="11" y="705" text-anchor="middle" fill="currentColor" stroke="none">7</text>
+<ellipse cx="389" cy="700" rx="11" ry="11" />
+<text x="389" y="705" text-anchor="middle" fill="currentColor" stroke="none">8</text>
+</g></svg>
+<ol class="anatomy-notes" role="list">
+<li><h3><span class="anatomy-number" aria-hidden="true">01</span> La superficie: Data Studio</h3><p>Form, viste e dashboard traducono il modello in un ambiente di lavoro. Un campo nascosto o in sola lettura nel form resta una scelta di interfaccia; la protezione del dato richiede permessi sul server.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">02</span> I punti di contatto: API</h3><p>REST e GraphQL espongono dati e operazioni. SDK e MCP permettono a codice e agenti di usarli. Cambiare un campo può quindi rompere un contratto con altri software, anche se il pannello continua a funzionare.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">03</span> Il controllo: identità e policy</h3><p>L’autenticazione riconosce chi arriva; le policy autorizzano azioni su collezioni, record e campi. Le credenziali SQL sono un accesso distinto: una scrittura diretta nel database non attraversa questi controlli applicativi.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">04</span> La struttura: schema e metadati</h3><p>Le collezioni corrispondono a tabelle SQL. Directus aggiunge configurazioni per campi, relazioni e interfacce nelle proprie collezioni di sistema. Il significato di «cliente», «progetto» o «approvato» dobbiamo progettarlo noi.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">05</span> Il lavoro interno: servizi dati</h3><p>Servizi come ItemsService eseguono le operazioni usando schema e contesto di autorizzazione. Le estensioni possono riusarli; devono passare il contesto corretto. Usare SQL direttamente cambia quali garanzie vengono applicate.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">06</span> Gli allegati: file e asset</h3><p>Directus gestisce metadati, accesso e trasformazioni; i file risiedono nello storage configurato. Record, originale e derivati hanno vite diverse. Esporre direttamente il bucket può aggirare i permessi applicati dall’API.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">07</span> La memoria: revisioni e versioni</h3><p>La cronologia registra le modifiche; le versioni permettono di lavorare su varianti del contenuto. Vanno abilitate e autorizzate secondo il caso. Ripristinare un record non recupera da solo file perduti o azioni esterne.</p></li>
+<li><h3><span class="anatomy-number" aria-hidden="true">08</span> Il movimento: Flows ed estensioni</h3><p>I Flows collegano eventi e operazioni; hook ed endpoint aggiungono logica. Un filtro può bloccare una modifica, un’azione reagisce all’evento. Una chiamata esterna richiede comunque gestione degli errori, delle ripetizioni e dei permessi.</p></li>
+</ol>
+</div>
+<figcaption>Le parti sono separate per leggerne le responsabilità. Nella piattaforma collaborano e si sovrappongono: questa è una dissezione funzionale, non una mappa dei moduli del codice. Il database, lo storage e i servizi esterni fanno parte dell’ambiente in cui l’animale vive.</figcaption>
+</figure>
+<p>La distinzione decisiva è tra <strong>quello che Directus sa fare e le decisioni che dobbiamo prendere noi</strong>. Offre collezioni, relazioni, permessi, versioni e automazioni. Stabilire chi può approvare una spesa, quando una bozza è pubblicabile o come riconoscere lo stesso cliente in due sistemi richiede un modello del nostro lavoro. Il prodotto ci dà strumenti con cui esprimerlo; la correttezza di quel modello resta una responsabilità nostra.</p>
+<p>Seguiamo una modifica concreta: un editor cambia il prezzo di un prodotto. Il Data Studio raccoglie il nuovo valore; l’API riceve la richiesta; i servizi la eseguono nel contesto dell’utente e dei permessi configurati. Il database applica i propri vincoli. La cronologia, se configurata, conserva la modifica. Un Flow può avviare l’aggiornamento di un catalogo esterno. Sono responsabilità diverse: se quell’ultimo servizio non risponde, il prezzo già salvato e il prezzo ancora visibile altrove possono divergere. Servono una regola di recupero e un modo per accorgersene.</p>
+<p>I confini contano anche quando estendiamo la piattaforma. La <a href="https://directus.com/docs/guides/extensions/api-extensions/services">documentazione dei servizi</a> richiede attenzione al contesto di autorizzazione, chiamato <code>accountability</code>: ometterlo può dare al servizio permessi amministrativi. E un campo marcato come nascosto nel Data Studio non sostituisce una <a href="https://directus.com/docs/guides/auth/access-control">policy sui dati</a>. Il valore della piattaforma dipende anche da quanto bene ne rispettiamo i confini.</p>
+<p>Fuori dall’animale restano l’esecuzione e la manutenzione del sistema: database e storage, segreti, backup verificati, monitoraggio, aggiornamenti e compatibilità con i client. Possiamo delegarne una parte a un servizio gestito. Dobbiamo comunque sapere chi la copre. Anche migrare lo schema o ripristinare una revisione risolve una parte del problema, non un intero piano di recupero.</p>
+<p>Anche le scelte di licenza riportano l’attenzione sul costo di questo insieme. Directus oggi adotta una licenza <em>source-available</em>, la MSCL: il sorgente è consultabile, l’uso dipende dalle condizioni applicabili. Per chi valuta un’alternativa, il conto comprende quanto costerà mantenere nel tempo le responsabilità che decide di assumersi.</p>
 
 <h2>Usabilità, anche fuori dal browser</h2>
 <p>La stessa cura deve arrivare a chi lavora attraverso codice, script e automazioni. La <em>developer experience</em>, o DevEx, è un’altra forma di usabilità: documentazione chiara, tipi espliciti, comandi prevedibili, errori comprensibili. Sono qualità che permettono di essere precisi e di ripetere un’operazione sapendo che cosa aspettarsi.</p>
@@ -226,12 +583,19 @@ article>ul li::marker{color:var(--muted)}
 <p>Un requisito deve sopravvivere alla persona che lo ha raccolto. Chi arriva dopo dovrebbe poter ritrovare la richiesta, capire da quale decisione nasce, risalire ai materiali originali e continuare il lavoro. Questa memoria comprende anche i dati concreti con cui l’azienda opera ogni giorno.</p>
 <p>Nel nostro caso, penso ai movimenti bancari in Qonto, al tempo registrato in Clockify, al codice e alle attività in GitLab. Più recentemente si sono aggiunti OpenRouter, con l’accesso ai modelli e i relativi consumi, e gli LLM con cui lavoriamo. Mettere queste informazioni in relazione permette di collegare ciò che abbiamo deciso a ciò che abbiamo fatto, impiegato e incassato.</p>
 <p>Per rispondere a una domanda come «quanto lavoro abbiamo dedicato a questo progetto e che cosa è stato pagato?», bisogna riconoscere lo stesso progetto nei diversi sistemi, collegare le ore alle attività e i movimenti ai documenti corretti. Un nome simile in due applicazioni non basta. Servono identità condivise, relazioni esplicite e regole per aggiornare i dati.</p>
-<p>È così che mi avvicino all’idea di <em>Single Source of Truth</em>: una base centrale di dati, definizioni e connessioni sulla quale possiamo ragionare insieme. Qonto resta il riferimento per i movimenti del conto, Clockify per le registrazioni del tempo, GitLab per codice e attività. Il sistema comune deve sapere da dove arriva ogni informazione, quanto è aggiornata e quale fonte prevale se due versioni discordano. Ogni connessione trova posto in un modello condiviso.</p>
+<p>È così che mi avvicino all’idea di <em>Single Source of Truth</em>: una base condivisa di dati, definizioni e connessioni sulla quale possiamo ragionare insieme. Qonto resta il riferimento per i movimenti del conto, Clockify per le registrazioni del tempo, GitLab per codice e attività. Per ogni dato serve una fonte autorevole, anche quando il sistema ne conserva una copia. Origine, aggiornamento e regole per risolvere le discrepanze fanno parte della conoscenza condivisa.</p>
 <p><strong>La conoscenza diventa razionale nella misura in cui possiamo ricostruirla e verificarla.</strong> Un movimento registrato, una stima e una conclusione del modello devono restare distinguibili. Le regole di calcolo e i collegamenti devono essere ispezionabili. È questa base che consente a persone diverse, con agenti diversi, di lavorare sugli stessi fatti e di discutere le interpretazioni.</p>
 <p>Qui vedo un collegamento con la <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">LLM Wiki proposta da Andrej Karpathy</a>: un modello legge le fonti e mantiene una conoscenza persistente, fatta di sintesi e collegamenti che si aggiornano nel tempo. In un CMS possiamo associare quella conoscenza a progetti, responsabilità e stati: quale requisito è approvato, chi può cambiarlo, quale attività ne dipende.</p>
 <p>Le fonti possono essere un documento, una registrazione o una fotografia. Gli strumenti che le interpretano devono conservarne la provenienza, così da permettere a una persona di controllare la sintesi e correggerla. Il modello può cambiare; dati, decisioni e relazioni devono poter restare. È in questo senso che il sistema diventa parte dell’intelligenza dell’azienda.</p>
 <p>Il passaggio all’azione richiede autorizzazioni precise. Leggere un requisito non dà automaticamente il diritto di modificare il progetto o inviare qualcosa a un cliente. Ogni connettore deve verificare l’azione richiesta e usare credenziali appropriate sul servizio esterno. MCP offre un modo comune di collegare gli strumenti; la corrispondenza tra i permessi dei diversi sistemi va progettata. Anche una sintesi ricavata da documenti riservati deve rispettare quei confini.</p>
 <p>È questa l’evoluzione che immagino quando penso a un <em>AI Management System</em>, o AI MS: un gestionale nel quale persone e agenti lavorano sulla stessa memoria operativa. Ciascuno può interagirci a proprio modo, mentre regole, responsabilità e storia delle modifiche restano verificabili. È un nome di lavoro per una direzione che mi sembra promettente.</p>
+
+<h2>Il CMS potrebbe essere il pezzo da togliere</h2>
+<p>L’obiezione più seria alla mia tesi è che l’AI potrebbe rendere più importanti dati e regole, e meno necessario il CMS che li riunisce. Le responsabilità della tavola anatomica possono essere ricomposte in un altro modo. Le competenze che ho descritto appartengono all’ingegneria del software. Averle imparate sui CMS non dimostra che un CMS sia ancora la scelta migliore.</p>
+<p>Se costruire strumenti specifici diventa più economico, cambia il vantaggio di adattarsi a una piattaforma generalista. Si può preferire un’applicazione piccola, costruita attorno al proprio lavoro, a un CMS pieno di estensioni. SDK, CLI e MCP sostengono anche questa alternativa: rendono ciascun prodotto accessibile e componibile, senza assegnargli necessariamente un ruolo centrale.</p>
+<p>Anche il modello comune ha un costo. Un progetto per chi pianifica il lavoro e una commessa per chi fattura possono avere confini diversi. Il <a href="https://martinfowler.com/bliki/BoundedContext.html">domain-driven design affronta proprio questa pluralità di modelli</a>, delimitandoli e rendendo esplicite le relazioni tra loro. Forzarli in un’unica struttura può creare traduzioni fragili, copie obsolete e un punto attraverso cui deve passare ogni cambiamento.</p>
+<p>Un’alternativa sensata conserva i sistemi autorevoli nei rispettivi ambiti e li collega attraverso contratti espliciti. L’agente coordina le operazioni; i servizi continuano ad applicare le proprie regole. Il CMS può restare dove serve agli editor, oppure uscire del tutto da quel flusso. È una possibilità che devo considerare anche per evitare di riconoscere nel futuro soprattutto lo strumento che conosco meglio.</p>
+<p>Per me il CMS merita quel posto quando relazioni, permessi e flussi editoriali condivisi sono una parte sostanziale del lavoro. Se per usarlo devo duplicare regole già affidabili altrove e mantenere sincronizzazioni continue, il vantaggio può sparire. La verifica concreta è immaginare di toglierlo: quali responsabilità dovrei ricostruire, quali integrazioni eliminerei, e quanto sarebbe più difficile capire o recuperare un errore? <strong>La scelta migliore è quella che riduce il lavoro complessivo mantenendo le garanzie necessarie.</strong></p>
 
 <h2>Gli strumenti che vorrei usare domani</h2>
 <p>Questa prospettiva influenza anche gli strumenti verso cui guardo. Mi interessa l’approccio di Railway, dove servizi e ambienti sono parti visibili del progetto. Lovable parte dalla costruzione dell’applicazione e offre anche un backend gestito, con database, autenticazione e storage. Sono modi diversi di rendere accessibile un sistema che, sotto, continua ad avere dipendenze.</p>
@@ -248,7 +612,7 @@ article>ul li::marker{color:var(--muted)}
 <li>Che cosa abbiamo davvero provato a recuperare dopo un errore?</li>
 <li>Che cosa saprà chi arriverà dopo di noi?</li>
 </ul>
-<p>Sono un tecnico e ho fatto CMS. Qualunque nome daremo al prossimo software, mi porto dietro quello che mi hanno insegnato.</p>
+<p>Sono un tecnico e ho fatto CMS. Mi porto dietro quello che mi hanno insegnato anche quando mi aiuta a scegliere un’architettura diversa. È il valore che riconosco a quell’esperienza.</p>
 <p lang="en" class="lead">CMS is dead. Long live the CMS.</p>
 
 <aside aria-labelledby="fonti"><h2 id="fonti">Riferimenti e note</h2>
@@ -257,6 +621,8 @@ article>ul li::marker{color:var(--muted)}
 <li>Directus per sviluppatori e agenti: <a href="https://directus.com/docs/guides/connect/sdk">SDK</a>, <a href="https://directus.com/docs/guides/environment-sync">CLI ed Environment Sync</a>, <a href="https://directus.com/docs/guides/ai/mcp">MCP</a>.</li>
 <li><a href="https://github.com/directus/directus">Directus: repository e licenza</a>. Il riferimento alla MSCL descrive le condizioni pubblicate al 2 novembre 2026; le condizioni dipendono dalla versione e dall’uso.</li>
 <li><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">Andrej Karpathy: LLM Wiki</a>.</li>
+<li>Directus: <a href="https://directus.com/docs/guides/data-model/collections">collezioni e metadati</a>, <a href="https://directus.com/docs/guides/extensions/api-extensions/services">servizi interni</a>, <a href="https://directus.com/docs/guides/auth/access-control">controllo degli accessi</a>, <a href="https://directus.com/docs/guides/content/content-versioning">versioni e revisioni</a>, <a href="https://directus.com/docs/guides/files/access">accesso ai file</a> e <a href="https://directus.com/docs/guides/flows/triggers">trigger dei Flows</a>, le responsabilità e i confini usati nella tavola anatomica.</li>
+<li><a href="https://martinfowler.com/bliki/BoundedContext.html">Martin Fowler: Bounded Context</a>, sui confini e sulle relazioni tra modelli di dominio.</li>
 <li><a href="https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices">MCP: sicurezza e autorizzazioni dei connettori</a>.</li>
 <li>Railway: <a href="https://docs.railway.com/projects">progetti</a> e <a href="https://docs.railway.com/environments">ambienti</a>. Lovable: <a href="https://docs.lovable.dev/features/cloud">backend gestito</a>.</li>
 <li>Le API dei servizi citati: <a href="https://docs.qonto.com/api-reference/business-api/transactions-statements/transactions/list-transactions">movimenti Qonto</a>, <a href="https://docs.clockify.me/">Clockify</a>, <a href="https://docs.gitlab.com/api/issues/">attività GitLab</a>, <a href="https://openrouter.ai/docs/cookbook/administration/usage-accounting">consumi OpenRouter</a>.</li>
