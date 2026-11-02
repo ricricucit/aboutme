@@ -168,107 +168,92 @@ article>ul li::marker{color:var(--muted)}
 <p class="meta">ONE DAY · <time datetime="2026-11-02">Lunedì 2 novembre 2026</time></p>
 <p class="almanac">Giorno dei morti. Luna calante. Condizioni ideali per riesumare vent’anni di esperienza.</p>
 <h1 lang="en">CMS is dead.<br>Long live the CMS.</h1>
-<p class="lead">Ho passato buona parte della mia vita professionale a lavorare sui CMS. Oggi che possiamo generare software parlando con un modello, quell’esperienza mi sembra più utile che mai.</p>
-<p class="meta">Enrico Icardi · Prima versione italiana</p>
+<p class="lead">Vent’anni di CMS mi hanno insegnato a tenere insieme persone, dati e software che cambia. Ora che possiamo costruirlo con l’AI, quell’esperienza mi sembra più utile che mai.</p>
+<p class="meta">Enrico Icardi</p>
 </header>
 <figure class="post-illustration"><img src="/img/cms-roots.webp" width="1400" height="700" fetchpriority="high" alt="Un vecchio monitor emerge dal terreno; sotto la superficie le radici collegano archivi, database e chiavi."><figcaption>La parte che si vede è solo l’inizio.</figcaption></figure>
 
 <p class="opener">Sono un tecnico e ho fatto CMS. Ecco, l’ho detto.</p>
-<p>Per anni, in certi ambienti, bastava pronunciare quelle tre lettere perché la conversazione prendesse una piega precisa. CMS voleva dire WordPress. WordPress voleva dire siti. E fare siti occupava un gradino piuttosto basso nella gerarchia immaginaria dell’ingegneria del software.</p>
-<p>Lo chiamerei <em>CMS bullying</em>: quello snobismo per cui il lavoro viene giudicato da ciò che si vede sullo schermo. Una pagina con un titolo e una fotografia? Probabilmente sotto non c’è niente di interessante.</p>
-<p>Sotto, invece, potevano esserci redazioni distribuite, contenuti in più lingue, autorizzazioni diverse sullo stesso record, sistemi esterni, rilasci senza interruzioni e anni di informazioni da conservare. Oppure un’installazione semplice, e andava benissimo anche quella. L’etichetta diceva poco della complessità.</p>
-<p>Oggi vedo persone entusiaste di costruirsi da sole un gestionale con l’AI. Lo sono anch’io. Mi interessa però osservare quanta parte di quel lavoro passi per problemi che chi ha costruito CMS complessi conosce da tempo.</p>
+<p>Ho passato buona parte degli ultimi vent’anni a lavorarci, e per un certo periodo sembrava quasi una cosa da giustificare. CMS voleva dire WordPress, WordPress voleva dire siti, e fare siti occupava un gradino piuttosto basso nella gerarchia immaginaria dell’ingegneria del software. Le applicazioni serie, evidentemente, abitavano altrove.</p>
+<p>Lo chiamo <em>CMS bullying</em>: quello snobismo professionale che deduce la complessità di un sistema dalla sua schermata più semplice. Si vedevano un titolo, una fotografia e il pulsante «Pubblica». Restavano fuori dall’inquadratura le redazioni, le traduzioni, i permessi, le integrazioni e gli anni di contenuti che dovevano sopravvivere al prossimo aggiornamento.</p>
+<p>Oggi l’AI permette a molte più persone di costruirsi un’applicazione, un gestionale, persino il proprio CMS. Lo trovo entusiasmante. E riconosco, in quei progetti, molti dei problemi sui quali abbiamo lavorato per anni.</p>
+<p><strong>Più diventa facile generare software, più diventa utile sapere che cosa quel software deve saper fare nel tempo.</strong> È di questa esperienza che vorrei parlare.</p>
 
 <h2>Il software comincia da chi deve usarlo</h2>
-<p>Un CMS mette un modello tecnico nelle mani di persone che hanno altro da fare: scrivere, vendere, organizzare un evento, aggiornare un catalogo. Il modello deve diventare comprensibile attraverso form, viste, nomi e operazioni.</p>
-<p>Un campo obbligatorio può essere corretto per il database e sbagliato nel momento in cui viene richiesto all’editor. Una pubblicazione può aver bisogno di un’approvazione. Una cancellazione accidentale deve avere una via di recupero. Sono decisioni di prodotto che diventano decisioni tecniche.</p>
-<p>Nel software aziendale, chi sceglie uno strumento e chi lo usa spesso sono persone diverse. I costi di cambio e le scelte dell’organizzazione possono tenere in vita interfacce scomode per anni. Quando l’utilizzatore può abbandonare un prodotto più facilmente, la pressione sull’usabilità cambia.</p>
-<p>Molti CMS sono a tutti gli effetti strumenti B2B. Ma il loro lavoro quotidiano obbliga a confrontarsi con persone che non pensano in termini di tabelle e chiavi esterne. Credo che sia stata una scuola importante: tenere insieme la struttura dei dati e il comportamento umano.</p>
+<p>Chi apre un CMS di solito ha un lavoro da finire: pubblicare un articolo, aggiornare un catalogo, organizzare un evento. Il nostro modello dati deve incontrare quel lavoro. Un campo obbligatorio, per esempio, può essere perfettamente sensato nel database e impossibile da compilare quando una persona sta appena abbozzando un contenuto. Prima o poi qualcuno ci scriverà «da definire», e il vincolo avrà prodotto dati peggiori.</p>
+<p>È una lezione di prodotto che diventa subito architettura: distinguere una bozza da un contenuto pubblicabile, chiedere le informazioni al momento giusto, rendere comprensibile un errore e possibile il recupero.</p>
+<p>Nel software aziendale chi compra e chi usa spesso sono persone diverse. Un dipendente può dover convivere per anni con un’interfaccia scomoda. Nel mondo consumer, dove è più facile abbandonare un prodotto, quella stessa scomodità può costare un cliente. Molti CMS stanno in mezzo: sono strumenti di lavoro, ma finiscono nelle mani di persone con competenze, abitudini e pazienza molto diverse. È stata una buona scuola per imparare a tenere insieme struttura e usabilità.</p>
+<p>Guardando le applicazioni di oggi, quella familiarità si riconosce. Un CRM, un gestionale immobiliare, un pannello amministrativo: filtro un insieme di informazioni, scelgo come visualizzarlo, faccio qualcosa. <strong>Query, vista, azione.</strong> La tabella, il calendario e il kanban possono essere tre modi di lavorare sugli stessi dati.</p>
+<p>Questa grammatica ha radici anche nei database e nei gestionali. I CMS l’hanno esercitata a lungo, portandola davanti a chi doveva usarla tutti i giorni senza conoscere le chiavi esterne. Ora l’AI ci permette di generare una vista per un singolo compito, magari destinata a durare dieci minuti. Sotto, il significato dei dati e le regole per modificarli devono restare riconoscibili.</p>
 
-<h2>Query, vista, azione</h2>
-<p>Guardiamo un pannello amministrativo, un CRM, un gestionale immobiliare o un CMS. Una grammatica ricorrente è questa: seleziono un insieme di informazioni, scelgo come guardarlo, compio un’azione.</p>
-<p>Filtri e ricerca esprimono una query. Tabelle, schede, calendari e kanban rappresentano i risultati. Form e comandi modificano dati e stati. Permessi e regole delimitano le operazioni possibili.</p>
-<p>Questa grammatica appartiene anche alla storia dei database e dei gestionali. I CMS hanno contribuito a renderla accessibile a pubblici molto diversi. Una vista è un modo di lavorare su un modello condiviso: cambiarla non dovrebbe cambiare arbitrariamente il significato dei dati.</p>
-<p>L’AI rende più facile produrre altre viste, anche temporanee, dedicate a una persona o a un compito. Per farle funzionare serve comunque sapere che cosa rappresentano quei dati e quali operazioni hanno senso.</p>
-
-<h2>Aprire un CMS e guardarci dentro</h2>
-<p>Uso Directus come esempio perché fa parte della mia esperienza. Il suo modello rende visibile quanto contenuto, dati e operazioni possano stare vicini. È un caso da studiare, con scelte e compromessi propri.</p>
-<p>La sua documentazione descrive controlli di accesso tramite utenti, ruoli e policy, permessi sui dati e configurazione di storage esterni. Sono capacità concrete sulle quali costruire un sistema. La capacità di collegare uno storage, però, lascia ancora da progettare backup, conservazione e ripristino dell’insieme.</p>
+<h2>Anatomia di un CMS</h2>
+<p>Directus è un buon esempio perché ci lavoro e perché rende visibile questa struttura: un database relazionale, API per accedervi, un’interfaccia per gestirlo. Intorno ci sono utenti, ruoli e policy, permessi su record e campi, strumenti per trasferire lo schema tra ambienti, collegamenti a storage esterni come S3.</p>
+<p>Se domani decidessi di ricostruirlo con l’AI, partirei dalle responsabilità che si è preso:</p>
 <div class="table-wrap"><table>
-<caption>Le responsabilità da riconoscere prima di costruire il proprio CMS</caption>
-<thead><tr><th scope="col">Parte</th><th scope="col">Domanda tecnica</th></tr></thead>
+<caption>Quello che deve continuare a funzionare, anche quando il sistema cambia</caption>
+<thead><tr><th scope="col">Parte</th><th scope="col">Responsabilità</th></tr></thead>
 <tbody>
-<tr><th scope="row">Modello</th><td>Che cosa rappresentano entità, relazioni e vincoli?</td></tr>
-<tr><th scope="row">Accesso</th><td>Chi può leggere o modificare quali record e campi?</td></tr>
-<tr><th scope="row">Ciclo di vita</th><td>Come funzionano bozze, revisioni, approvazioni e pubblicazione?</td></tr>
-<tr><th scope="row">Asset</th><td>Come restano coerenti file, metadati e riferimenti?</td></tr>
-<tr><th scope="row">Integrazioni</th><td>Quali contratti usano frontend, servizi e automazioni?</td></tr>
-<tr><th scope="row">Evoluzione</th><td>Come cambiano schema, dati, configurazioni e codice?</td></tr>
-<tr><th scope="row">Interfacce</th><td>Come rendiamo quelle regole comprensibili e utilizzabili?</td></tr>
+<tr><th scope="row">Modello dati</th><td>Dare un significato a entità, relazioni e vincoli.</td></tr>
+<tr><th scope="row">Accesso</th><td>Stabilire chi può leggere o modificare quali record e campi.</td></tr>
+<tr><th scope="row">Ciclo editoriale</th><td>Gestire bozze, revisioni, approvazioni e pubblicazione.</td></tr>
+<tr><th scope="row">Asset</th><td>Mantenere coerenti file, metadati e riferimenti.</td></tr>
+<tr><th scope="row">API e integrazioni</th><td>Offrire contratti affidabili a frontend, servizi e automazioni.</td></tr>
+<tr><th scope="row">Evoluzione</th><td>Far cambiare schema, dati, configurazioni e codice senza perdere il lavoro fatto.</td></tr>
+<tr><th scope="row">Interfacce</th><td>Rendere tutto questo comprensibile a chi deve usarlo.</td></tr>
 </tbody></table></div>
-<p>Dietro ciascuna riga si accumulano casi limite. Il valore di un prodotto maturo sta anche nelle decisioni prese dopo averli incontrati. Ricrearne l’aspetto offre pochi indizi su quante di quelle decisioni abbiamo effettivamente riprodotto.</p>
+<p>Un prodotto maturo contiene anni di decisioni su questi problemi. Per apprezzarne il valore bisogna entrare nei dettagli: che cosa succede a una traduzione incompleta, a un file ancora referenziato, a un campo che un utente può leggere ma non modificare. È qui che si vede quanto un software sia stato modellato sul proprio dominio.</p>
+<p>Anche le scelte di licenza riportano l’attenzione su quel valore. Directus oggi adotta una licenza <em>source-available</em>, la MSCL: il sorgente è consultabile, l’uso dipende dalle condizioni applicabili. Per chi valuta un’alternativa, il conto comprende quanto costerà mantenere nel tempo le responsabilità che decide di assumersi.</p>
 
-<h2>È solo una galleria di immagini</h2>
-<p>Facciamo un esempio: l’immagine principale di un articolo deve diventare una galleria ordinata.</p>
-<p>La modifica al form sembra piccola. Il modello passa da un riferimento singolo a una relazione con più elementi, ciascuno con una posizione. Gli articoli esistenti devono conservare l’immagine precedente. Le API cambiano forma. I template devono saper leggere la nuova struttura. Gli editor continuano a lavorare durante il rilascio.</p>
-<p>Possiamo introdurre la nuova relazione, trasferire i riferimenti esistenti e mantenere temporaneamente compatibili le letture precedenti. Poi aggiorniamo chi consuma quei dati e, quando è possibile, rimuoviamo il vecchio campo. L’ordine dipende dal sistema, dai volumi e dalle garanzie richieste.</p>
-<p>Qui emerge una distinzione importante: <strong>i componenti devono restare compatibili; non devono necessariamente cambiare tutti nello stesso istante.</strong></p>
-<p>Promuovere uno schema da un ambiente all’altro è diverso dal copiare il database di sviluppo sopra quello di produzione. E ripristinare la vecchia versione del codice non annulla una trasformazione dei dati già avvenuta. Una migrazione distruttiva può richiedere un recupero o una correzione in avanti, con conseguenze sulle modifiche arrivate nel frattempo.</p>
-<p>Poi c’è la domanda che una demo difficilmente fa emergere: se ripristino il database di ieri, possiedo ancora i file che cita? Ho una versione del codice e delle configurazioni capace di usarlo? Posso riattivare i servizi senza provocare di nuovo azioni già eseguite?</p>
-<p>È la vita operativa del contenuto. La fotografia era soltanto il punto da cui siamo partiti.</p>
+<h2>«È solo una galleria di immagini»</h2>
+<p>Prendiamo una richiesta normale: l’immagine principale di un articolo deve diventare una galleria ordinata. Nel form aggiungiamo qualche miniatura e la possibilità di trascinarle. Sembra un pomeriggio tranquillo.</p>
+<p>Il modello, però, passa da un riferimento singolo a una relazione con più immagini e un ordine. Gli articoli esistenti devono conservare la fotografia che avevano. Le API e i template devono capire la nuova struttura. I permessi devono consentire agli editor di gestire anche la relazione, senza aprire accessi indesiderati ai file. E gli editor, nel frattempo, continuano a lavorare.</p>
+<p>Possiamo procedere per gradi: aggiungere la relazione, trasformare i riferimenti esistenti nella prima immagine di ciascuna galleria, aggiornare le letture e infine ritirare il vecchio campo. Durante la transizione dobbiamo decidere anche come trattare le nuove scritture: se qualcuno cambia la vecchia immagine dopo la migrazione iniziale, quella modifica deve arrivare nella galleria. Un rilascio compatibile si progetta anche per ciò che accade mentre lo stiamo eseguendo.</p>
+<p><strong>Schema, dati, file e codice devono poter funzionare insieme in ogni fase del cambiamento.</strong> Possono evolvere in momenti diversi, purché ci sia un percorso che li tenga compatibili.</p>
+<p>Per questo promuovere lo schema da sviluppo a produzione e trasferire i contenuti sono operazioni distinte. Per questo tornare al codice di ieri può lasciare il sistema rotto, se nel frattempo abbiamo trasformato i dati. E per questo un backup del database, da solo, può essere insufficiente: se cita immagini ormai eliminate dallo storage, abbiamo recuperato i riferimenti a qualcosa che non esiste più.</p>
+<p>Da una galleria siamo arrivati al disaster recovery. Ci serve sapere quali file conservare, con quali versioni del codice possiamo riaprire i dati e come riavviare le integrazioni senza ripetere azioni già eseguite. Un’email inviata o un’operazione su un servizio esterno non tornano indietro insieme al database.</p>
+<p>È qui che entra il laboratorio costruito attorno al CMS: infrastruttura, pipeline di CI/CD, osservabilità, prove di ripristino. Serve a rilasciare in un ordine preciso, distinguere un permesso errato da un servizio fermo e verificare quanto lavoro potremmo perdere in un incidente. Ci sono poi le persone: chi approva il cambiamento, chi interviene, chi sa perché esiste quella strana regola.</p>
+<p>In welance, il nostro cloud e i processi che ci abbiamo costruito attorno fanno parte di questa esperienza collettiva. Chi ha seguito CMS complessi spesso si porta dietro un intero modo di lavorare, molto più difficile da vedere di una schermata.</p>
+<p>L’AI può aiutarci a scrivere anche le migrazioni, i test e le procedure di recupero. L’esperienza serve a riconoscere quali chiedere e a capire se le prove dimostrano davvero ciò che ci interessa. Il prototipo ci mostra che una cosa può funzionare; il lavoro successivo stabilisce a quali condizioni continuerà a farlo.</p>
 
-<h2>Il laboratorio attorno al software</h2>
-<p>Chi lavora a lungo su questi sistemi costruisce un laboratorio: strumenti, pipeline, procedure e abitudini condivise.</p>
-<p>L’infrastruttura ospita database, storage, rete e segreti. La CI/CD stabilisce come un cambiamento attraversa gli ambienti. L’osservabilità aiuta a distinguere un file mancante da un permesso errato o da un servizio esterno fermo. Il disaster recovery mette alla prova quanto possiamo recuperare e in quanto tempo.</p>
-<p>Occorre decidere quanta perdita di dati è accettabile e quanto a lungo il servizio può restare indisponibile. Una copia esistente non dimostra ancora che l’intero sistema sia ripristinabile nei tempi necessari.</p>
-<p>Infine c’è l’organizzazione. Chi può cambiare il modello? Chi approva il rilascio? Chi interviene quando qualcosa si rompe? Dove resta il motivo per cui una regola esiste?</p>
-<p>Sono competenze generali dell’ingegneria, esercitate su un dominio specifico. In welance, il lavoro sul nostro cloud e sui processi di CI/CD, osservabilità e recupero fa parte di questa esperienza collettiva. Molto di ciò che permette al software di durare vive attorno al suo codice.</p>
+<h2>La C sta per contenuto</h2>
+<p>Fin qui ho parlato di articoli e fotografie. Ma un contenuto può essere anche un requisito, un immobile, una disponibilità, una decisione o la relazione tra un progetto e una persona. È questa apertura che mi ha sempre interessato nei CMS.</p>
+<p>Un sistema abbastanza flessibile può diventare la base di un gestionale immobiliare, di un CRM o di parti di un ERP. Offre già un posto per descrivere entità, collegarle, assegnare accessi e costruire interfacce. Su quella base si aggiunge la conoscenza del dominio: una prenotazione deve impedire sovrapposizioni anche quando arrivano due richieste contemporaneamente; una decisione contabile porta vincoli che un articolo non ha.</p>
+<p>Per me il CMS è interessante proprio come contenitore di queste possibilità. Molto di ciò che chiamiamo «gestionale» consiste nel dare struttura a informazioni e permettere alle persone giuste di agire su di esse. Con l’AI, tra quelle persone e quelle informazioni si aggiunge un nuovo interlocutore, capace di leggere, proporre e operare. La qualità della struttura diventa ancora più importante.</p>
 
-<h2>Quando costruire costa meno</h2>
-<p>Con l’AI possiamo esplorare implementazioni e personalizzazioni che prima avrebbero richiesto un investimento difficile da giustificare. È una libertà enorme. Cambia anche il valore dell’esperienza: aiuta a formulare requisiti, riconoscere omissioni e scegliere quali risultati verificare.</p>
-<p>Se chiedo un pannello per gestire articoli, otterrò probabilmente un pannello. Per ottenere anche le garanzie di cui ho bisogno devo renderle esplicite: compatibilità, autorizzazioni, provenienza, gestione degli errori e continuità.</p>
-<p>Le condizioni di licenza contano nella scelta di un prodotto. Directus oggi dichiara una licenza source-available MSCL: disponibilità del sorgente e libertà d’uso vanno valutate rispetto alla versione e alle condizioni applicabili. Questo apre una discussione sul valore economico della piattaforma; attribuirne le scelte commerciali all’AI sarebbe un’interpretazione ulteriore.</p>
-<p>La scelta tra costruire e adottare include così il costo di mantenere nel tempo tutte queste responsabilità. Il primo prototipo ci dice solo una parte del prezzo.</p>
+<h2>Quando la memoria diventa operativa</h2>
+<p>In welance questa idea ha preso forma nel nostro sistema interno, Butler/Otto. Lavoriamo con un ecosistema di circa sessanta-settanta persone, con un ricambio frequente nelle collaborazioni. Raccogliere contenuti e requisiti in un contenitore comune, basato su CMS, ci aiuta a mantenere continuità anche quando cambiano le persone. Oggi lavoriamo su quel patrimonio anche attraverso MCP, il protocollo che consente agli strumenti AI di accedere a dati e operazioni esposti dai nostri sistemi.</p>
+<p>Il caso che mi interessa è molto semplice: un requisito deve sopravvivere alla persona che lo ha raccolto. Chi arriva dopo dovrebbe poter ritrovare la richiesta, capire da quale decisione nasce, risalire ai materiali originali e continuare il lavoro. La presenza del documento in una cartella è soltanto l’inizio.</p>
+<p>Qui vedo un collegamento con la <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">LLM Wiki proposta da Andrej Karpathy</a>: un modello legge le fonti e mantiene una conoscenza persistente, fatta di sintesi e collegamenti che si aggiornano nel tempo. Il risultato di una conversazione diventa materiale per il lavoro successivo.</p>
+<p>In un CMS strutturato possiamo collegare quella conoscenza a progetti, responsabilità e stati: quale requisito è approvato, chi può cambiarlo, quale attività ne dipende. Le fonti possono essere un documento, una registrazione o una fotografia. Gli strumenti che le interpretano devono conservarne la provenienza, così da permettere a una persona di controllare la sintesi e correggerla.</p>
+<p>È in questo senso che il sistema può diventare parte dell’intelligenza dell’azienda: conserva il contesto e lo rende utilizzabile nelle operazioni. Il modello può cambiare; requisiti, decisioni e relazioni devono poter restare.</p>
+<p>Il passaggio all’azione richiede però autorizzazioni precise. Leggere un requisito non dà automaticamente il diritto di modificare il progetto o inviare qualcosa a un cliente. Ogni connettore deve verificare l’azione richiesta e usare credenziali appropriate sul servizio esterno. MCP fornisce un modo comune di collegare gli strumenti; la corrispondenza tra i permessi dei diversi sistemi va progettata. Anche una sintesi ricavata da documenti riservati deve rispettare quei confini.</p>
+<p>È questa l’evoluzione che immagino quando penso a un <em>AI Management System</em>, o AI MS: un gestionale nel quale persone e agenti lavorano sulla stessa memoria operativa. Il linguaggio naturale si affianca a form e viste; regole, responsabilità e storia delle modifiche restano verificabili. È un nome di lavoro per una direzione che mi sembra promettente.</p>
 
-<h2>Il contenuto supera il sito</h2>
-<p>La C di CMS significa <em>content</em>. Il contenuto può essere un articolo, ma anche un requisito, un immobile, una disponibilità, una decisione o la relazione tra un progetto e una persona.</p>
-<p>Un CMS sufficientemente flessibile può offrire una base per molti sistemi di gestione. Un gestionale immobiliare aggiunge regole su immobili e prenotazioni; un ERP porta processi e vincoli specifici. Chiamare tutto “contenuto” non elimina quelle regole: ci aiuta a riconoscere una parte comune sulla quale costruirle.</p>
-<p>Per esempio, una prenotazione deve evitare sovrapposizioni anche quando due operazioni arrivano contemporaneamente. Un campo ben disegnato e un agente capace di comprenderlo non sostituiscono il vincolo applicato dal sistema.</p>
-<p>È qui che immagino un’evoluzione verso gestionali progettati fin dall’inizio per persone e agenti. Li chiamo, provvisoriamente, <em>AI MS</em>: sistemi in cui il linguaggio naturale si affianca a form e viste, mentre regole, permessi e transizioni restano verificabili. Uso il nome come etichetta di lavoro.</p>
-
-<h2>Dalla memoria alle operazioni</h2>
-<p>La proposta <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">LLM Wiki di Andrej Karpathy</a> descrive un modello interessante: conservare le fonti e usare un LLM per costruire e mantenere conoscenza persistente, con sintesi e collegamenti che restano disponibili oltre la conversazione.</p>
-<p>Vedo un collegamento con ciò che può fare un CMS strutturato. A quella memoria possiamo associare entità, stati, responsabilità e azioni. Possiamo collegare il requisito alla decisione che lo ha generato e ai materiali originali.</p>
-<p>Le fonti possono essere documenti, immagini, audio e video. Per renderle utilizzabili servono strumenti capaci di interpretarne il contenuto, mantenendo provenienza e confini di accesso. Una sintesi di informazioni riservate richiede a sua volta un accesso adeguato.</p>
-<p>Nel nostro caso, Butler/Otto nasce dal lavoro per gestire la digital agency welance. L’ecosistema di collaborazioni che descrivo comprende circa sessanta-settanta persone, con ricambio elevato. Raccogliere contenuti e requisiti in un contenitore comune basato su CMS ci aiuta a conservare il contesto quando cambiano le persone.</p>
-<p>Oggi lavoriamo su quel patrimonio anche tramite MCP. La prospettiva è poter interrogare la memoria operativa e usarla nei flussi che coinvolgono gli altri software aziendali.</p>
-<p>Un requisito dovrebbe poter sopravvivere alla persona che lo ha raccolto: un collega autorizzato deve poterlo ritrovare, capirne l’origine e usarlo per continuare il lavoro. Questo è il criterio con cui giudicherei l’utilità della memoria aziendale.</p>
-<p>Il passaggio ai connettori richiede un lavoro preciso sulle autorizzazioni. L’identità usata nel sistema centrale, le verifiche sulle azioni e le credenziali del servizio esterno devono essere coerenti. MCP non rende automaticamente equivalenti le policy di due prodotti.</p>
-
-<h2>Quali strumenti vorrei usare domani</h2>
-<p>Mi interessano gli strumenti che rendono comprensibile il sistema in cui l’applicazione vive. In Railway, per esempio, progetti, servizi e ambienti sono elementi espliciti del lavoro. Lovable permette di costruire applicazioni e offre anche un backend gestito: database e infrastruttura continuano a esistere sotto l’astrazione.</p>
-<p>La mia preferenza va verso strumenti che consentano di capire e governare le dipendenze. Un’interfaccia conversazionale potrebbe diventare uno dei modi di lavorare su una piattaforma di quel tipo.</p>
-<p>È un’ipotesi sul futuro, non una previsione su quale azienda vincerà. Disegnare i servizi su un canvas non garantisce da solo migrazioni corrette o ripristini affidabili. Vorrei poter chiedere una modifica e vedere quali dati coinvolge, con quale identità verrà eseguita, quali approvazioni richiede e come recuperare se fallisce.</p>
-<p>Un CMS della prossima generazione dovrà rendere questo lavoro comprensibile anche agli agenti. La data di nascita del prodotto conta meno delle garanzie che riesce a offrire.</p>
+<h2>Gli strumenti che vorrei usare domani</h2>
+<p>Questa prospettiva influenza anche gli strumenti verso cui guardo. Mi interessa l’approccio di Railway, dove servizi e ambienti sono parti visibili del progetto. Lovable parte dalla costruzione dell’applicazione e offre anche un backend gestito, con database, autenticazione e storage. Sono modi diversi di rendere accessibile un sistema che, sotto, continua ad avere dipendenze.</p>
+<p>La mia preferenza va verso piattaforme capaci di rendere comprensibili quelle dipendenze e di aiutarci a governarle. Immagino la costruzione conversazionale come una delle capacità di una piattaforma più ampia, che accompagna il software anche dopo il primo rilascio.</p>
+<p>Vorrei poter chiedere «trasforma questa immagine in una galleria» e vedere quali dati cambieranno, come verranno trattati quelli esistenti, quali servizi saranno coinvolti e dove servirà un’approvazione. Vorrei sapere anche come recuperare se qualcosa va storto. Disegnare i componenti su un canvas è un buon punto di partenza; il valore sta nel gestire il cambiamento che li attraversa.</p>
+<p>Il prossimo CMS potrebbe nascere da qui, oppure dall’evoluzione di strumenti che già usiamo. Directus, per esempio, offre già un server MCP. Per me la differenza la farà la capacità di accompagnare un cambiamento dall’intenzione di chi lo chiede fino alle sue conseguenze sul sistema.</p>
 
 <h2>Viva il CMS</h2>
-<p>Il CMS ridotto a “quella cosa con cui pubblichi pagine” mi sta stretto da tempo. Lavorarci mi ha insegnato a collegare persone, informazioni, interfacce e responsabilità operative.</p>
-<p>Adesso che costruire software diventa più accessibile, porto quell’esperienza nei sistemi che vorrei costruire. E a chi domani si farà il proprio CMS con l’AI lascerei quattro domande:</p>
+<p>Il 2 novembre mi sembra un giorno adatto per seppellire l’idea che lavorare sui CMS significhi fare ingegneria di serie B. Quei sistemi mi hanno insegnato quanto sia impegnativo tenere insieme persone, informazioni e software mentre tutti e tre cambiano.</p>
+<p>A chi oggi si costruisce il proprio gestionale con l’AI lascerei quattro domande, le stesse che continuerei a farmi:</p>
 <ul>
-<li>Quali regole devono restare vere quando cambiano codice, schema e contenuti?</li>
-<li>Chi può intervenire e come verifichiamo l’impatto di una modifica?</li>
-<li>Che cosa sappiamo davvero recuperare dopo un errore?</li>
-<li>Chi conserva questa conoscenza quando cambiano le persone?</li>
+<li>Quali regole devono restare vere mentre il sistema cambia?</li>
+<li>Chi può agire, su quali dati e con quali conseguenze?</li>
+<li>Che cosa abbiamo davvero provato a recuperare dopo un errore?</li>
+<li>Che cosa saprà chi arriverà dopo di noi?</li>
 </ul>
-<p>Sono un tecnico e ho fatto CMS. Continuerò a portarmi dietro quello che mi hanno insegnato, qualunque nome daremo al prossimo sistema.</p>
+<p>Sono un tecnico e ho fatto CMS. Qualunque nome daremo al prossimo software, mi porto dietro quello che mi hanno insegnato.</p>
 <p lang="en" class="lead">CMS is dead. Long live the CMS.</p>
 
-<aside aria-labelledby="fonti"><h2 id="fonti">Riferimenti</h2>
+<aside aria-labelledby="fonti"><h2 id="fonti">Riferimenti e note</h2>
 <ul class="references">
-<li><a href="https://directus.com/docs/guides/auth/access-control">Directus: controllo degli accessi</a> e <a href="https://directus.com/docs/configuration/files">configurazione dei file</a>.</li>
-<li><a href="https://github.com/directus/directus">Directus: repository e licenza</a>.</li>
+<li>Directus: <a href="https://directus.com/docs/guides/auth/access-control">controllo degli accessi</a>, <a href="https://directus.com/docs/configuration/files">storage dei file</a>, <a href="https://directus.com/docs/api/schema">Schema API</a> e <a href="https://directus.com/docs/configuration/migrations">migrazioni</a>.</li>
+<li><a href="https://github.com/directus/directus">Directus: repository e licenza</a>. Il riferimento alla MSCL descrive le condizioni pubblicate al 2 novembre 2026; le condizioni dipendono dalla versione e dall’uso.</li>
 <li><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">Andrej Karpathy: LLM Wiki</a>.</li>
-<li><a href="https://docs.railway.com/projects">Railway: progetti</a> e <a href="https://docs.railway.com/environments">ambienti</a>; <a href="https://lovable.dev/blog/lovable-cloud">Lovable Cloud</a>.</li>
+<li><a href="https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices">MCP: sicurezza e autorizzazioni dei connettori</a>.</li>
+<li>Railway: <a href="https://docs.railway.com/projects">progetti</a> e <a href="https://docs.railway.com/environments">ambienti</a>. Lovable: <a href="https://docs.lovable.dev/features/cloud">backend gestito</a>.</li>
 <li><a href="https://www.timeanddate.com/moon/phases/italy/rome?year=2026">Almanacco lunare 2026</a>: ultimo quarto il 1° novembre alle 21:28, ora italiana.</li>
 </ul></aside>
 <footer class="author-note"><p>Sono Enrico Icardi, cofondatore di <a href="https://welance.com/">welance</a>. Mi occupo di engineering e prodotto. Tra i progetti a cui lavoro c’è <a href="https://welance.com/directory">welance/directory</a>, dedicato all’incontro tra progetti e team digitali.</p><p><a href="/it/one-day/">Torna a One Day</a> · <a href="https://calendar.app.google/bHXHZtic4a7dmcfR8">Parliamone</a></p></footer>
