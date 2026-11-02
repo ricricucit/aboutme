@@ -3,6 +3,8 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, copyFileSync, exis
 import { join, extname } from 'node:path';
 import { createServer } from 'node:http';
 import { gzipSync } from 'node:zlib';
+import { addShareCard, resetShareCards, shareMeta, postShareMeta, writeShareCards } from './src/share-images.mjs';
+import { enhanceReading } from './src/reading-tools.mjs';
 
 const ROOT = new URL('.', import.meta.url).pathname;
 const OUT = join(ROOT, 'dist');
@@ -25,7 +27,7 @@ function load() {
     .map(l => JSON.parse(readFileSync(join(ROOT, 'content', l + '.json'), 'utf8')));
   // A post is a folder content/oneday/YYYY-MM-DD-slug/ holding one COMPLETE,
   // art-directed standalone HTML document per language (it.html, en.html, ...),
-  // copied to /one-day/<slug>/ verbatim — no site chrome is injected.
+  // published to /one-day/<slug>/ with social metadata and reading tools; the editorial design is preserved.
   const pdir = join(ROOT, 'content', 'oneday');
   posts = !existsSync(pdir) ? [] : readdirSync(pdir).filter(n => statSync(join(pdir, n)).isDirectory()).sort().reverse().map(slug => {
     const tr = {};
@@ -79,11 +81,16 @@ function jsonld(c, page) {
 
 function head(c, page, title, desc, o = {}) {
   const l = c.lang;
+  const cover = o.share === false ? null : addShareCard({
+    id: `${l}-${page}`, lang: l, kind: page, label: c.nav[page] || c.nav.oneday,
+    title: page === 'home' ? 'Enrico Icardi.' : page === 'oneday' ? 'One Day' : page === 'about' ? c.about.title : c.cv.title,
+    subtitle: page === 'oneday' ? c.oneday.tagline : desc
+  });
   const route = o.route || (lg => path(lg, page));
   const L = o.langs ? langs.filter(x => o.langs.includes(x.lang)) : langs;
   const abs = lg => BASE + route(lg);
   const alts = L.map(x => `<link rel="alternate" hreflang="${x.lang}" href="${abs(x.lang)}">`).join('') + (L.some(x => x.lang === 'en') ? `<link rel="alternate" hreflang="x-default" href="${abs('en')}">` : '');
-  return `<!doctype html><html lang="${l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${abs(l)}">${alts}<meta property="og:type" content="profile"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${abs(l)}"><meta property="og:image" content="${BASE}/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="${l}"><meta property="og:site_name" content="${esc(c.meta.siteName)}"><meta name="twitter:card" content="summary_large_image"><meta name="author" content="Enrico Icardi"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"><link rel="icon" href="${FAVICON}"><script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script><link rel="preload" href="/fonts/MaisonNeue-Book.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/MaisonNeue-Medium.woff2" as="font" type="font/woff2" crossorigin><style>${css}</style><script type="application/ld+json">${jsonld(c, page)}</script></head><body>`;
+  return `<!doctype html><html lang="${l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${abs(l)}">${alts}<meta property="og:type" content="profile"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${abs(l)}">${cover ? shareMeta(cover) : ''}<meta property="og:locale" content="${l}"><meta property="og:site_name" content="${esc(c.meta.siteName)}"><meta name="author" content="Enrico Icardi"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"><link rel="icon" href="${FAVICON}"><script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script><link rel="preload" href="/fonts/MaisonNeue-Book.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/MaisonNeue-Medium.woff2" as="font" type="font/woff2" crossorigin><style>${css}</style><script type="application/ld+json">${jsonld(c, page)}</script></head><body>`;
 }
 
 function header(c, page) {
@@ -170,6 +177,7 @@ function cvMarkdown(c) {
 
 function build() {
   load();
+  resetShareCards();
   rmSync(OUT, { recursive: true, force: true });
   mkdirSync(join(OUT, 'fonts'), { recursive: true }); mkdirSync(join(OUT, 'img'), { recursive: true });
   for (const f of readdirSync(join(ROOT, 'src/fonts'))) copyFileSync(join(ROOT, 'src/fonts', f), join(OUT, 'fonts', f));
@@ -187,7 +195,10 @@ function build() {
   }
   for (const p of posts) for (const lg of Object.keys(p.tr)) {
     const dir = join(OUT, postPath(lg, p.slug)); mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, 'index.html'), p.tr[lg].src);
+    const source = p.tr[lg].src;
+    const description = source.match(/<meta name="description" content="([^"]*)"/)?.[1] || '';
+    const cover = addShareCard({ id: `${lg}-${p.slug}`, lang: lg, kind: 'article', title: p.tr[lg].title, subtitle: description, date: p.date, source });
+    writeFileSync(join(dir, 'index.html'), enhanceReading(postShareMeta(source, cover), lg));
     urls.push({ loc: BASE + postPath(lg, p.slug), page: null, post: p });
   }
   const en = langs[0];
@@ -206,7 +217,8 @@ function build() {
     `\n## One Day (blog)\n`, strip(en.oneday.tagline), posts.length ? posts.map(p => `- ${p.tr[postFor(p, 'en')].title} (${p.date}): ${BASE + postPath(postFor(p, 'en'), p.slug)}`).join('\n') : strip(en.oneday.empty),
     `\n## Contact\n`, `E-mail: ${EMAIL}`, `Book a 30-minute call: ${BOOK}`, `LinkedIn: ${LINKEDIN}`, `GitHub: ${GITHUB}`].join('\n');
   writeFileSync(join(OUT, 'llms-full.txt'), full + '\n');
-  writeFileSync(join(OUT, '404.html'), head(en, 'home', 'Not found — Enrico Icardi', 'Page not found').replace(/<link rel="canonical"[^>]+>/, '').replace(/<link rel="alternate"[^>]+>/g, '') + header(en, '') + `<main class="wrap"><h1>404</h1><p class="lead">Nothing here. <a href="/">Home</a>.</p></main>` + footer(en));
+  writeFileSync(join(OUT, '404.html'), head(en, 'home', 'Not found — Enrico Icardi', 'Page not found', { share: false }).replace(/<link rel="canonical"[^>]+>/, '').replace(/<link rel="alternate"[^>]+>/g, '') + header(en, '') + `<main class="wrap"><h1>404</h1><p class="lead">Nothing here. <a href="/">Home</a>.</p></main>` + footer(en));
+  writeShareCards(OUT);
   return urls.length;
 }
 
@@ -215,7 +227,7 @@ const isMain = process.argv[1] && new URL('file://' + process.argv[1]).pathname 
 if (isMain) { const n = build(); console.log(`built ${n} pages in ${langs.length} languages → dist/`); }
 
 if (isMain && process.argv.includes('--serve')) {
-  const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.json': 'application/json' };
+  const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.json': 'application/json' };
   const port = Number(process.env.PORT) || 5173;
   createServer((req, res) => {
     let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);

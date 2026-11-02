@@ -2,12 +2,16 @@
   "name": "aboutme",
   "version": "2.0.0",
   "private": true,
-  "description": "aboutme.it — Enrico Icardi. Static, framework-free personal site.",
+  "description": "aboutme.it \u2014 Enrico Icardi. Static, framework-free personal site.",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
     "dev": "node build.mjs --serve",
-    "test": "node test/lighthouse.mjs"
+    "test": "node test/site-features.mjs && node test/lighthouse.mjs",
+    "share:render": "node scripts/render-share-images.mjs",
+    "posttest": "npm run share:render"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
