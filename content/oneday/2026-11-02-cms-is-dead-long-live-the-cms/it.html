@@ -4,6 +4,16 @@
 <title>I was “just” a CMS developer. Then came AI</title>
 <meta name="description" content="Vent’anni di CMS, il pregiudizio verso chi fa siti e le competenze che diventano centrali nei sistemi costruiti con l’AI.">
 <meta name="author" content="Enrico Icardi"><link rel="canonical" href="https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="en" href="https://www.aboutme.it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="de" href="https://www.aboutme.it/de/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="it" href="https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="fr" href="https://www.aboutme.it/fr/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="es" href="https://www.aboutme.it/es/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="pt" href="https://www.aboutme.it/pt/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="nl" href="https://www.aboutme.it/nl/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="pl" href="https://www.aboutme.it/pl/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="uk" href="https://www.aboutme.it/uk/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<link rel="alternate" hreflang="x-default" href="https://www.aboutme.it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
 <meta property="og:type" content="article"><meta property="og:title" content="I was “just” a CMS developer. Then came AI"><meta property="og:description" content="Dal CMS bullying alla memoria operativa dell’azienda: cosa ci portiamo dietro nell’era dell’AI."><meta property="og:url" content="https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="One Day · Enrico Icardi"><meta property="article:published_time" content="2026-11-02"><meta name="twitter:card" content="summary">
 <style>@font-face{font-family:"Maison Neue";src:url(/fonts/MaisonNeue-Book.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Maison Neue";src:url(/fonts/MaisonNeue-Medium.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
@@ -138,6 +148,10 @@ footer p{margin:0}
 @media(max-width:40rem){.project-groups section{grid-template-columns:1fr;gap:.25rem;margin-block:var(--r1)}.project-links{line-height:2}.home-contact{align-items:flex-start}}
 
 .post-head{padding-block:var(--r3);border-bottom:1px solid var(--line);margin-bottom:var(--r3)}
+.post-languages{display:flex;flex-wrap:wrap;gap:0 var(--r1);margin-top:var(--r1);font-size:var(--fs-s);line-height:1.5}
+.post-languages a{display:inline-flex;align-items:center;min-height:2.75rem;padding-block:var(--r0);text-decoration:none;color:var(--muted)}
+.post-languages a[aria-current]{color:var(--fg);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.post-languages a:hover{text-decoration:underline}
 .almanac{font-size:var(--fs-s);color:var(--muted);font-style:italic;margin-block:var(--r2)}
 article h2{color:var(--fg);font-size:var(--fs-l);text-transform:none;letter-spacing:0;line-height:1.4}
 article li{margin-bottom:var(--r1)}
@@ -160,6 +174,21 @@ article .footnotes h2{font-size:var(--fs-s);line-height:var(--lh);font-weight:50
 .note-back{display:inline-block;padding-inline:var(--r0);font-family:var(--ff);text-decoration:none;white-space:nowrap}
 .note-back:hover{text-decoration:underline}
 @media print{.note-back{display:none}.footnotes li{break-inside:avoid;border-inline-start:0}.note-ref a{text-decoration:none}}
+
+/* A field report that can be read independently of the main argument. */
+.field-note{margin-block:var(--r3);background:light-dark(#f5f2e9,#1a1914);border-inline-start:3px solid var(--accent)}
+.field-note summary{display:grid;grid-template-columns:minmax(0,1fr) var(--r2);gap:var(--r1);align-items:center;padding:var(--r1);cursor:pointer;list-style:none;touch-action:manipulation}
+.field-note summary::-webkit-details-marker{display:none}
+.field-note-label,.field-note-title,.field-note-preview{display:block}
+.field-note-label{font-size:var(--fs-s);line-height:1.5;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--r0)}
+.field-note-title{font-family:var(--ff-serif);font-size:var(--fs-l);line-height:1.25}
+.field-note-preview{font-size:var(--fs-s);line-height:1.5;color:var(--muted);margin-top:var(--r0)}
+.field-note-toggle{font-family:var(--ff-serif);font-size:var(--fs-l);text-align:center}
+.field-note-toggle::before{content:'+'}
+.field-note details[open] .field-note-toggle::before{content:'−'}
+.field-note-body{margin-inline:var(--r1);padding-block:var(--r1);border-top:1px solid var(--line);font-size:var(--fs-s);line-height:1.7}
+.field-note-body p:last-child{margin-bottom:0}
+@media(min-width:40rem){.field-note summary{padding:var(--r2)}.field-note-body{margin-inline:var(--r2);padding-block:var(--r2)}}
 
 .author-note{margin-top:var(--r4);font-size:var(--fs-s)}
 :focus-visible{outline:2px solid var(--fg);outline-offset:4px}
@@ -237,10 +266,11 @@ article>ul li::marker{color:var(--muted)}
 <main class="wrap" id="contenuto"><article>
 <header class="post-head">
 <p class="meta">ONE DAY · <time datetime="2026-11-02">Lunedì 2 novembre 2026</time></p>
-<p class="almanac">Giorno dei morti. Luna calante.<sup class="note-ref" id="richiamo-1" tabindex="-1"><a href="#nota-1" role="doc-noteref" aria-label="Nota 1">1</a></sup> Condizioni ideali per riesumare vent’anni di esperienza.</p>
+<p class="almanac">Bosia (CN). Giorno dei morti. Luna calante.<sup class="note-ref" id="richiamo-1" tabindex="-1"><a href="#nota-1" role="doc-noteref" aria-label="Nota 1">1</a></sup> Condizioni ideali per riesumare vent’anni di esperienza.</p>
 <h1 lang="en">I was “just” a CMS developer.<br>Then came AI</h1>
 <p class="lead">Vent’anni di CMS mi hanno insegnato a tenere insieme persone, dati e software che cambia. Ora che possiamo costruirlo con l’AI, quell’esperienza mi sembra più utile che mai.</p>
 <p class="meta">Enrico Icardi</p>
+<nav class="post-languages" aria-label="Lingua"><a href="/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="en" lang="en">English</a><a href="/de/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="de" lang="de">Deutsch</a><a href="/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="it" lang="it" aria-current="page">Italiano</a><a href="/fr/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="fr" lang="fr">Français</a><a href="/es/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="es" lang="es">Español</a><a href="/pt/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="pt" lang="pt">Português</a><a href="/nl/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="nl" lang="nl">Nederlands</a><a href="/pl/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="pl" lang="pl">Polski</a><a href="/uk/one-day/2026-11-02-cms-is-dead-long-live-the-cms/" hreflang="uk" lang="uk">Українська</a></nav>
 </header>
 
 <aside class="post-summary" aria-labelledby="in-breve">
@@ -517,11 +547,19 @@ article>ul li::marker{color:var(--muted)}
 <p>Per me il CMS è interessante proprio come contenitore di queste possibilità. Molto di ciò che chiamiamo «gestionale» consiste nel dare struttura a informazioni e permettere alle persone giuste di agire su di esse. Con l’AI, tra quelle persone e quelle informazioni si aggiunge un nuovo interlocutore, capace di leggere, proporre e operare. La qualità della struttura diventa ancora più importante.</p>
 
 <h2>Quando la memoria diventa operativa</h2>
+<p>Una memoria condivisa diventa operativa quando possiamo risalire da un dato alla sua fonte, da una decisione ai suoi motivi e da un’azione alle regole che la autorizzano.</p>
+<aside class="field-note" aria-labelledby="nota-dal-campo-label nota-dal-campo-titolo">
+<details id="nota-dal-campo">
+<summary><span><span class="field-note-label" id="nota-dal-campo-label">Nota dal campo</span><span class="field-note-title" id="nota-dal-campo-titolo">Butler/Otto, la memoria di welance</span><span class="field-note-preview">Persone, requisiti e dati aziendali in una base condivisa.</span></span><span class="field-note-toggle" aria-hidden="true"></span></summary>
+<div class="field-note-body">
 <p>In welance questa idea ha preso forma nel nostro sistema interno, Butler/Otto. Lavoriamo con un ecosistema di circa sessanta-settanta persone, con un ricambio frequente nelle collaborazioni. Raccogliere contenuti e requisiti in un contenitore comune, basato su CMS, ci aiuta a mantenere continuità anche quando cambiano le persone. Oggi lavoriamo su quel patrimonio anche attraverso MCP, ciascuno con i propri strumenti e il proprio agente.</p>
 <p>Un requisito deve sopravvivere alla persona che lo ha raccolto. Chi arriva dopo dovrebbe poter ritrovare la richiesta, capire da quale decisione nasce, risalire ai materiali originali e continuare il lavoro. Questa memoria comprende anche i dati concreti con cui l’azienda opera ogni giorno.</p>
 <p>Nel nostro caso, penso ai movimenti bancari in Qonto, al tempo registrato in Clockify, al codice e alle attività in GitLab. Più recentemente si sono aggiunti OpenRouter, con l’accesso ai modelli e i relativi consumi, e gli LLM con cui lavoriamo.<sup class="note-ref" id="richiamo-10" tabindex="-1"><a href="#nota-10" role="doc-noteref" aria-label="Nota 10">10</a></sup> Mettere queste informazioni in relazione permette di collegare ciò che abbiamo deciso a ciò che abbiamo fatto, impiegato e incassato.</p>
 <p>Per rispondere a una domanda come «quanto lavoro abbiamo dedicato a questo progetto e che cosa è stato pagato?», bisogna riconoscere lo stesso progetto nei diversi sistemi, collegare le ore alle attività e i movimenti ai documenti corretti. Un nome simile in due applicazioni non basta. Servono identità condivise, relazioni esplicite e regole per aggiornare i dati.</p>
 <p>È così che mi avvicino all’idea di <em>Single Source of Truth</em>: una base condivisa di dati, definizioni e connessioni sulla quale possiamo ragionare insieme. Qonto resta il riferimento per i movimenti del conto, Clockify per le registrazioni del tempo, GitLab per codice e attività. Per ogni dato serve una fonte autorevole, anche quando il sistema ne conserva una copia. Origine, aggiornamento e regole per risolvere le discrepanze fanno parte della conoscenza condivisa.</p>
+</div>
+</details>
+</aside>
 <p><strong>La conoscenza diventa razionale nella misura in cui possiamo ricostruirla e verificarla.</strong> Un movimento registrato, una stima e una conclusione del modello devono restare distinguibili. Le regole di calcolo e i collegamenti devono essere ispezionabili. È questa base che consente a persone diverse, con agenti diversi, di lavorare sugli stessi fatti e di discutere le interpretazioni.</p>
 <p>Qui vedo un collegamento con la LLM Wiki proposta da Andrej Karpathy: un modello legge le fonti e mantiene una conoscenza persistente, fatta di sintesi e collegamenti che si aggiornano nel tempo.<sup class="note-ref" id="richiamo-11" tabindex="-1"><a href="#nota-11" role="doc-noteref" aria-label="Nota 11">11</a></sup> In un CMS possiamo associare quella conoscenza a progetti, responsabilità e stati: quale requisito è approvato, chi può cambiarlo, quale attività ne dipende.</p>
 <p>Le fonti possono essere un documento, una registrazione o una fotografia. Gli strumenti che le interpretano devono conservarne la provenienza, così da permettere a una persona di controllare la sintesi e correggerla. Il modello può cambiare; dati, decisioni e relazioni devono poter restare. È in questo senso che il sistema diventa parte dell’intelligenza dell’azienda.</p>
@@ -556,7 +594,7 @@ article>ul li::marker{color:var(--muted)}
 <section class="footnotes" role="doc-endnotes" aria-labelledby="fonti">
 <h2 id="fonti">Note</h2>
 <ol>
-<li id="nota-1" tabindex="-1">Time and Date, <a href="https://www.timeanddate.com/moon/phases/italy/rome?year=2026">fasi lunari a Roma, 2026</a>: ultimo quarto il 1° novembre alle 21:28, ora italiana. <a class="note-back" href="#richiamo-1" role="doc-backlink" aria-label="Torna al richiamo della nota 1">↩</a></li>
+<li id="nota-1" tabindex="-1">Time and Date, <a href="https://www.timeanddate.com/moon/phases/@6543814?year=2026">fasi lunari a Bosia (CN), 2026</a>: ultimo quarto il 1° novembre alle 21:28, ora locale. <a class="note-back" href="#richiamo-1" role="doc-backlink" aria-label="Torna al richiamo della nota 1">↩</a></li>
 <li id="nota-2" tabindex="-1">Directus, documentazione alla base della tavola: <a href="https://directus.com/docs/guides/data-model/collections">collezioni e metadati</a>, <a href="https://directus.com/docs/guides/extensions/api-extensions/services">servizi interni</a>, <a href="https://directus.com/docs/guides/auth/access-control">controllo degli accessi</a>, <a href="https://directus.com/docs/guides/content/content-versioning">versioni e revisioni</a>, <a href="https://directus.com/docs/guides/files/access">accesso ai file</a>, <a href="https://directus.com/docs/guides/flows/triggers">trigger dei Flows</a>, <a href="https://directus.com/docs/guides/extensions/api-extensions/hooks">hook</a> e <a href="https://directus.com/features/realtime">realtime</a>. <a class="note-back" href="#richiamo-2" role="doc-backlink" aria-label="Torna al richiamo della nota 2">↩</a></li>
 <li id="nota-3" tabindex="-1">Directus, <a href="https://directus.com/docs/guides/extensions/api-extensions/services">Services</a>, in particolare il parametro <code>accountability</code> e il contesto di autorizzazione delle estensioni. <a class="note-back" href="#richiamo-3" role="doc-backlink" aria-label="Torna al richiamo della nota 3">↩</a></li>
 <li id="nota-4" tabindex="-1">Directus, <a href="https://directus.com/docs/guides/auth/access-control">Access Control</a>: policy e permessi per collezioni, record e campi. <a class="note-back" href="#richiamo-4" role="doc-backlink" aria-label="Torna al richiamo della nota 4">↩</a></li>
@@ -580,6 +618,22 @@ article>ul li::marker{color:var(--muted)}
   const adapt = () => notes.forEach(note => { note.open = wide.matches; });
   adapt();
   wide.addEventListener('change', adapt);
+
+  // Make references inside the optional field report reachable when it is closed.
+  const revealFieldNote = hash => {
+    const target = document.getElementById(hash.slice(1));
+    const detail = target?.closest('.field-note details');
+    if (!detail || detail.open || target === detail) return;
+    detail.open = true;
+    target.scrollIntoView();
+    target.focus({preventScroll:true});
+  };
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (link) revealFieldNote(link.hash);
+  });
+  window.addEventListener('hashchange', () => revealFieldNote(location.hash));
+  revealFieldNote(location.hash);
 })();
 </script>
 </body></html>
