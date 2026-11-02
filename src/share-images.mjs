@@ -39,16 +39,16 @@ body{--bg:#f6f3e9;background:var(--bg);color:#151713;font-family:Maison,Arial,sa
 header{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #b8b7ab;padding-bottom:17px;position:relative;z-index:2}
 .brand{font-family:'Times New Roman','Liberation Serif',serif;font-style:italic;font-size:30px}.issue{font-size:16px;letter-spacing:.12em;text-transform:uppercase}
 .copy{position:relative;z-index:2;width:760px;padding-top:38px}
-h1{font-family:'Times New Roman','Liberation Serif',serif;font-weight:400;font-size:82px;line-height:1.02;letter-spacing:-.035em;margin:0;max-height:300px;overflow:visible;text-wrap:balance}
-.deck{font-size:24px;line-height:1.45;margin:25px 0 0;max-width:680px;max-height:105px;color:#4c5045}
+h1{font-family:'Times New Roman','Liberation Serif',serif;font-weight:400;font-size:82px;line-height:1.08;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.deck{font-size:24px;line-height:1.45;margin:25px 0 0;max-width:680px;color:#4c5045}
 .art{position:absolute;right:20px;top:96px;width:330px;height:440px;z-index:1}
 .art::before{content:'';position:absolute;background:#eecc5d;width:240px;height:240px;border-radius:50%;right:25px;top:90px;z-index:-1}
 .art svg{display:block;width:100%;height:100%;color:#292d23}.art text{font-family:serif;font-size:20px}.art .cms-specimen{--bg:#f6f3e9}
 .footer{position:absolute;left:56px;right:56px;bottom:36px;border-top:1px solid #b8b7ab;padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:19px;z-index:2}
 .domain{font-size:17px;letter-spacing:.04em}.signature{display:flex;align-items:center;gap:12px}.dot{width:10px;height:10px;border-radius:50%;background:#eecc5d;display:inline-block}
-.home{background:#172018;color:#f6f3e9}.home header,.home .footer{border-color:#586153}.home .copy{width:760px;padding-top:46px}.home h1{font-size:116px;max-width:720px;max-height:285px;text-wrap:initial}.home .deck{color:#d3d5ca;max-width:660px;font-size:25px}.home .art{width:350px;right:12px;top:125px;height:380px;color:#eecc5d}.home .art svg{color:#eecc5d}.home .art::before{display:none}
-.index h1{font-size:138px;font-style:italic;max-height:270px}.index .deck{max-width:630px;font-size:29px}.index .art{right:8px;top:105px}.index .art::before{width:285px;height:285px;top:60px}
-.article.has-specimen .copy{width:800px}.article.has-specimen h1{max-width:800px;font-size:82px}.article.has-specimen .deck{max-width:700px;font-size:23px}
+.home{background:#172018;color:#f6f3e9}.home header,.home .footer{border-color:#586153}.home .copy{width:760px;padding-top:46px}.home h1{font-size:116px;max-width:720px;text-wrap:initial}.home .deck{color:#d3d5ca;max-width:660px;font-size:25px}.home .art{width:350px;right:12px;top:125px;height:380px;color:#eecc5d}.home .art svg{color:#eecc5d}.home .art::before{display:none}
+.index h1{font-size:138px;font-style:italic}.index .deck{max-width:630px;font-size:29px}.index .art{right:8px;top:105px}.index .art::before{width:285px;height:285px;top:60px}
+.article.has-specimen .copy{width:760px}.article.has-specimen h1{font-size:82px}.article.has-specimen .deck{max-width:700px;font-size:23px}
 `;
 
 function cardHtml(card, art) {
@@ -57,11 +57,12 @@ function cardHtml(card, art) {
   return `<!doctype html><html lang="${esc(card.lang)}"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=1200"><title>${esc(card.title)}</title><style>${style}</style></head><body><main class="cover ${theme}${card.hasSpecimen ? ' has-specimen' : ''}"><header><span class="brand">${card.kind === 'article' || card.kind === 'oneday' ? 'One Day' : 'aboutme.it'}</span><span class="issue">${esc(issue)} &nbsp; / &nbsp; ${esc(card.lang.toUpperCase())}</span></header><div class="copy"><h1>${esc(card.title)}</h1><p class="deck">${esc(card.subtitle)}</p></div><div class="art">${art}</div><div class="footer"><span class="signature"><i class="dot"></i>Enrico Icardi</span><span class="domain">aboutme.it${card.kind === 'article' || card.kind === 'oneday' ? ' / one day' : ''}</span></div></main><script>
 document.fonts.ready.then(() => {
   const title=document.querySelector('h1'), deck=document.querySelector('.deck');
-  for(const el of [title,deck]){let size=parseFloat(getComputedStyle(el).fontSize);const min=el===title?42:18;while(el.scrollHeight>el.clientHeight+1&&size>min){el.style.fontSize=(--size)+'px';}}
+  // Measure line boxes, not glyph ink overflow: descenders should not shrink a title.
+  for(const el of [title,deck]){let size=parseFloat(getComputedStyle(el).fontSize);const min=el===title?42:18,limit=el===title?300:110;while((el.getBoundingClientRect().height>limit||el.scrollWidth>el.clientWidth+1)&&size>min){el.style.fontSize=(--size)+'px';}}
   let size=parseFloat(getComputedStyle(title).fontSize);
   while(deck.getBoundingClientRect().bottom>520&&size>42) title.style.fontSize=(--size)+'px';
   const bottom=deck.getBoundingClientRect().bottom;
-  document.body.dataset.overflow=String(bottom>535||[title,deck].some(el=>el.scrollHeight>el.clientHeight+1||el.scrollWidth>el.clientWidth+1));
+  document.body.dataset.overflow=String(bottom>535||title.getBoundingClientRect().height>300||deck.getBoundingClientRect().height>110||[title,deck].some(el=>el.scrollWidth>el.clientWidth+1));
   document.body.dataset.ready='true';
 });
 </script></body></html>`;

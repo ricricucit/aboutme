@@ -1,6 +1,6 @@
 // Publishing-only renderer. Uses the same installed Chrome as the Lighthouse gate.
 import { createServer } from 'node:http';
-import { readFileSync, existsSync, statSync, mkdtempSync, rmSync } from 'node:fs';
+import { readFileSync, existsSync, statSync, mkdtempSync, rmSync, copyFileSync } from 'node:fs';
 import { join, resolve, extname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execFile, spawnSync } from 'node:child_process';
@@ -34,6 +34,8 @@ async function worker() {
       const png = readFileSync(join(OUT, 'share', card.file));
       if (png.toString('hex', 0, 8) !== '89504e470d0a1a0a' || png.readUInt32BE(16) !== 1200 || png.readUInt32BE(20) !== 630) throw new Error(`Invalid PNG: ${card.id}`);
       if (png.length > 2 * 1024 * 1024) throw new Error(`Share image exceeds 2 MB: ${card.id}`);
+      // Stable embeds (README, newsletters) coexist with cache-busted OG URLs.
+      copyFileSync(join(OUT, 'share', card.file), join(OUT, 'share', card.id + '.png'));
       console.log(`✓ ${card.id}: 1200×630, ${Math.round(png.length / 1024)} KB`);
     } finally { rmSync(profile, { recursive: true, force: true }); }
   }

@@ -5,6 +5,7 @@ import { createServer } from 'node:http';
 import { gzipSync } from 'node:zlib';
 import { addShareCard, resetShareCards, shareMeta, postShareMeta, writeShareCards } from './src/share-images.mjs';
 import { enhanceReading } from './src/reading-tools.mjs';
+import { enhanceSharing } from './src/share-tools.mjs';
 
 const ROOT = new URL('.', import.meta.url).pathname;
 const OUT = join(ROOT, 'dist');
@@ -188,7 +189,7 @@ function build() {
     for (const page of PAGES) {
       const dir = join(OUT, path(c.lang, page)); mkdirSync(dir, { recursive: true });
       const render = { home: homePage, about: aboutPage, cv: cvPage, oneday: onedayPage }[page];
-      writeFileSync(join(dir, 'index.html'), render(c));
+      writeFileSync(join(dir, 'index.html'), enhanceSharing(render(c), c.lang));
       urls.push({ loc: url(c.lang, page), page });
     }
     writeFileSync(join(OUT, prefix(c.lang) || '/', 'cv.md'), cvMarkdown(c));
@@ -198,7 +199,7 @@ function build() {
     const source = p.tr[lg].src;
     const description = source.match(/<meta name="description" content="([^"]*)"/)?.[1] || '';
     const cover = addShareCard({ id: `${lg}-${p.slug}`, lang: lg, kind: 'article', title: p.tr[lg].title, subtitle: description, date: p.date, source });
-    writeFileSync(join(dir, 'index.html'), enhanceReading(postShareMeta(source, cover), lg));
+    writeFileSync(join(dir, 'index.html'), enhanceSharing(enhanceReading(postShareMeta(source, cover), lg), lg));
     urls.push({ loc: BASE + postPath(lg, p.slug), page: null, post: p });
   }
   const en = langs[0];

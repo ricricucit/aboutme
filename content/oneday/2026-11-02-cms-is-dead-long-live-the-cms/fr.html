@@ -2,7 +2,7 @@
 <html lang="fr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>I was “just” a CMS developer. Then came AI</title>
-<meta name="description" content="Vingt ans de CMS, les préjugés envers ceux qui font des sites et les compétences essentielles aux systèmes construits avec l’IA.">
+<meta name="description" content="Vingt ans de CMS, l’anatomie de Directus et ce qui fait un bon logiciel, même quand on le construit avec l’IA.">
 <meta name="author" content="Enrico Icardi"><link rel="canonical" href="https://www.aboutme.it/fr/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
 <link rel="alternate" hreflang="en" href="https://www.aboutme.it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
 <link rel="alternate" hreflang="de" href="https://www.aboutme.it/de/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="pl" href="https://www.aboutme.it/pl/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
 <link rel="alternate" hreflang="uk" href="https://www.aboutme.it/uk/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
 <link rel="alternate" hreflang="x-default" href="https://www.aboutme.it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
-<meta property="og:type" content="article"><meta property="og:title" content="I was “just” a CMS developer. Then came AI"><meta property="og:description" content="Du CMS bullying à la mémoire opérationnelle de l’entreprise : ce que notre expérience apporte à l’ère de l’IA."><meta property="og:url" content="https://www.aboutme.it/fr/one-day/2026-11-02-cms-is-dead-long-live-the-cms/"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="One Day · Enrico Icardi"><meta property="article:published_time" content="2026-11-02"><meta name="twitter:card" content="summary">
+<meta property="og:type" content="article"><meta property="og:title" content="I was “just” a CMS developer. Then came AI"><meta property="og:description" content="Vingt ans de CMS, l’anatomie de Directus et ce qui fait un bon logiciel, même quand on le construit avec l’IA."><meta property="og:url" content="https://www.aboutme.it/fr/one-day/2026-11-02-cms-is-dead-long-live-the-cms/"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="One Day · Enrico Icardi"><meta property="article:published_time" content="2026-11-02"><meta name="twitter:card" content="summary">
 <style>@font-face{font-family:"Maison Neue";src:url(/fonts/MaisonNeue-Book.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Maison Neue";src:url(/fonts/MaisonNeue-Medium.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
 :root{
@@ -282,9 +282,9 @@ article>ul li::marker{color:var(--muted)}
 </ul>
 </aside>
 
-<p class="opener">Je suis développeur et j’ai fait des CMS. Voilà, c’est dit.</p>
-<p>J’y ai consacré une bonne partie des vingt dernières années, et pendant un temps, cela semblait presque devoir se justifier. CMS voulait dire WordPress, WordPress voulait dire sites web, et faire des sites occupait une place assez basse dans la hiérarchie imaginaire du génie logiciel. Les applications sérieuses vivaient apparemment ailleurs.</p>
-<p>J’appelle cela le <em>CMS bullying</em> : ce snobisme professionnel qui déduit la complexité d’un système de son écran le plus simple. On voyait un titre, une photo et le bouton « Publier ». Hors champ restaient les rédactions, les traductions, les permissions, les intégrations et des années de contenus qui devaient survivre à la prochaine mise à jour.</p>
+<p class="opener">Je suis développeur et j’ai fait des CMS.</p>
+<p>J’y ai consacré une bonne partie des vingt dernières années. CMS voulait souvent dire WordPress, et WordPress voulait dire sites web. L’association se comprend, mais elle ne raconte qu’une partie du travail.</p>
+<p>Un titre, une photo et un bouton « Publier » peuvent être tout ce que l’on voit. Derrière, il peut y avoir des rédactions, des traductions, des permissions, des intégrations et des années de contenus qui doivent survivre à la prochaine mise à jour. C’est en travaillant sur ces problèmes que j’ai le plus appris.</p>
 <p>Aujourd’hui, l’IA permet à bien plus de personnes de se construire une application, un outil de gestion, voire leur propre CMS. Je trouve cela enthousiasmant. Et je reconnais, dans ces projets, beaucoup des problèmes sur lesquels nous avons travaillé pendant des années.</p>
 <p><strong>Plus il devient facile de générer du logiciel, plus il devient utile de savoir ce que ce logiciel doit pouvoir faire dans la durée.</strong> C’est de cette expérience que je voudrais parler.</p>
 
@@ -580,7 +580,8 @@ article>ul li::marker{color:var(--muted)}
 <p>Le prochain CMS pourrait naître ici, ou de l’évolution d’outils existants. Ce qui m’importe, c’est qu’une personne puisse choisir son interface et son agent tout en travaillant sur une base partagée. La différence sera la capacité à accompagner une modification depuis l’intention de celui qui la demande jusqu’à ses conséquences sur le système.</p>
 
 <h2>Vive le CMS</h2>
-<p>Le 2 novembre me semble bien choisi pour enterrer l’idée que travailler sur des CMS serait faire de l’ingénierie de seconde zone. Ces systèmes m’ont appris combien il est exigeant de faire tenir ensemble personnes, informations et logiciel quand tous trois changent.</p>
+<p>Dans le monde des CMS aussi, beaucoup de travail se fait par habitude : installer un thème, empiler des extensions et livrer sans se demander comment le système tiendra. Avoir travaillé avec des CMS n’est pas, en soi, un signe de soin ou de compétence. La facilité des premiers pas peut encourager aussi bien la curiosité que la paresse.</p>
+<p>En regardant ce que nous construisons aujourd’hui avec l’IA, je retrouve surtout une évidence : un bon logiciel reste un bon logiciel. Il se reconnaît à l’aide qu’il apporte aux personnes qui l’utilisent et à sa capacité à durer et à évoluer. Les noms, les sigles et la technologie du moment en disent peu à eux seuls.</p>
 <p>À ceux qui construisent aujourd’hui leur outil de gestion avec l’IA, je laisserais quatre questions, celles que je continuerais à me poser :</p>
 <ul>
 <li>Quelles règles doivent rester vraies pendant que le système change ?</li>
@@ -588,7 +589,7 @@ article>ul li::marker{color:var(--muted)}
 <li>Qu’avons-nous réellement essayé de restaurer après une erreur ?</li>
 <li>Que sauront les personnes qui arriveront après nous ?</li>
 </ul>
-<p>Je suis développeur et j’ai fait des CMS. J’emporte leurs leçons, même lorsqu’elles m’aident à choisir une autre architecture. C’est la valeur que je reconnais à cette expérience.</p>
+<p>Les CMS ont été le contexte dans lequel j’ai appris à me poser ces questions. J’emporte ce que j’y ai appris, y compris lorsque cela m’aide à choisir une autre architecture.</p>
 <p lang="en" class="lead">CMS is dead. Long live the CMS.</p>
 
 <section class="footnotes" role="doc-endnotes" aria-labelledby="fonti">
