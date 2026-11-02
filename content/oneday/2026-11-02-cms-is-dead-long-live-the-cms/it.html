@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CMS is dead. Long live the CMS.</title>
+<meta name="description" content="Vent’anni di CMS, il pregiudizio verso chi fa siti e le competenze che diventano centrali nei sistemi costruiti con l’AI.">
+<meta name="author" content="Enrico Icardi"><link rel="canonical" href="https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/">
+<meta property="og:type" content="article"><meta property="og:title" content="CMS is dead. Long live the CMS."><meta property="og:description" content="Dal CMS bullying alla memoria operativa dell’azienda: cosa ci portiamo dietro nell’era dell’AI."><meta property="og:url" content="https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="One Day — Enrico Icardi"><meta property="article:published_time" content="2026-11-02"><meta name="twitter:card" content="summary">
+<style>@font-face{font-family:"Maison Neue";src:url(/fonts/MaisonNeue-Book.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Maison Neue";src:url(/fonts/MaisonNeue-Medium.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{
+  /* 1. tokens ------------------------------------------------------------ */
+  color-scheme:light dark;
+  --bg:light-dark(#fff,#0a0a0a);--fg:light-dark(#0a0a0a,#f2f2ef);
+  --muted:light-dark(#4a4a4a,#c8c6bc);--muted-2:light-dark(#767470,#8e8c84);
+  --line:light-dark(#e6e6e6,#242424);--accent:#eecc5d;
+  --ff:"Maison Neue","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --ff-serif:"Times New Roman",Times,Georgia,"Liberation Serif",serif;
+  /* type scale: four sizes */
+  --fs-s:1rem;--fs-b:1.1875rem;--fs-l:clamp(1.375rem,1.15rem + 1vw,1.625rem);--fs-h:clamp(2.25rem,1.5rem + 3.5vw,3.5rem);
+  /* rhythm: the body line (1.8rem) is the unit; --rN = N/2 lines */
+  --lh:1.9rem;--r0:calc(var(--lh)/4);--r1:calc(var(--lh)/2);--r2:var(--lh);--r3:calc(1.5*var(--lh));--r4:calc(2*var(--lh));--r5:calc(3*var(--lh));
+  --measure:48rem;--gutter:clamp(1.25rem,5vw,2.5rem);--control:2.25rem;
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+/* 2. base ---------------------------------------------------------------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;hanging-punctuation:first}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ff);font-size:var(--fs-b);line-height:var(--lh);font-weight:400;font-kerning:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:var(--muted-2)}
+a:hover{text-decoration-color:var(--accent);text-decoration-thickness:2px}
+strong{font-weight:500}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--line);margin:var(--r3) 0}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:calc(var(--measure) + 2*var(--gutter));margin:0 auto;padding-inline:var(--gutter)}
+
+p,li{text-wrap:pretty}
+@media (max-width:40rem){p,li{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:10 4 4}}
+p{margin:0 0 var(--r2)}
+h1{font-family:var(--ff-serif);font-size:var(--fs-h);line-height:1.08;letter-spacing:-.01em;font-weight:400;margin:0 0 var(--r2);text-wrap:balance}
+h2{font-size:var(--fs-s);line-height:var(--lh);font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-2);margin:var(--r5) 0 var(--r2)}
+h1+h2,.hero+h2,.btn+h2{margin-top:var(--r4)}
+@media (max-width:40rem){h2{margin-top:var(--r4)}h1+h2,.hero+h2,.btn+h2{margin-top:var(--r3)}}
+h3{font-size:var(--fs-b);line-height:var(--lh);font-weight:500;margin:0}
+.lead{font-size:var(--fs-l);line-height:1.45;letter-spacing:-.008em;margin-bottom:var(--r2)}
+.tldr{margin-top:calc(-1*var(--r1))}
+.meta{font-size:var(--fs-s);line-height:var(--lh);color:var(--muted)}
+.muted{color:var(--muted)}
+/* drop cap on page openers */
+.opener::first-letter{float:left;font-family:var(--ff-serif);font-size:3.05em;line-height:.76;padding:.125em .12em 0 0;font-weight:400}
+.masthead{font-family:var(--ff-serif);font-style:italic;font-weight:400;letter-spacing:0}
+/* 3. components ---------------------------------------------------------- */
+/* header */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--r1) var(--r2);padding-block:var(--r2);border-bottom:1px solid var(--line)}
+.top nav{display:flex;gap:1.2rem;align-items:baseline;white-space:nowrap;font-size:var(--fs-s)}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a[aria-current],.top nav a.brand{color:var(--fg);font-weight:500}
+.top nav a[aria-current]{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--accent);text-underline-offset:.4em}
+.top nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--fg);text-underline-offset:.4em}
+.tools{display:flex;gap:var(--r0);align-items:center}
+.tools a,.tools button{display:inline-flex;align-items:center;justify-content:center;width:var(--control);height:var(--control);border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;padding:0;text-decoration:none}
+.tools a:hover,.tools button:hover{border-color:var(--fg)}
+.tools svg{width:1.05rem;height:1.05rem;fill:currentColor}
+#theme .i-sun,#theme .i-moon,#theme .i-auto{display:none}
+:root[data-theme=light] #theme .i-sun{display:block}
+:root[data-theme=dark] #theme .i-moon{display:block}
+:root:not([data-theme]) #theme .i-auto{display:block}
+/* main */
+main{padding-block:var(--r4) var(--r5)}
+@media (max-width:40rem){main{padding-block:var(--r3) var(--r4)}}
+/* hero: newspaper run-around — portrait floats left, headline + lead wrap around and continue beneath */
+.hero{display:flow-root}
+.hero figure{float:right;width:7rem;margin:var(--r0) 0 var(--r1) var(--r2)}
+.hero figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0;border-radius:4px}
+@media (min-width:48rem){.hero figure{width:13rem;margin-left:var(--r3)}}
+.earlier{margin-top:var(--r4)}
+.earlier summary{width:max-content;cursor:pointer;color:var(--muted-2);font-size:var(--fs-s);font-weight:500;letter-spacing:.09em;line-height:var(--lh);text-transform:uppercase}
+.earlier summary:hover{color:var(--fg)}
+.earlier[open] summary{margin-bottom:var(--r1)}
+.earlier+h2{margin-top:var(--r3)}
+/* button */
+.btn{display:inline-flex;align-items:center;gap:var(--r0);min-height:var(--control);padding:0 var(--r2);border:1px solid var(--fg);border-radius:999px;background:var(--fg);color:var(--bg);text-decoration:none;font-size:var(--fs-s);font-weight:500;margin:var(--r1) 0 var(--r2)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#0a0a0a}
+.btn svg{width:1rem;height:1rem;fill:currentColor}
+/* lists */
+ul.plain{list-style:none;padding:0;margin:0 0 var(--r2)}
+ul.plain li{position:relative;padding:var(--r0) 0 var(--r0) var(--r2)}
+ul.plain li::before{content:"\2014";position:absolute;left:0;color:var(--muted-2)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:var(--r0) var(--r2);margin:0 0 var(--r2)}
+dt{font-weight:500}dd{margin:0;color:var(--muted)}
+/* cv sections: sticky eyebrow + sticky dates while their entry scrolls */
+.sec{margin-top:var(--r4)}
+.sec h2{position:sticky;top:0;z-index:2;background:var(--bg);margin:0;padding-block:var(--r1)}
+@media (min-width:40rem){.entry .when{position:sticky;top:calc(2*var(--lh));align-self:start;z-index:1;background:var(--bg);padding-bottom:var(--r0)}}
+/* wide desktops: labels + dates hang into the left margin, text keeps the full measure */
+@media (min-width:72rem){
+  .sec h2,.sec .entry{margin-left:calc(-7rem - var(--r2))}
+  .sec h2{padding-left:calc(7rem + var(--r2))}
+  .sec h2{padding-left:0}
+}
+/* cv entries */
+.entry{display:grid;grid-template-columns:7rem 1fr;gap:var(--r0) var(--r2);padding:var(--r3) 0;border-top:1px solid var(--line)}
+h2+.entry{border-top:0;padding-top:0}
+.entry .when{font-size:var(--fs-s);line-height:var(--lh);color:var(--muted);font-variant-numeric:tabular-nums}
+.entry .role{font-size:var(--fs-s);color:var(--muted);margin:0 0 var(--r1)}
+.entry .where{color:var(--muted-2)}
+.entry p{margin-bottom:var(--r1)}
+.entry p:last-child{margin-bottom:0}
+@media (max-width:40rem){.entry{grid-template-columns:1fr;gap:0}.entry .when{margin-bottom:var(--r0)}}
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:var(--r2) var(--r4);color:var(--muted);font-size:.875rem;line-height:var(--lh)}
+footer .langs{display:flex;flex-wrap:wrap;gap:0 var(--r2);list-style:none;padding:0;margin:0 0 var(--r1)}
+footer .langs a{text-decoration:none;color:var(--muted-2)}
+footer .langs a[aria-current]{color:var(--fg);font-weight:500}
+footer .langs a:hover{color:var(--fg)}
+footer p{margin:0}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
+
+/* Compact personal homepage: prose first, project links second. */
+.home-refresh h1{font-style:italic}
+.home-refresh .lead{font-size:clamp(1.5rem,1.25rem + 1vw,1.75rem)}
+.project-groups{border-top:1px solid var(--line);padding-top:var(--r1);margin-top:var(--r2)}
+.project-groups section{display:grid;grid-template-columns:11rem 1fr;gap:var(--r1);margin-block:var(--r1)}
+.project-groups h2{margin:0;font-size:.6875rem;line-height:1.8;letter-spacing:.08em;color:var(--muted);padding-top:.15rem}
+.project-links{display:flex;flex-wrap:wrap;gap:.25rem 0;list-style:none;padding:0;margin:0;font-size:.875rem;line-height:1.8}
+.project-links li:not(:last-child)::after{content:'·';margin-inline:.55rem;color:var(--muted)}
+.project-links a{text-decoration:none}
+.project-links a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.home-journey{border-top:1px solid var(--line);margin-top:var(--r2);padding-top:var(--r1);font-size:var(--fs-s)}
+.home-journey summary{cursor:pointer;min-height:2.75rem;padding-block:.35rem}
+.home-journey[open] summary{margin-bottom:var(--r1)}
+.home-journey p{color:var(--muted)}
+.home-contact{display:flex;flex-wrap:wrap;gap:var(--r1) var(--r2);justify-content:space-between;align-items:center;margin-top:var(--r2);font-size:var(--fs-s)}
+.home-contact .btn{margin:0}
+.home-closing{font-size:.875rem;color:var(--muted);margin:var(--r2) 0 0}
+@media(max-width:40rem){.project-groups section{grid-template-columns:1fr;gap:.25rem;margin-block:var(--r1)}.project-links{line-height:2}.home-contact{align-items:flex-start}}
+
+.post-head{padding-block:var(--r3);border-bottom:1px solid var(--line);margin-bottom:var(--r3)}
+.almanac{font-size:var(--fs-s);color:var(--muted);font-style:italic;margin-block:var(--r2)}
+article h2{color:var(--fg);font-size:var(--fs-l);text-transform:none;letter-spacing:0;line-height:1.4}
+article li{margin-bottom:var(--r1)}
+.table-wrap{overflow-x:auto;margin-block:var(--r3)}
+table{width:100%;border-collapse:collapse;font-size:var(--fs-s);line-height:1.5}
+caption{text-align:left;font-weight:500;padding-bottom:var(--r1)}
+th,td{text-align:left;vertical-align:top;padding:var(--r1);border-bottom:1px solid var(--line)}
+th{font-weight:500}
+.references{font-size:var(--fs-s);padding-left:var(--r2)}
+.author-note{margin-top:var(--r4);font-size:var(--fs-s)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:4px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CMS is dead. Long live the CMS.","datePublished":"2026-11-02","inLanguage":"it","author":{"@type":"Person","name":"Enrico Icardi","url":"https://www.aboutme.it/"},"mainEntityOfPage":"https://www.aboutme.it/it/one-day/2026-11-02-cms-is-dead-long-live-the-cms/"}</script>
+</head><body>
+<header class="wrap"><nav class="top" aria-label="Navigazione"><a href="/it/">Enrico Icardi</a><a href="/it/one-day/">One Day</a></nav></header>
+<main class="wrap" id="contenuto"><article>
+<header class="post-head">
+<p class="meta">ONE DAY · <time datetime="2026-11-02">Lunedì 2 novembre 2026</time></p>
+<p class="almanac">Giorno dei morti. Luna calante. Condizioni ideali per riesumare vent’anni di esperienza.</p>
+<h1 lang="en">CMS is dead.<br>Long live the CMS.</h1>
+<p class="lead">Ho passato buona parte della mia vita professionale a lavorare sui CMS. Oggi che possiamo generare software parlando con un modello, quell’esperienza mi sembra più utile che mai.</p>
+<p class="meta">Enrico Icardi · Prima versione italiana</p>
+</header>
+
+<p>Sono un tecnico e ho fatto CMS. Ecco, l’ho detto.</p>
+<p>Per anni, in certi ambienti, bastava pronunciare quelle tre lettere perché la conversazione prendesse una piega precisa. CMS voleva dire WordPress. WordPress voleva dire siti. E fare siti occupava un gradino piuttosto basso nella gerarchia immaginaria dell’ingegneria del software.</p>
+<p>Lo chiamerei <em>CMS bullying</em>: quello snobismo per cui il lavoro viene giudicato da ciò che si vede sullo schermo. Una pagina con un titolo e una fotografia? Probabilmente sotto non c’è niente di interessante.</p>
+<p>Sotto, invece, potevano esserci redazioni distribuite, contenuti in più lingue, autorizzazioni diverse sullo stesso record, sistemi esterni, rilasci senza interruzioni e anni di informazioni da conservare. Oppure un’installazione semplice, e andava benissimo anche quella. L’etichetta diceva poco della complessità.</p>
+<p>Oggi vedo persone entusiaste di costruirsi da sole un gestionale con l’AI. Lo sono anch’io. Mi interessa però osservare quanta parte di quel lavoro passi per problemi che chi ha costruito CMS complessi conosce da tempo.</p>
+
+<h2>Il software comincia da chi deve usarlo</h2>
+<p>Un CMS mette un modello tecnico nelle mani di persone che hanno altro da fare: scrivere, vendere, organizzare un evento, aggiornare un catalogo. Il modello deve diventare comprensibile attraverso form, viste, nomi e operazioni.</p>
+<p>Un campo obbligatorio può essere corretto per il database e sbagliato nel momento in cui viene richiesto all’editor. Una pubblicazione può aver bisogno di un’approvazione. Una cancellazione accidentale deve avere una via di recupero. Sono decisioni di prodotto che diventano decisioni tecniche.</p>
+<p>Nel software aziendale, chi sceglie uno strumento e chi lo usa spesso sono persone diverse. I costi di cambio e le scelte dell’organizzazione possono tenere in vita interfacce scomode per anni. Quando l’utilizzatore può abbandonare un prodotto più facilmente, la pressione sull’usabilità cambia.</p>
+<p>Molti CMS sono a tutti gli effetti strumenti B2B. Ma il loro lavoro quotidiano obbliga a confrontarsi con persone che non pensano in termini di tabelle e chiavi esterne. Credo che sia stata una scuola importante: tenere insieme la struttura dei dati e il comportamento umano.</p>
+
+<h2>Query, vista, azione</h2>
+<p>Guardiamo un pannello amministrativo, un CRM, un gestionale immobiliare o un CMS. Una grammatica ricorrente è questa: seleziono un insieme di informazioni, scelgo come guardarlo, compio un’azione.</p>
+<p>Filtri e ricerca esprimono una query. Tabelle, schede, calendari e kanban rappresentano i risultati. Form e comandi modificano dati e stati. Permessi e regole delimitano le operazioni possibili.</p>
+<p>Questa grammatica appartiene anche alla storia dei database e dei gestionali. I CMS hanno contribuito a renderla accessibile a pubblici molto diversi. Una vista è un modo di lavorare su un modello condiviso: cambiarla non dovrebbe cambiare arbitrariamente il significato dei dati.</p>
+<p>L’AI rende più facile produrre altre viste, anche temporanee, dedicate a una persona o a un compito. Per farle funzionare serve comunque sapere che cosa rappresentano quei dati e quali operazioni hanno senso.</p>
+
+<h2>Aprire un CMS e guardarci dentro</h2>
+<p>Uso Directus come esempio perché fa parte della mia esperienza. Il suo modello rende visibile quanto contenuto, dati e operazioni possano stare vicini. È un caso da studiare, con scelte e compromessi propri.</p>
+<p>La sua documentazione descrive controlli di accesso tramite utenti, ruoli e policy, permessi sui dati e configurazione di storage esterni. Sono capacità concrete sulle quali costruire un sistema. La capacità di collegare uno storage, però, lascia ancora da progettare backup, conservazione e ripristino dell’insieme.</p>
+<div class="table-wrap"><table>
+<caption>Le responsabilità da riconoscere prima di costruire il proprio CMS</caption>
+<thead><tr><th scope="col">Parte</th><th scope="col">Domanda tecnica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Modello</th><td>Che cosa rappresentano entità, relazioni e vincoli?</td></tr>
+<tr><th scope="row">Accesso</th><td>Chi può leggere o modificare quali record e campi?</td></tr>
+<tr><th scope="row">Ciclo di vita</th><td>Come funzionano bozze, revisioni, approvazioni e pubblicazione?</td></tr>
+<tr><th scope="row">Asset</th><td>Come restano coerenti file, metadati e riferimenti?</td></tr>
+<tr><th scope="row">Integrazioni</th><td>Quali contratti usano frontend, servizi e automazioni?</td></tr>
+<tr><th scope="row">Evoluzione</th><td>Come cambiano schema, dati, configurazioni e codice?</td></tr>
+<tr><th scope="row">Interfacce</th><td>Come rendiamo quelle regole comprensibili e utilizzabili?</td></tr>
+</tbody></table></div>
+<p>Dietro ciascuna riga si accumulano casi limite. Il valore di un prodotto maturo sta anche nelle decisioni prese dopo averli incontrati. Ricrearne l’aspetto offre pochi indizi su quante di quelle decisioni abbiamo effettivamente riprodotto.</p>
+
+<h2>È solo una galleria di immagini</h2>
+<p>Facciamo un esempio: l’immagine principale di un articolo deve diventare una galleria ordinata.</p>
+<p>La modifica al form sembra piccola. Il modello passa da un riferimento singolo a una relazione con più elementi, ciascuno con una posizione. Gli articoli esistenti devono conservare l’immagine precedente. Le API cambiano forma. I template devono saper leggere la nuova struttura. Gli editor continuano a lavorare durante il rilascio.</p>
+<p>Possiamo introdurre la nuova relazione, trasferire i riferimenti esistenti e mantenere temporaneamente compatibili le letture precedenti. Poi aggiorniamo chi consuma quei dati e, quando è possibile, rimuoviamo il vecchio campo. L’ordine dipende dal sistema, dai volumi e dalle garanzie richieste.</p>
+<p>Qui emerge una distinzione importante: <strong>i componenti devono restare compatibili; non devono necessariamente cambiare tutti nello stesso istante.</strong></p>
+<p>Promuovere uno schema da un ambiente all’altro è diverso dal copiare il database di sviluppo sopra quello di produzione. E ripristinare la vecchia versione del codice non annulla una trasformazione dei dati già avvenuta. Una migrazione distruttiva può richiedere un recupero o una correzione in avanti, con conseguenze sulle modifiche arrivate nel frattempo.</p>
+<p>Poi c’è la domanda che una demo difficilmente fa emergere: se ripristino il database di ieri, possiedo ancora i file che cita? Ho una versione del codice e delle configurazioni capace di usarlo? Posso riattivare i servizi senza provocare di nuovo azioni già eseguite?</p>
+<p>È la vita operativa del contenuto. La fotografia era soltanto il punto da cui siamo partiti.</p>
+
+<h2>Il laboratorio attorno al software</h2>
+<p>Chi lavora a lungo su questi sistemi costruisce un laboratorio: strumenti, pipeline, procedure e abitudini condivise.</p>
+<p>L’infrastruttura ospita database, storage, rete e segreti. La CI/CD stabilisce come un cambiamento attraversa gli ambienti. L’osservabilità aiuta a distinguere un file mancante da un permesso errato o da un servizio esterno fermo. Il disaster recovery mette alla prova quanto possiamo recuperare e in quanto tempo.</p>
+<p>Occorre decidere quanta perdita di dati è accettabile e quanto a lungo il servizio può restare indisponibile. Una copia esistente non dimostra ancora che l’intero sistema sia ripristinabile nei tempi necessari.</p>
+<p>Infine c’è l’organizzazione. Chi può cambiare il modello? Chi approva il rilascio? Chi interviene quando qualcosa si rompe? Dove resta il motivo per cui una regola esiste?</p>
+<p>Sono competenze generali dell’ingegneria, esercitate su un dominio specifico. In welance, il lavoro sul nostro cloud e sui processi di CI/CD, osservabilità e recupero fa parte di questa esperienza collettiva. Molto di ciò che permette al software di durare vive attorno al suo codice.</p>
+
+<h2>Quando costruire costa meno</h2>
+<p>Con l’AI possiamo esplorare implementazioni e personalizzazioni che prima avrebbero richiesto un investimento difficile da giustificare. È una libertà enorme. Cambia anche il valore dell’esperienza: aiuta a formulare requisiti, riconoscere omissioni e scegliere quali risultati verificare.</p>
+<p>Se chiedo un pannello per gestire articoli, otterrò probabilmente un pannello. Per ottenere anche le garanzie di cui ho bisogno devo renderle esplicite: compatibilità, autorizzazioni, provenienza, gestione degli errori e continuità.</p>
+<p>Le condizioni di licenza contano nella scelta di un prodotto. Directus oggi dichiara una licenza source-available MSCL: disponibilità del sorgente e libertà d’uso vanno valutate rispetto alla versione e alle condizioni applicabili. Questo apre una discussione sul valore economico della piattaforma; attribuirne le scelte commerciali all’AI sarebbe un’interpretazione ulteriore.</p>
+<p>La scelta tra costruire e adottare include così il costo di mantenere nel tempo tutte queste responsabilità. Il primo prototipo ci dice solo una parte del prezzo.</p>
+
+<h2>Il contenuto supera il sito</h2>
+<p>La C di CMS significa <em>content</em>. Il contenuto può essere un articolo, ma anche un requisito, un immobile, una disponibilità, una decisione o la relazione tra un progetto e una persona.</p>
+<p>Un CMS sufficientemente flessibile può offrire una base per molti sistemi di gestione. Un gestionale immobiliare aggiunge regole su immobili e prenotazioni; un ERP porta processi e vincoli specifici. Chiamare tutto “contenuto” non elimina quelle regole: ci aiuta a riconoscere una parte comune sulla quale costruirle.</p>
+<p>Per esempio, una prenotazione deve evitare sovrapposizioni anche quando due operazioni arrivano contemporaneamente. Un campo ben disegnato e un agente capace di comprenderlo non sostituiscono il vincolo applicato dal sistema.</p>
+<p>È qui che immagino un’evoluzione verso gestionali progettati fin dall’inizio per persone e agenti. Li chiamo, provvisoriamente, <em>AI MS</em>: sistemi in cui il linguaggio naturale si affianca a form e viste, mentre regole, permessi e transizioni restano verificabili. Uso il nome come etichetta di lavoro.</p>
+
+<h2>Dalla memoria alle operazioni</h2>
+<p>La proposta <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">LLM Wiki di Andrej Karpathy</a> descrive un modello interessante: conservare le fonti e usare un LLM per costruire e mantenere conoscenza persistente, con sintesi e collegamenti che restano disponibili oltre la conversazione.</p>
+<p>Vedo un collegamento con ciò che può fare un CMS strutturato. A quella memoria possiamo associare entità, stati, responsabilità e azioni. Possiamo collegare il requisito alla decisione che lo ha generato e ai materiali originali.</p>
+<p>Le fonti possono essere documenti, immagini, audio e video. Per renderle utilizzabili servono strumenti capaci di interpretarne il contenuto, mantenendo provenienza e confini di accesso. Una sintesi di informazioni riservate richiede a sua volta un accesso adeguato.</p>
+<p>Nel nostro caso, Butler/Otto nasce dal lavoro per gestire la digital agency welance. L’ecosistema di collaborazioni che descrivo comprende circa sessanta-settanta persone, con ricambio elevato. Raccogliere contenuti e requisiti in un contenitore comune basato su CMS ci aiuta a conservare il contesto quando cambiano le persone.</p>
+<p>Oggi lavoriamo su quel patrimonio anche tramite MCP. La prospettiva è poter interrogare la memoria operativa e usarla nei flussi che coinvolgono gli altri software aziendali.</p>
+<p>Un requisito dovrebbe poter sopravvivere alla persona che lo ha raccolto: un collega autorizzato deve poterlo ritrovare, capirne l’origine e usarlo per continuare il lavoro. Questo è il criterio con cui giudicherei l’utilità della memoria aziendale.</p>
+<p>Il passaggio ai connettori richiede un lavoro preciso sulle autorizzazioni. L’identità usata nel sistema centrale, le verifiche sulle azioni e le credenziali del servizio esterno devono essere coerenti. MCP non rende automaticamente equivalenti le policy di due prodotti.</p>
+
+<h2>Quali strumenti vorrei usare domani</h2>
+<p>Mi interessano gli strumenti che rendono comprensibile il sistema in cui l’applicazione vive. In Railway, per esempio, progetti, servizi e ambienti sono elementi espliciti del lavoro. Lovable permette di costruire applicazioni e offre anche un backend gestito: database e infrastruttura continuano a esistere sotto l’astrazione.</p>
+<p>La mia preferenza va verso strumenti che consentano di capire e governare le dipendenze. Un’interfaccia conversazionale potrebbe diventare uno dei modi di lavorare su una piattaforma di quel tipo.</p>
+<p>È un’ipotesi sul futuro, non una previsione su quale azienda vincerà. Disegnare i servizi su un canvas non garantisce da solo migrazioni corrette o ripristini affidabili. Vorrei poter chiedere una modifica e vedere quali dati coinvolge, con quale identità verrà eseguita, quali approvazioni richiede e come recuperare se fallisce.</p>
+<p>Un CMS della prossima generazione dovrà rendere questo lavoro comprensibile anche agli agenti. La data di nascita del prodotto conta meno delle garanzie che riesce a offrire.</p>
+
+<h2>Viva il CMS</h2>
+<p>Il CMS ridotto a “quella cosa con cui pubblichi pagine” mi sta stretto da tempo. Lavorarci mi ha insegnato a collegare persone, informazioni, interfacce e responsabilità operative.</p>
+<p>Adesso che costruire software diventa più accessibile, porto quell’esperienza nei sistemi che vorrei costruire. E a chi domani si farà il proprio CMS con l’AI lascerei quattro domande:</p>
+<ul>
+<li>Quali regole devono restare vere quando cambiano codice, schema e contenuti?</li>
+<li>Chi può intervenire e come verifichiamo l’impatto di una modifica?</li>
+<li>Che cosa sappiamo davvero recuperare dopo un errore?</li>
+<li>Chi conserva questa conoscenza quando cambiano le persone?</li>
+</ul>
+<p>Sono un tecnico e ho fatto CMS. Continuerò a portarmi dietro quello che mi hanno insegnato, qualunque nome daremo al prossimo sistema.</p>
+<p lang="en" class="lead">CMS is dead. Long live the CMS.</p>
+
+<aside aria-labelledby="fonti"><h2 id="fonti">Riferimenti</h2>
+<ul class="references">
+<li><a href="https://directus.com/docs/guides/auth/access-control">Directus: controllo degli accessi</a> e <a href="https://directus.com/docs/configuration/files">configurazione dei file</a>.</li>
+<li><a href="https://github.com/directus/directus">Directus: repository e licenza</a>.</li>
+<li><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">Andrej Karpathy: LLM Wiki</a>.</li>
+<li><a href="https://docs.railway.com/projects">Railway: progetti</a> e <a href="https://docs.railway.com/environments">ambienti</a>; <a href="https://lovable.dev/blog/lovable-cloud">Lovable Cloud</a>.</li>
+<li><a href="https://www.timeanddate.com/moon/phases/italy/rome?year=2026">Almanacco lunare 2026</a>: ultimo quarto il 1° novembre alle 21:28, ora italiana.</li>
+</ul></aside>
+<footer class="author-note"><p>Sono Enrico Icardi, cofondatore di <a href="https://welance.com/">welance</a>. Mi occupo di engineering e prodotto. Tra i progetti a cui lavoro c’è <a href="https://welance.com/directory">welance/directory</a>, dedicato all’incontro tra progetti e team digitali.</p><p><a href="/it/one-day/">Torna a One Day</a> · <a href="https://calendar.app.google/bHXHZtic4a7dmcfR8">Parliamone</a></p></footer>
+</article></main></body></html>
