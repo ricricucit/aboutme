@@ -88,7 +88,7 @@ const script = `
 `;
 
 export function enhanceReading(source, lang) {
-  if (source.includes('class="reader-tools"')) return source;
+  if (source.includes('class="reader-tools"') || /<article\b[^>]*data-reading-minutes=/.test(source)) return source;
   const words = readingMinutes(source, lang);
   const [contents, duration, top, progress, estimate] = labels[lang] || labels.en;
   source = source.replace(/(<time\b[^>]*>[\s\S]*?<\/time>)/, '$1<span class="reading-estimate"> · ' + esc(duration.replace('{n}', words.minutes)) + '</span>');
@@ -101,6 +101,8 @@ export function enhanceReading(source, lang) {
     if (!/\btabindex=/.test(attrs)) attrs += ' tabindex="-1"';
     return `<h2${attrs}>${text}</h2>`;
   });
+  // Short notes keep the time estimate without an empty contents menu.
+  if (!entries.length) return source.replace(/<article\b([^>]*)>/, `<article$1 data-reading-minutes="${words.minutes}">`);
   const toolbar = `<span id="reader-start" aria-hidden="true"></span><div class="reader-tools" data-reading-minutes="${words.minutes}"><div class="reader-row"><details class="reader-toc"><summary><span>${esc(contents)}</span><span class="reader-time" title="${esc(estimate.replace('{n}', words.minutes))}">${esc(duration.replace('{n}', words.minutes))}</span></summary><nav aria-label="${esc(contents)}"><ol>${entries.map(e => `<li><a href="#${esc(e.id)}">${esc(e.title)}</a></li>`).join('')}</ol></nav></details><a class="reader-top" href="#article-top" aria-label="${esc(top)}" title="${esc(top)}">↑</a></div><div class="reader-progress" aria-hidden="true"><span></span></div></div>`;
   source = source.replace(/<article\b([^>]*)>/, (_, attrs) => `<article${attrs}><span id="article-top" tabindex="-1"></span>`);
   const head = source.match(/<header class="post-head">[\s\S]*?<\/header>/);
